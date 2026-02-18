@@ -1,0 +1,1 @@
+docker run  -e CUDA_VISIBLE_DEVICES=0 --gpus all --network=host --ipc=host -v /home/ec2-user/SageMaker/inference/models/Qwen3-8B:/opt/ml/model -d -t agent-tool-interface-optimizer:0.1
