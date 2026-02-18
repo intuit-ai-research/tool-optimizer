@@ -1,0 +1,1 @@
+docker build --network=host --progress plain -f Dockerfile -t agent-tool-interface-optimizer:0.1 .

@@ -1,0 +1,74 @@
+---
+description: Generate comprehensive technical documentation for README files
+globs: **/README.md
+alwaysApply: false
+---
+
+# Technical README Format
+
+When generating or updating README.md files, use this comprehensive technical documentation structure:
+
+## Structure
+
+```markdown
+# Project Technical Documentation
+
+## Table of Contents
+
+1. High-Level Architecture
+2. Directory Structure
+3. Key Components
+4. Implementation Details
+5. Development Patterns & Quirks
+6. Workflow Considerations
+
+---
+
+## 1. High-Level Architecture
+
+[Describe the overall system design, main components, and how they interact]
+
+## 2. Directory Structure
+
+[Explain the project's folder organization and what each major directory contains]
+
+## 3. Key Components
+
+[Detail the most important classes, modules, or services and their responsibilities]
+
+## 4. Implementation Details
+
+[Cover specific implementation choices, algorithms, or technical decisions]
+
+## 5. Development Patterns & Quirks
+
+[Highlight non-canonical approaches, workarounds, or unique patterns used in the codebase]
+
+## 6. Workflow Considerations
+
+[Describe development workflows, deployment processes, or operational concerns]
+```
+
+## Guidelines
+
+- **Table of Contents**: Always include for easy navigation
+- **Concise but thorough**: Keep explanations clear and detailed without being verbose
+- **Highlight quirks**: Call out non-canonical patterns or unusual implementation choices
+- **Complete coverage**: Ensure all six sections address their respective topics
+- **Code examples**: Include relevant code snippets where helpful
+- **Actionable**: Make it useful for developers joining the project
+
+## Example Section Format
+
+```markdown
+## 3. Key Components
+
+### ComponentName
+**Purpose**: Brief description of what it does
+**Location**: `path/to/component.py`
+**Key methods/features**:
+- `methodName()`: What it does
+- `anotherMethod()`: What it does
+
+**Note**: Highlight any quirks or important considerations
+```
