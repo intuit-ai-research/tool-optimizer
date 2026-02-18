@@ -4,8 +4,9 @@ import traceback
 from typing import Any
 
 from datasets import DatasetDict
-from vllm import LLM
 from transformers import AutoTokenizer
+from vllm import LLM
+
 from agent_tool_optimizer.inference.application.prompts_builder import PromptsBuilder
 from agent_tool_optimizer.inference.utils.console_output import (
     SPACE_BETWEEN_INFERENCES,
@@ -30,7 +31,7 @@ class VLLMInference:
         self.model_name = model_name
         self.llm: LLM | None = None
         self.tokenizer: AutoTokenizer | None = None
-        self.prompts_builder = PromptsBuilder()        
+        self.prompts_builder = PromptsBuilder()
         self.llm_kwargs = llm_kwargs
 
         log.info("Initializing vLLM with model name: %s", self.model_name)
@@ -39,15 +40,16 @@ class VLLMInference:
 
     def load_model(self) -> None:
         log.info("Start loading model from %s", self.model_name)
-        
+
         load_start_time = datetime.datetime.now()
-        self.llm = LLM(model=self.model_name, 
-                    tokenizer = self.model_name,
-                    trust_remote_code=True,    
-                    max_model_len=MAX_MODEL_LEN,
-                    enforce_eager=False,
-                    gpu_memory_utilization=GPU_MEMORY_UTILIZATION,
-                    max_num_seqs=MAX_NUM_SEQS                    
+        self.llm = LLM(
+            model=self.model_name,
+            tokenizer=self.model_name,
+            trust_remote_code=True,
+            max_model_len=MAX_MODEL_LEN,
+            enforce_eager=False,
+            gpu_memory_utilization=GPU_MEMORY_UTILIZATION,
+            max_num_seqs=MAX_NUM_SEQS,
         )
 
         end_time = datetime.datetime.now()
@@ -77,7 +79,7 @@ class VLLMInference:
 
                 outputs = self.llm.chat([conversation], sampling_params, use_tqdm=False)
                 if outputs:
-                    content = outputs[0].outputs[0].text                    
+                    content = outputs[0].outputs[0].text
                     print_inference_output(prompt, content)
                     print("\n" * SPACE_BETWEEN_INFERENCES)
                 else:

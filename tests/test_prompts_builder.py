@@ -8,10 +8,8 @@ from agent_tool_optimizer.inference.application.prompts_builder import PromptsBu
 def test_get_dataset_uses_local_data_when_dataset_id_is_none(mocker):
     """When dataset_id is None, get_dataset() should use local data, not HuggingFace."""
 
-    mock_from_hf = mocker.patch.object(
-        PromptsBuilder, "build_dataset_from_huggingface", return_value=None
-    )
-    
+    mock_from_hf = mocker.patch.object(PromptsBuilder, "build_dataset_from_huggingface", return_value=None)
+
     builder = PromptsBuilder()
     result = builder.build_dataset(dataset_id=None)
 

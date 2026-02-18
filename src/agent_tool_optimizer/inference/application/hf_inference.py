@@ -19,6 +19,7 @@ SAMPLE_PARAMS_TEMPERATURE = 0.6
 SAMPLE_PARAMS_TOP_K = 40
 SAMPLE_PARAMS_TOP_P = 0.95
 
+
 class HFInference:
     def __init__(self, model_name: str):
         self.model_name = model_name
@@ -38,7 +39,7 @@ class HFInference:
             model=self.model_name,
             torch_dtype=torch.bfloat16,
             device_map="auto",
-            trust_remote_code=True            
+            trust_remote_code=True,
         )
 
         end_time = datetime.datetime.now()
@@ -57,7 +58,7 @@ class HFInference:
                 "num_beams": 1,
                 "temperature": SAMPLE_PARAMS_TEMPERATURE,
                 "top_p": SAMPLE_PARAMS_TOP_P,
-                "top_k": SAMPLE_PARAMS_TOP_K                
+                "top_k": SAMPLE_PARAMS_TOP_K,
             }
 
             log.info("Starting inference...")

@@ -1,4 +1,5 @@
 """Shared console output helpers for inference (two-row layout, colored)."""
+
 import shutil
 import textwrap
 
