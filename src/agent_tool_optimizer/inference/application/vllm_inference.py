@@ -5,6 +5,7 @@ from typing import Any
 
 from datasets import DatasetDict
 from transformers import AutoTokenizer
+from huggingface_hub import login
 from vllm import LLM
 
 from agent_tool_optimizer.inference.application.prompts_builder import PromptsBuilder
@@ -27,7 +28,7 @@ REASONING_PARSER = "qwen3"
 
 
 class VLLMInference:
-    def __init__(self, model_name: str, **llm_kwargs: Any):
+    def __init__(self, model_name: str, hf_access_token: str | None = None, **llm_kwargs: Any):
         self.model_name = model_name
         self.llm: LLM | None = None
         self.tokenizer: AutoTokenizer | None = None
@@ -36,7 +37,19 @@ class VLLMInference:
 
         log.info("Initializing vLLM with model name: %s", self.model_name)
 
+        if hf_access_token:
+            self.login_to_huggingface(hf_access_token)
+
         self.load_model()
+
+    def login_to_huggingface(self, access_token: str) -> None:
+        try:            
+            log.info("Logging in to Hugging Face using access token")
+            login(token=access_token)
+            log.info("Successfully logged in to Hugging Face")
+        except Exception as e:
+            log.error("Failed to login to Hugging Face: %s", e)
+            raise
 
     def load_model(self) -> None:
         log.info("Start loading model from %s", self.model_name)
