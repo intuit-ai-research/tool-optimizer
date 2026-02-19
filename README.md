@@ -20,8 +20,8 @@ Entry point: `src/agent_tool_optimizer/inference_main.py`
 
 | Argument | Required | Default | Description |
 |----------|----------|---------|-------------|
-| `--model_name` | Yes | — | Hugging Face model id or local path (e.g. `/opt/ml/model`) |
-| `--dataset_id` | No | `""` | Hugging Face dataset id; if empty, uses built-in local demo dataset |
+| `--model_name` | Yes | `intuit/agent-tool-optimizer` | Hugging Face model id or local path (e.g. `/opt/ml/model`) |
+| `--dataset_id` | No | `intuit/tool-optimizer-dataset` | Hugging Face dataset id; if empty, uses built-in local demo dataset |
 | `--inference_engine` | No | `vllm` | Engine: `vllm` or `hf` |
 | `--hf_access_token` | No | `None` | Hugging Face access token for authentication (required for gated models or private datasets) |
 

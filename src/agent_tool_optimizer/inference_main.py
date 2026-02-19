@@ -45,13 +45,17 @@ if __name__ == "__main__":
     try:
         arg_parser = argparse.ArgumentParser()
         arg_parser.add_argument(
-            "--model_name", type=str, required=True, help="Model name on Huggingface or local path to model"
+            "--model_name",
+             type=str,
+            required=True, 
+            default="intuit/agent-tool-optimizer",
+            help="Model name on Huggingface or local path to model"
         )
         arg_parser.add_argument(
             "--dataset_id",
             type=str,
             required=False,
-            default="",
+            default="intuit/tool-optimizer-dataset",
             help="The Huggingface dataset id to use for inference or empty to use a local dataset",
         )
         arg_parser.add_argument(
