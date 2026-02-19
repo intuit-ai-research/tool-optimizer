@@ -56,6 +56,13 @@ if __name__ == "__main__":
         )
         arg_parser.add_argument(
             "--inference_engine", type=str, required=False, default="vllm", help="Whether to use VLLM for inference"
+        )        
+        arg_parser.add_argument(
+            "--hf_access_token",
+            type=str,
+            required=False,
+            default=None,
+            help="Hugging Face access token for authentication",
         )
 
         args = arg_parser.parse_args()
@@ -66,11 +73,15 @@ if __name__ == "__main__":
 
         if args.inference_engine == "vllm":
             log.info("Using VLLM for inference")
-            inference_engine = VLLMInference(model_name=args.model_name)
+            inference_engine = VLLMInference(
+                model_name=args.model_name, hf_access_token=args.hf_access_token
+            )
             inference_engine.run_inference(dataset_id=args.dataset_id)
         else:
             log.info("Using HF for inference")
-            inference_engine = HFInference(model_name=args.model_name)
+            inference_engine = HFInference(
+                model_name=args.model_name, hf_access_token=args.hf_access_token
+            )
             inference_engine.run_inference(dataset_id=args.dataset_id)
 
         log.info("Inference completed successfully")

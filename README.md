@@ -23,6 +23,7 @@ Entry point: `src/agent_tool_optimizer/inference_main.py`
 | `--model_name` | Yes | — | Hugging Face model id or local path (e.g. `/opt/ml/model`) |
 | `--dataset_id` | No | `""` | Hugging Face dataset id; if empty, uses built-in local demo dataset |
 | `--inference_engine` | No | `vllm` | Engine: `vllm` or `hf` |
+| `--hf_access_token` | No | `None` | Hugging Face access token for authentication (required for gated models or private datasets) |
 
 **Examples**
 
@@ -32,6 +33,12 @@ python src/agent_tool_optimizer/inference_main.py --model_name /opt/ml/model
 
 # Hugging Face engine with a Hub model and Hub dataset
 python src/agent_tool_optimizer/inference_main.py --model_name Qwen/Qwen3-8B --inference_engine hf --dataset_id your-org/your-dataset
+
+# Using a gated model with Hugging Face access token
+python src/agent_tool_optimizer/inference_main.py --model_name meta-llama/Llama-3.1-8B --hf_access_token hf_your_token_here
+
+# vLLM with private dataset requiring authentication
+python src/agent_tool_optimizer/inference_main.py --model_name /opt/ml/model --dataset_id your-org/private-dataset --hf_access_token hf_your_token_here
 ```
 
 Set `PYTHONPATH` to include `src` (e.g. `export PYTHONPATH=/path/to/project/src`).
