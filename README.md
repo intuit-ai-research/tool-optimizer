@@ -472,7 +472,7 @@ python eval/tmdb/examples/main_tmdb.py \
   --mcp_yaml_path /Users/csoares1/dev/git-repos/tool-optimizer/data/StableToolBench/tools_mcp_yaml_desc_improve_tracefree \
   --tool_root_dir /Users/csoares1/dev/git-repos/tool-optimizer/data/StableToolBench/tools_api \
   --output_dir /Users/csoares1/dev/git-repos/tool-optimizer/data/StableToolBench/tools_exec_traces/20260415_111700 \
-  --openai_api_key "<key>" \
+  --openai_api_key <key> \
   --model_name "gpt-4.1-2025-04-14"
 
 
