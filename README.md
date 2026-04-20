@@ -442,11 +442,15 @@ For manual step-by-step execution (including optional quality checks in Steps 2-
 cd src/tool_exec_tracer/StableToolBench/server 
 
 # Start the StableToolBench server (and leave it running)
-python StableToolBench/server/main.py
-
+python main.py --openai_api_key "<key>" \
+  --model_name "gpt-4.1-2025-04-14"
+  --tool_root_dir ../../../../data/StableToolBench/tools_api 
 ```
 
 **In a separate terminal window**
+
+```bash
+cd src/tool_exec_tracer/StableToolBench/server 
 
 cd FunctionWrapper
 
