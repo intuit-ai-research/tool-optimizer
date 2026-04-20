@@ -1,0 +1,12 @@
+[submodule "src/submodules/TOUCAN"]
+	path = src/submodules/TOUCAN
+	url = https://github.com/intuit-ai-research/TOUCAN.git
+[submodule "src/submodules/verl"]
+	path = src/submodules/verl
+	url = https://github.com/intuit-ai-research/verl.git
+[submodule "src/submodules/StableToolBench"]
+	path = src/submodules/StableToolBench
+	url = https://github.com/intuit-ai-research/StableToolBench.git
+[submodule "src/submodules/tool_desc_atomic"]
+	path = src/submodules/tool_desc_atomic
+	url = https://github.com/intuit-ai-research/tool_desc_atomic.git
