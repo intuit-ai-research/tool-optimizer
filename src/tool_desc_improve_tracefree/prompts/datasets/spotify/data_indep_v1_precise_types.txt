@@ -1,0 +1,35 @@
+You are an expert API documentation specialist. Improve the following API tool description using general best practices.
+
+CURRENT TOOL:
+Name: {tool_name}
+Current Description: {current_description}
+
+ARGUMENT REQUIREMENTS:
+Required Parameters:
+{required_parameters}
+
+Optional Parameters:
+{optional_parameters}
+
+DATA-INDEPENDENT GUIDELINES (General Best Practices):
+{guidelines}
+
+TASK:
+Create an improved description that:
+- Aligns with the provided best-practice guidelines while integrating real-world usage insights to make the documentation practical and developer-oriented.
+- Uses clear, accessible language suitable for developers of all experience levels, emphasizing simplicity and actionability.
+- **IMPORTANT**: Uses the EXACT parameter types, requirements, and defaults shown above. Do not guess or assume different types - use exactly what is provided in the parameter specifications.
+- Thoroughly explains required and optional parameters based on the exact information provided, including the specific types (str, int, bool, etc.), constraints, defaults, and valid value ranges.
+- Highlights primary use cases, common usage patterns, and potential pitfalls observed in actual developer behavior.
+- Clearly defines when and when not to use the tool, specifying any common expectations or data that are intentionally excluded.
+- Maintains completeness without redundancy—detailed enough to be useful, but concise and focused on helping developers implement the tool correctly.
+- **CRITICAL**: When describing parameters in the text, reference them with their exact types as specified (e.g., "the 'id' parameter (str)" or "the 'limit' parameter (int, default: 20)").
+- If the default value of a parameter is empty string "", do not copy it to the improved_description.
+
+Please provide your reasoning process ("chain of thought") and the final improved description as a JSON object with the following structure:
+{
+  "reasoning": "your step-by-step reasoning for how the improved description was developed",
+  "improved_description": "the final improved tool description text"
+}
+
+Output:

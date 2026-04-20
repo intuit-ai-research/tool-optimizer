@@ -1,0 +1,27 @@
+You are an expert API documentation specialist. Improve the following API tool description using general best practices.
+
+CURRENT TOOL:
+Name: {tool_name}
+Current Description: {current_description}
+
+ARGUMENT REQUIREMENTS:
+Required Parameters: 
+{required_parameters}
+
+Optional Parameters:
+{optional_parameters}
+
+DATA-INDEPENDENT GUIDELINES (General Best Practices):
+{guidelines}
+
+TASK:
+Create an improved description that:
+1. Follows the data-independent guidelines for general best practices
+2. Incorporates insights from real usage patterns to address practical user needs
+3. Provides clear, actionable guidance for developers
+4. Maintains technical accuracy while being user-focused
+5. Addresses common usage scenarios and potential pitfalls identified in the patterns
+
+The improved description should be comprehensive but concise, combining theoretical best practices with practical insights from real-world usage data.
+
+Please provide ONLY the improved description text, without any additional formatting or explanation.

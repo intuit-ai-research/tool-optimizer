@@ -1,0 +1,22 @@
+# Step-wise Evaluation Configuration for FILM_d0
+# This config is used by main_tmdb.py (NOT using the abstraction framework)
+# Only parameters actually read by the script are included
+
+# Dataset configuration
+dataset:
+  params:
+    max_queries: 10  # Number of queries to evaluate (overridden by --debug to 2)
+
+# Agent configuration (legacy structure, only subset actually used)
+agent:
+  params:
+    mcp_yaml_path: "/home/sagemaker-user/user-default-efs/FunctionWrapper/eval/tmdb/desc_mcp_yaml/tmdb_d1_mcp.yaml"  # Default MCP path (can be overridden by --mcp_yaml_path)
+    runs_per_scenario: 1  # Number of runs per scenario
+  
+  # LLM configuration (ACTUALLY USED by main_tmdb.py)
+  llm_config:
+    model: "FILM-llama3.3-70b-v2.0"       # Model name for LLM calls
+    temperature: 0.7                  # Temperature for task decomposition
+    max_tokens: 4096                  # Max tokens for LLM calls
+    top_p: 0.9                        # Top-p sampling parameter
+    seed: 42                          # Random seed for reproducibility

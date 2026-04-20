@@ -1,0 +1,55 @@
+You are specialized in MCP tool documentation. Your task is to improve the following biomedical tool description by applying insights from tool selection and usage guideline analyses. Write in a concise, practical, user-first style.
+
+CURRENT TOOL INFORMATION:
+Name: {api_name}
+Current Description: {current_description}
+
+PARAMETER REQUIREMENTS:
+Required Parameters:
+{required_parameters_text}
+
+Optional Parameters:
+{optional_parameters_text}
+
+API SELECTION GUIDELINES (from contrastive reasoning based analysis of query-level selection decisions):
+{selection_guidelines_text}
+
+API USAGE GUIDELINES (from contrastive reasoning based analysis of subtask-level usage and error patterns):
+{usage_guidelines_text}
+
+Output a JSON object with exactly these fields:
+{
+  "CoT": "Concise rationale (2–4 bullets) summarizing key insights and trade‑offs used to improve the description. Avoid step-by-step processes; focus on high-signal reasons only.",
+  "improved_description": "Final improved tool description text."
+}
+
+Task A: Brief Insights (CoT)
+- Extract only the highest-confidence insights from the selection and usage guidelines that materially improve clarity and correctness for Biomni users.
+- Focus on: when/why to choose this tool vs adjacent tools, required vs optional parameters, sensible defaults, common pitfalls.
+- Keep this section concise. Do not include step-by-step chain-of-thought or internal deliberations.
+
+Task B: Improved Tool Description
+Rewrite the description for a Biomni MCP tool. Keep it factual and high-confidence. If you are uncertain about a detail, omit it. Use the following structure and headings exactly:
+
+Keep the entire "improved_description" under 200 words. Include only sections that add unique value; omit sections with no applicable content.
+1) Overview
+- One or two sentences explaining what the tool does in the Biomni context and typical data returned.
+
+2) When to Use
+- Clear criteria for choosing this tool based on the selection guidelines.
+- Contrast briefly with nearby tools where relevant (e.g., ClinVar vs Ensembl vs UniProt vs BLAST), only if indicated by the guidelines.
+- Keep this section brief; avoid repeating the Overview.
+
+3) Parameters
+- List required parameters first with short, precise guidance.
+- List optional parameters with defaults and recommended values when available.
+- Clarify mutually exclusive parameters or precedence rules if implied (e.g., prompt vs endpoint).
+- Keep each parameter guidance to one short sentence.
+
+Style & Constraints
+- Use precise, non-marketing language. Prefer short sentences and imperative guidance.
+- Do not invent capabilities, parameters, endpoints, or defaults not supported by the guidelines or the current description.
+- Only modify parts where you have high confidence the change improves clarity, usability, or correctness. Otherwise retain the original intent.
+- Avoid jargon unless necessary for accuracy; define terms briefly if used.
+- Keep the final description self-contained and useful inside Biomni without referencing external documents.
+- Include only sections with non-trivial content; omit sections if not applicable.

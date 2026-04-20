@@ -1,0 +1,7 @@
+We break down a complex user's problems into simple subtasks and provide answers to each simple subtask. You need to organize these answers to each subtask and form a self-consistent final answer to the user's question.
+
+This is the user's question: {question}
+
+These are subtasks and their answers: {answer_task}
+ 
+Final answer: 

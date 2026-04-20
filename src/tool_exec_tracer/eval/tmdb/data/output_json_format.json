@@ -1,0 +1,26 @@
+[
+    {
+        "sample_id": 1,
+        "question": "...",
+        "llm_prompt": "given the question xxx and subtask xxxx, tool description xxx, give me tool args",
+        "llm_response": "(thoughts).... {\"A\": 123, \"B\": \"ask\"}",
+        "error_message": "invalid value for arg AAA",
+        "tool": {
+            "name": "XXX",
+            "description": "xxxx",
+            "parameters": {}
+        }
+    },
+    {
+        "sample_id": 2,
+        "question": "...",
+        "prompt": "given the question xxx and subtask xxxx, tool description xxx, give me tool args",
+        "response": "(thoughts).... {\"A\": 123, \"B\": \"ask\"}",
+        "error_message": "invalid value for arg AAA",
+        "tool": {
+            "name": "XXX",
+            "description": "xxxx",
+            "parameters": {}
+        }
+    }
+]

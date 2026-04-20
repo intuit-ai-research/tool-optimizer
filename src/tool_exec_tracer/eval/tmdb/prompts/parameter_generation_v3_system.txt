@@ -1,0 +1,28 @@
+Given a subtask and an API and its description, you need to first write your reasoning step by step in plain text about how to extract the correct parameters. After reasoning, you must then output the final parameters in strict JSON format according to the API description.
+
+Please note that:
+
+The API description can help you better understand the use of the API.
+
+Ensure the parameters you output are correct. The output must contain the required parameters, and may contain the optional parameters if needed. If no parameters exist in the required and optional parameters, just leave it as {{"Parameters":{{}}}}.
+
+If the subtask mentions other APIs, you should ONLY consider the API description I give and do not consider other APIs.
+
+Parameter Extraction from Previous Context: When the API requires path parameters (like person_id, movie_id, tv_id, company_id, etc.), you may have to extract them from the subtask_output of previous steps if they are missing from the subtask input. Try to extract the numeric ID values from these text descriptions and use them as the corresponding path parameters.
+
+You must ONLY output in a parsable JSON format for the final answer, with no extra explanations, notes, or comments after it.
+
+The output must have two parts:
+
+"Reasoning": your step-by-step reasoning as plain text.
+
+"Parameters": the final extracted parameters in JSON format.
+
+The output must be formatted as this:
+
+{
+  "Reasoning": "The subtask asks for person details. The required parameter is person_id. From previous_log, I see that person_id is 190. Therefore, the correct parameter is person_id=190.",
+  "Parameters": {
+    "person_id": 190
+  }
+}

@@ -1,0 +1,355 @@
+{
+  "categories": {
+    "Spotify": {
+      "apis": []
+    },
+    "Albums": {
+      "apis": [
+        {
+          "function_name": "get_an_album",
+          "endpoint": "/albums/{id}",
+          "endpoint_with_method": "GET /albums/{id}",
+          "method": "GET",
+          "description": "Get Album",
+          "category": "Albums"
+        },
+        {
+          "function_name": "get_an_albums_tracks",
+          "endpoint": "/albums/{id}/tracks",
+          "endpoint_with_method": "GET /albums/{id}/tracks",
+          "method": "GET",
+          "description": "Get Album Tracks",
+          "category": "Albums"
+        },
+        {
+          "function_name": "get_new_releases",
+          "endpoint": "/browse/new-releases",
+          "endpoint_with_method": "GET /browse/new-releases",
+          "method": "GET",
+          "description": "Get New Releases",
+          "category": "Albums"
+        },
+        {
+          "function_name": "remove_albums_user",
+          "endpoint": "/me/albums",
+          "endpoint_with_method": "DELETE /me/albums",
+          "method": "DELETE",
+          "description": "Remove Users' Saved Albums",
+          "category": "Albums"
+        },
+        {
+          "function_name": "get_users_saved_albums",
+          "endpoint": "/me/albums",
+          "endpoint_with_method": "GET /me/albums",
+          "method": "GET",
+          "description": "Get User's Saved Albums",
+          "category": "Albums"
+        },
+        {
+          "function_name": "save_albums_user",
+          "endpoint": "/me/albums",
+          "endpoint_with_method": "PUT /me/albums",
+          "method": "PUT",
+          "description": "Save Albums for Current User",
+          "category": "Albums"
+        }
+      ]
+    },
+    "Artists": {
+      "apis": [
+        {
+          "function_name": "get_an_artist",
+          "endpoint": "/artists/{id}",
+          "endpoint_with_method": "GET /artists/{id}",
+          "method": "GET",
+          "description": "Get Artist",
+          "category": "Artists"
+        },
+        {
+          "function_name": "get_an_artists_albums",
+          "endpoint": "/artists/{id}/albums",
+          "endpoint_with_method": "GET /artists/{id}/albums",
+          "method": "GET",
+          "description": "Get Artist's Albums",
+          "category": "Artists"
+        },
+        {
+          "function_name": "get_an_artists_related_artists",
+          "endpoint": "/artists/{id}/related-artists",
+          "endpoint_with_method": "GET /artists/{id}/related-artists",
+          "method": "GET",
+          "description": "Get Artist's Related Artists",
+          "category": "Artists"
+        },
+        {
+          "function_name": "get_an_artists_top_tracks",
+          "endpoint": "/artists/{id}/top-tracks",
+          "endpoint_with_method": "GET /artists/{id}/top-tracks",
+          "method": "GET",
+          "description": "Get Artist's Top Tracks",
+          "category": "Artists"
+        }
+      ]
+    },
+    "Users": {
+      "apis": [
+        {
+          "function_name": "get_current_users_profile",
+          "endpoint": "/me",
+          "endpoint_with_method": "GET /me",
+          "method": "GET",
+          "description": "Get Current User's Profile",
+          "category": "Users"
+        },
+        {
+          "function_name": "unfollow_artists_users",
+          "endpoint": "/me/following",
+          "endpoint_with_method": "DELETE /me/following",
+          "method": "DELETE",
+          "description": "Unfollow Artists or Users",
+          "category": "Users"
+        },
+        {
+          "function_name": "get_followed",
+          "endpoint": "/me/following",
+          "endpoint_with_method": "GET /me/following",
+          "method": "GET",
+          "description": "Get Followed Artists",
+          "category": "Users"
+        },
+        {
+          "function_name": "follow_artists_users",
+          "endpoint": "/me/following",
+          "endpoint_with_method": "PUT /me/following",
+          "method": "PUT",
+          "description": "Follow Artists or Users",
+          "category": "Users"
+        },
+        {
+          "function_name": "get_users_top_artists_and_tracks",
+          "endpoint": "/me/top/{type}",
+          "endpoint_with_method": "GET /me/top/{type}",
+          "method": "GET",
+          "description": "Get User's Top Items",
+          "category": "Users"
+        }
+      ]
+    },
+    "Player": {
+      "apis": [
+        {
+          "function_name": "get_information_about_the_users_current_playback",
+          "endpoint": "/me/player",
+          "endpoint_with_method": "GET /me/player",
+          "method": "GET",
+          "description": "Get Playback State",
+          "category": "Player"
+        },
+        {
+          "function_name": "get_the_users_currently_playing_track",
+          "endpoint": "/me/player/currently-playing",
+          "endpoint_with_method": "GET /me/player/currently-playing",
+          "method": "GET",
+          "description": "Get Currently Playing Track",
+          "category": "Player"
+        },
+        {
+          "function_name": "get_a_users_available_devices",
+          "endpoint": "/me/player/devices",
+          "endpoint_with_method": "GET /me/player/devices",
+          "method": "GET",
+          "description": "Get Available Devices",
+          "category": "Player"
+        },
+        {
+          "function_name": "skip_users_playback_to_next_track",
+          "endpoint": "/me/player/next",
+          "endpoint_with_method": "POST /me/player/next",
+          "method": "POST",
+          "description": "Skip To Next",
+          "category": "Player"
+        },
+        {
+          "function_name": "pause_a_users_playback",
+          "endpoint": "/me/player/pause",
+          "endpoint_with_method": "PUT /me/player/pause",
+          "method": "PUT",
+          "description": "Pause Playback",
+          "category": "Player"
+        },
+        {
+          "function_name": "start_a_users_playback",
+          "endpoint": "/me/player/play",
+          "endpoint_with_method": "PUT /me/player/play",
+          "method": "PUT",
+          "description": "Start/Resume Playback",
+          "category": "Player"
+        },
+        {
+          "function_name": "skip_users_playback_to_previous_track",
+          "endpoint": "/me/player/previous",
+          "endpoint_with_method": "POST /me/player/previous",
+          "method": "POST",
+          "description": "Skip To Previous",
+          "category": "Player"
+        },
+        {
+          "function_name": "get_queue",
+          "endpoint": "/me/player/queue",
+          "endpoint_with_method": "GET /me/player/queue",
+          "method": "GET",
+          "description": "Get the User's Queue",
+          "category": "Player"
+        },
+        {
+          "function_name": "add_to_queue",
+          "endpoint": "/me/player/queue",
+          "endpoint_with_method": "POST /me/player/queue",
+          "method": "POST",
+          "description": "Add Item to Playback Queue",
+          "category": "Player"
+        },
+        {
+          "function_name": "get_recently_played",
+          "endpoint": "/me/player/recently-played",
+          "endpoint_with_method": "GET /me/player/recently-played",
+          "method": "GET",
+          "description": "Get Recently Played Tracks",
+          "category": "Player"
+        },
+        {
+          "function_name": "set_repeat_mode_on_users_playback",
+          "endpoint": "/me/player/repeat",
+          "endpoint_with_method": "PUT /me/player/repeat",
+          "method": "PUT",
+          "description": "Set Repeat Mode",
+          "category": "Player"
+        },
+        {
+          "function_name": "set_volume_for_users_playback",
+          "endpoint": "/me/player/volume",
+          "endpoint_with_method": "PUT /me/player/volume",
+          "method": "PUT",
+          "description": "Set Playback Volume",
+          "category": "Player"
+        }
+      ]
+    },
+    "Playlists": {
+      "apis": [
+        {
+          "function_name": "get_a_list_of_current_users_playlists",
+          "endpoint": "/me/playlists",
+          "endpoint_with_method": "GET /me/playlists",
+          "method": "GET",
+          "description": "Get Current User's Playlists",
+          "category": "Playlists"
+        },
+        {
+          "function_name": "get_playlist",
+          "endpoint": "/playlists/{playlist_id}",
+          "endpoint_with_method": "GET /playlists/{playlist_id}",
+          "method": "GET",
+          "description": "Get Playlist",
+          "category": "Playlists"
+        },
+        {
+          "function_name": "change_playlist_details",
+          "endpoint": "/playlists/{playlist_id}",
+          "endpoint_with_method": "PUT /playlists/{playlist_id}",
+          "method": "PUT",
+          "description": "Change Playlist Details",
+          "category": "Playlists"
+        },
+        {
+          "function_name": "remove_tracks_playlist",
+          "endpoint": "/playlists/{playlist_id}/tracks",
+          "endpoint_with_method": "DELETE /playlists/{playlist_id}/tracks",
+          "method": "DELETE",
+          "description": "Remove Playlist Items",
+          "category": "Playlists"
+        },
+        {
+          "function_name": "get_playlists_tracks",
+          "endpoint": "/playlists/{playlist_id}/tracks",
+          "endpoint_with_method": "GET /playlists/{playlist_id}/tracks",
+          "method": "GET",
+          "description": "Get Playlist Items",
+          "category": "Playlists"
+        },
+        {
+          "function_name": "add_tracks_to_playlist",
+          "endpoint": "/playlists/{playlist_id}/tracks",
+          "endpoint_with_method": "POST /playlists/{playlist_id}/tracks",
+          "method": "POST",
+          "description": "Add Items to Playlist",
+          "category": "Playlists"
+        },
+        {
+          "function_name": "create_playlist",
+          "endpoint": "/users/{user_id}/playlists",
+          "endpoint_with_method": "POST /users/{user_id}/playlists",
+          "method": "POST",
+          "description": "Create Playlist",
+          "category": "Playlists"
+        }
+      ]
+    },
+    "Tracks": {
+      "apis": [
+        {
+          "function_name": "remove_tracks_user",
+          "endpoint": "/me/tracks",
+          "endpoint_with_method": "DELETE /me/tracks",
+          "method": "DELETE",
+          "description": "Remove User's Saved Tracks",
+          "category": "Tracks"
+        },
+        {
+          "function_name": "get_users_saved_tracks",
+          "endpoint": "/me/tracks",
+          "endpoint_with_method": "GET /me/tracks",
+          "method": "GET",
+          "description": "Get User's Saved Tracks",
+          "category": "Tracks"
+        },
+        {
+          "function_name": "save_tracks_user",
+          "endpoint": "/me/tracks",
+          "endpoint_with_method": "PUT /me/tracks",
+          "method": "PUT",
+          "description": "Save Tracks for Current User",
+          "category": "Tracks"
+        },
+        {
+          "function_name": "get_recommendations",
+          "endpoint": "/recommendations",
+          "endpoint_with_method": "GET /recommendations",
+          "method": "GET",
+          "description": "Get Recommendations",
+          "category": "Tracks"
+        },
+        {
+          "function_name": "get_track",
+          "endpoint": "/tracks/{id}",
+          "endpoint_with_method": "GET /tracks/{id}",
+          "method": "GET",
+          "description": "Get Track",
+          "category": "Tracks"
+        }
+      ]
+    },
+    "Search": {
+      "apis": [
+        {
+          "function_name": "search",
+          "endpoint": "/search",
+          "endpoint_with_method": "GET /search",
+          "method": "GET",
+          "description": "Search for Item",
+          "category": "Search"
+        }
+      ]
+    }
+  }
+}

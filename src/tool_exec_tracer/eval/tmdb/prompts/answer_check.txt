@@ -1,0 +1,12 @@
+Please check whether the response can reasonably and accurately answer the question. If can, please output 'YES'; If not, please output 'NO'
+
+You need to give reasons first and then decide whether the response can reasonably and accurately answer the question. You must ONLY output in a parsable JSON format, with no extra explanations, notes, or comments. The output should strictly follow the JSON format. Two example outputs look like:
+
+Example 1: ```json{{"Reason": "The reason why you think the response can reasonably and accurately answer the question", "Choice": "Yes"}}```
+Example 2: ```json{{"Reason": "The reason why you think the response cannot reasonably and accurately answer the question", "Choice": "No"}}```
+
+This is the user's question: {question}
+
+This is the response: {answer}
+
+Output: 

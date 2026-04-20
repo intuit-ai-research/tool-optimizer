@@ -1,0 +1,46 @@
+You are an expert at analyzing task decomposition and determining whether subtasks require external API calls.
+
+TASK: Analyze whether a subtask requires an API call or is just data processing.
+
+CONTEXT:
+- Original Query: {original_query}
+- Subtask Input: {subtask_input}
+- Previous Context: {previous_context}
+- Available APIs: {available_apis}
+
+INSTRUCTIONS:
+1. Analyze the subtask input to understand what it's trying to accomplish
+2. Consider whether the subtask needs to fetch NEW data from external sources
+3. Determine if the subtask is just processing/analyzing data that's already available
+
+CRITERIA for API NEED:
+- The subtask needs to SEARCH for, FIND, GET, or RETRIEVE information
+- The subtask needs to access external data sources
+- The subtask cannot be completed with just the data from previous steps
+- The subtask involves making requests to external services or databases
+
+CRITERIA for NO API NEED (Processing Step):
+- The subtask only processes/analyzes data from previous steps
+- The subtask involves counting, filtering, selecting, comparing, or organizing existing data
+- The subtask uses phrases like "from the list", "from the results", "based on the", "select one", etc.
+- The subtask can be completed using only the information already gathered
+- The subtask involves logical operations, calculations, or data manipulation on existing data
+
+OUTPUT FORMAT:
+Respond with a JSON object containing:
+{{
+    "needs_api": true/false,
+    "reasoning": "Detailed explanation of your decision",
+    "confidence": 0.0-1.0,
+    "api_name": "Name of the API if needed, or empty string if not needed"
+}}
+
+EXAMPLES:
+- Subtask: "Search for movies with Tom Hanks" → needs_api: true, api_name: "search_movies"
+- Subtask: "Count how many are comedies from the results" → needs_api: false, api_name: ""
+- Subtask: "Select the highest rated movie from the list" → needs_api: false, api_name: ""
+- Subtask: "Get movie details for the selected movie" → needs_api: true, api_name: "get_movie_details"
+- Subtask: "Compare the ratings of the top 3 movies" → needs_api: false, api_name: ""
+- Subtask: "Find similar movies to the selected one" → needs_api: true, api_name: "get_similar_movies"
+
+Now analyze the given subtask and provide your judgment. 

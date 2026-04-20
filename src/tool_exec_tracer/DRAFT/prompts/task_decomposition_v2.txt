@@ -1,0 +1,13 @@
+Tools: {tools}
+Question: {question}
+
+Rules:
+1. Break the user’s question into atomic, explicit subtasks, each aligned with a single tool’s primary purpose.
+2. Express each subtask in natural language, grounded in the question’s wording.
+3. Subtasks must be consistent and together equivalent to the user's original query.
+4. The first subtask should use a search tool (e.g. search_movie, search_person, search_tv) if needed to find an ID for later steps.
+5. You may allow overlap with one tool name in one subtask description if necessary.
+6. Do not mention tool names in any other subtasks beyond that one.
+7. Output ONLY valid JSON in this format:
+```json
+{{"Tasks": ["Task 1", "Task 2", ..., "Task N"]}}

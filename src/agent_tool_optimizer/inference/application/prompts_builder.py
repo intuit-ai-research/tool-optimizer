@@ -1,45 +1,70 @@
+import csv
 import json
 import logging
 import os
-from typing import Optional
 
 from datasets import Dataset, DatasetDict
-
-from agent_tool_optimizer.inference.utils.string_utils import (
-    str_is_empty,
-    str_is_not_empty,
-)
 
 log = logging.getLogger(__name__)
 
 
 class PromptsBuilder:
-    def __init__(
-        self,
-    ):
+    def __init__(self):
         log.info("Initializing PromptsBuilder")
 
-    def build_dataset(self, dataset_id: str = "") -> DatasetDict:
+    def build_dataset(self, input_data_path: str = "") -> DatasetDict:
         """
-        Get the dataset.
+        Build a dataset from a comma-delimited file or from local hardcoded data.
+        Args:
+            input_data_path: Path to a comma-delimited data file. If empty, uses local demo data.
         Returns:
             DatasetDict: The dataset
         """
         log.info("Getting dataset")
 
-        if str_is_empty(dataset_id):
-            return self.build_dataset_from_local_data()
+        if input_data_path:
+            return self.build_dataset_from_csv(input_data_path)
         else:
-            return self.build_dataset_from_huggingface(dataset_id)
+            return self.build_dataset_from_local_data()
 
-    def build_dataset_from_huggingface(self, dataset_id: str) -> DatasetDict:
+    def build_dataset_from_csv(self, input_data_path: str) -> DatasetDict:
         """
-        Build a dataset from Huggingface.
+        Build a dataset from a comma-delimited file.
+        Args:
+            input_data_path: Path to a comma-delimited data file
         Returns:
             DatasetDict: The dataset
         """
-        log.info("Building dataset from Huggingface")
-        return DatasetDict.from_hf_hub(dataset_id)
+        log.info("Building dataset from %s", input_data_path)
+
+        prompt_template = self.read_prompt_template()
+        dataset_dicts = []
+
+        with open(input_data_path, "r", encoding="utf-8") as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                tool_name = row["tool_name"]
+                parameters = row["parameters"]
+                original_description = row["original_description"]
+
+                dataset_dicts.append(
+                    {
+                        "prompt_template": prompt_template,
+                        "prompt": prompt_template.format(
+                            tool_name=tool_name, parameter_json=parameters, original_description=original_description
+                        ),
+                        "tool_name": tool_name,
+                        "parameters": parameters,
+                        "original_description": original_description,
+                    }
+                )
+
+        ds = DatasetDict({"test": Dataset.from_list(dataset_dicts)})
+
+        log.info(ds["test"])
+        log.info(len(ds["test"]))
+        log.info(ds["test"].features)
+        return ds
 
     def build_dataset_from_local_data(self) -> DatasetDict:
         """
@@ -200,17 +225,17 @@ class PromptsBuilder:
 
     def read_prompt_template(self) -> str:
         """
-        Read the prompt template from tool_prompt.txt file.
+        Read the prompt template from tool_prompt.example.txt file.
         Returns:
             str: The content of the prompt template file
         Raises:
-            FileNotFoundError: If tool_prompt.txt is not found
+            FileNotFoundError: If tool_prompt.example.txt is not found
             IOError: If there's an error reading the file
         """
         try:
             # Get the directory where this script is located
             script_dir = os.path.dirname(os.path.abspath(__file__))
-            prompt_file_path = os.path.join(script_dir, "../data/tool_prompt.txt")
+            prompt_file_path = os.path.join(script_dir, "../../../../data/inference/tool_prompt.example.txt")
 
             log.info(f"Reading prompt template from {prompt_file_path}")
 

@@ -1,0 +1,24 @@
+# Step-wise Evaluation Configuration for D1 (Improved TMDB API Descriptions)
+# This config is used by main_tmdb.py (NOT using the abstraction framework)
+# Only parameters actually read by the script are included
+
+# Dataset configuration
+dataset:
+  params:
+    max_queries: 57  # Number of queries to evaluate (overridden by --debug to 2)
+
+# Agent configuration (legacy structure, only subset actually used)
+agent:
+  params:
+    mcp_yaml_path: "/home/sagemaker-user/user-default-efs/FunctionWrapper/eval/tmdb/desc_mcp_yaml/spotify/spotify_d0_mcp.yaml"  # Default MCP path (can be overridden by --mcp_yaml_path)
+    runs_per_scenario: 3  # Number of runs per scenario
+    semantic_matching_mode: "semantic"  # Matching mode: "semantic" (LLM-based) or "keyword" (heuristic-based)
+    simple_api_instruction: false  # Use simplified API instructions for parameter generation
+  
+  # LLM configuration (ACTUALLY USED by main_tmdb.py)
+  llm_config:
+    model: "gpt-41-2025-04-14-oai"       # Model name for LLM calls
+    temperature: 1.0                  # Temperature for task decomposition (Note: semantic matching uses this too; 0.0 recommended for deterministic matching)
+    max_tokens: 4096                  # Max tokens for LLM calls
+    top_p: 0.9                        # Top-p sampling parameter
+    seed: 42                          # Random seed for reproducibility

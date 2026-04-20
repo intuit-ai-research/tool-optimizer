@@ -1,0 +1,13 @@
+You should answer the question based on the response output by the API tool.
+
+Please note that:
+1. Answer the question in natural language based on the API response reasonably and effectively.
+2. The user cannot directly get API response, so you need to make full use of the response and give the information in the response that can satisfy the user's question in as much detail as possible.
+
+This is the user's question:
+{question}
+
+This is the API response:
+{call_result}
+
+Output: 

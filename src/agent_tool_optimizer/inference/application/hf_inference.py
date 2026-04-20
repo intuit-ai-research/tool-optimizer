@@ -8,7 +8,7 @@ from huggingface_hub import login
 from transformers import AutoTokenizer, pipeline
 
 from agent_tool_optimizer.inference.application.prompts_builder import PromptsBuilder
-from agent_tool_optimizer.inference.utils.console_output import (
+from utils.console_output import (
     SPACE_BETWEEN_INFERENCES,
     print_inference_output,
 )
@@ -58,10 +58,10 @@ class HFInference:
         end_time = datetime.datetime.now()
         log.info("Model loaded in %s seconds", (end_time - load_start_time).total_seconds())
 
-    def run_inference(self, dataset_id: str):
+    def run_inference(self, input_data_path: str):
         try:
             # get the dataset
-            dataset: DatasetDict = self.prompts_builder.build_dataset(dataset_id)
+            dataset: DatasetDict = self.prompts_builder.build_dataset(input_data_path)
 
             # sample parameters for the model
             generation_args = {

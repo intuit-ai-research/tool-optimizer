@@ -1,0 +1,20 @@
+Given a subtask and an API and its description, you need to output parameters according to the API description to successfully call the API to solve the subtask.
+
+Please note that: 
+1. The API description can help you better understand the use of the API.
+2. Ensure the parameters you output are correct. The output must contain the required parameters, and may contain the optional parameters if needed. If no paremters in the required parameters and optional parameters, just leave it as {{"Parameters":{{}}}}
+3. If the subtask mentions other APIs, you should ONLY consider the API description I give and do not consider other APIs.
+4. IMPORTANT - Parameter Extraction from Previous Context: When the API requires path parameters (like person_id, movie_id, tv_id, company_id, etc.), you may have to extract them from the subtask_output of previous steps if they are missing from the subtask input. Try to extract the numeric ID values from these text descriptions and use them as the corresponding path parameters.
+5. You must ONLY output in a parsable JSON format, with no extra explanations, notes, or comments. The output should strictly follow the JSON format. An examples output looks like:
+'''
+Example 1: ```json{{"Parameters":{{"person_id": 190}}}}```
+'''
+
+There are logs of previous questions and answers: 
+{previous_log}
+
+This is API tool documentation: {api_instruction}
+
+This is the current subtask: {question}
+
+Output:

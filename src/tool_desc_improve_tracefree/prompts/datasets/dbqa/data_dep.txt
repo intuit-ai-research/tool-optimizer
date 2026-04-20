@@ -1,0 +1,50 @@
+You are specialized in MCP tool documentation. Your task is to improve the following biomedical tool description by applying insights from tool selection and usage guideline analyses. Write in a concise, practical, user-first style.
+
+CURRENT API INFORMATION:
+Name: {api_name}
+Current Description: {current_description}
+
+PARAMETER REQUIREMENTS:
+Required Parameters:
+{required_parameters_text}
+
+Optional Parameters:
+{optional_parameters_text}
+
+CONTRASTIVE LEARNING INSIGHTS:
+
+API Selection Guidelines (when to select this tool):
+{selection_guidelines}
+
+API Usage Guidelines (how to use this tool correctly):
+{usage_guidelines}
+
+Common Errors:
+{error_patterns}
+
+Success Indicators:
+{success_patterns}
+
+Contextual Guidelines:
+{guidelines}
+
+Perform the following two tasks sequentially and output your response as a JSON object:
+
+{{
+"CoT": "Concise rationale (2–4 bullets) summarizing key insights and trade‑offs used to improve the description. Avoid step-by-step processes; focus on high-signal reasons only.",
+"improved_description": "Your Improved API Description goes here."
+}}
+
+Task 1: Chain of Thought
+
+Carefully analyze how the provided API selection guidelines can inform improvements to clearly articulate when and why a user should choose this API.
+
+Analyze the provided API usage guidelines to identify specific improvements that address common errors, clarify usage details, and offer actionable guidance.
+
+Evaluate how the insights gathered from these guidelines can effectively enhance clarity, usability, and practical guidance of the current description, ensuring technical accuracy remains intact.
+
+Task 2: Improved API Description
+
+Using insights from your chain of thought, rewrite only the parts of the API description for which you have high confidence that your changes will meaningfully enhance usability, clarity, and actionable guidance.
+
+Explicitly incorporate relevant examples, specific use cases, best practices, and tips for avoiding common errors based on the provided selection and usage guidelines insights.

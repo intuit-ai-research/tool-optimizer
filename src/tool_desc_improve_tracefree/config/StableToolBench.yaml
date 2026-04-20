@@ -1,0 +1,54 @@
+# TMDB Description Improvement - Data Independent (D0 -> D1)
+
+# Dataset configuration
+dataset:
+  name: tool_manager
+  tools_path: ""
+  queries_path: ""  # Empty for data-independent
+  params:
+    server_name: ""
+    platform: StableToolBench
+    verbose: false
+
+# Improvement configuration
+improvement:
+  # Turn 1: Data-independent improvement
+  turn_1:
+    strategy: generic_llm_guidelines
+    stage: data_independent
+    params:
+      model_name: gpt-41-2025-04-14-oai
+      temperature: 0.3
+      max_tokens: 2048
+      dataset_name: StableToolBench  # Uses tmdb guidelines and prompts
+      prompt_file: data_indep_v1.txt  # Specific prompt file to use (optional, defaults to data_indep.txt)
+      save_reasoning: true  # Save full JSON responses with reasoning to separate files (default: true)
+      # output_dir: results/tmdb_D1/reasoning  # Custom output dir (optional)
+  
+  # Guidelines configuration
+  guidelines_provider: file_based
+  guidelines_path: guidelines/datasets/tmdb
+  guidelines_file: generic_v1.txt  # Specific guidelines file to use (optional, loads all .txt files if not specified)
+  
+  # Pattern analysis (not used for data-independent)
+  pattern_analyzer: basic
+  
+  # Processing configuration
+  max_turns: 1
+
+# Evaluation configuration (optional)
+evaluation:
+  enabled: false
+
+# Output configuration
+output:
+  base_dir: results/StableToolBench_D1
+  version_format: "D{iteration}"
+  save_intermediate: true
+  save_metadata: true
+
+# Pipeline behavior
+continue_on_error: true
+parallel_strategies: false
+validate_tools: true
+

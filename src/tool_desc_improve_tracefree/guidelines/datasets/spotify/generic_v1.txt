@@ -1,0 +1,5 @@
+The description should start with a concise, plain-language summary of what the tool does. The goal is to articulate the problem that the tool solves.
+The description should be written for the least experienced user, avoiding unnecessary jargon and explaining complex concepts in simple terms.
+The description should thoroughly explain the relevant data models. This includes specifying required parameters and detailing any constraints such as default, minimum, and maximum values if possible.
+The description should include primary use cases, which describe the most common use cases the tool is designed for.
+The description should explain what information the tool does not return. To manage developer expectations, explicitly state if there is common information that a consumer might reasonably expect but which is intentionally excluded in this tool.

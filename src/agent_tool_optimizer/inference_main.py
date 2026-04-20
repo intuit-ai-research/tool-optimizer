@@ -6,7 +6,6 @@ import os
 import yaml
 
 from agent_tool_optimizer.inference.application.hf_inference import HFInference
-from agent_tool_optimizer.inference.application.vllm_inference import VLLMInference
 
 LOG_CONFIG_YAML = """
 ---
@@ -52,11 +51,10 @@ if __name__ == "__main__":
             help="Model name on Huggingface or local path to model"
         )
         arg_parser.add_argument(
-            "--dataset_id",
+            "--input_data_path",
             type=str,
-            required=False,
-            default="intuit/tool-optimizer-dataset",
-            help="The Huggingface dataset id to use for inference or empty to use a local dataset",
+            required=True,
+            help="Path to a comma-delimited data file to use for inference",
         )
         arg_parser.add_argument(
             "--inference_engine", type=str, required=False, default="vllm", help="Whether to use VLLM for inference"
@@ -76,17 +74,19 @@ if __name__ == "__main__":
             log.info(f"{key}: {value}")
 
         if args.inference_engine == "vllm":
+            from agent_tool_optimizer.inference.application.vllm_inference import VLLMInference
+
             log.info("Using VLLM for inference")
             inference_engine = VLLMInference(
                 model_name=args.model_name, hf_access_token=args.hf_access_token
             )
-            inference_engine.run_inference(dataset_id=args.dataset_id)
+            inference_engine.run_inference(input_data_path=args.input_data_path)
         else:
             log.info("Using HF for inference")
             inference_engine = HFInference(
                 model_name=args.model_name, hf_access_token=args.hf_access_token
             )
-            inference_engine.run_inference(dataset_id=args.dataset_id)
+            inference_engine.run_inference(input_data_path=args.input_data_path)
 
         log.info("Inference completed successfully")
     except Exception as e:

@@ -1,0 +1,15 @@
+Given a complex user's question, I have decompose this question into some simple subtasks. I think there exists a logical connections and order among the tasks. Thus you need to help me output this logical connections and order.
+
+You must ONLY output in a parsable JSON format, with no extra explanations, notes, or comments. The output should strictly follow the JSON format. An example output looks like:
+'''
+```json[{{"task": task, "id", task_id, "dep": [dependency_task_id1, dependency_task_id2, ...]}}]```
+'''
+
+The "dep" field denotes the id of the previous task which generates a new resource upon which the current task depends. If there are no dependencies, set "dep" to -1.
+
+This is user's question: {question}
+
+These are subtasks of this question:
+{task_list}
+
+Output: 

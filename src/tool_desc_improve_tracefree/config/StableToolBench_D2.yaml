@@ -1,0 +1,39 @@
+dataset:
+  name: tool_manager
+  tools_path: ""
+  queries_path: ""
+  params:
+    server_name: ""
+    platform: StableToolBench
+    verbose: false
+improvement:
+  turn_2:
+    strategy: mcp_contrastive_strategy
+    stage: data_dependent
+    params:
+      model_name: gpt-41-2025-04-14
+      temperature: 0.3
+      max_tokens: 4096
+      pattern_analyzer: mcp_analyzer
+      min_pattern_threshold: 1
+      dataset_name: StableToolBench
+      extract_guidelines: true
+      use_constrained_prompts: true
+      max_selection_guidelines: 2
+      max_usage_guidelines: 5
+      prompt_template_path: prompts/datasets/spotify/data_dep.txt
+      eval_results_path: ""
+  guidelines_provider: file_based
+  guidelines_path: guidelines/datasets/spotify
+  pattern_analyzer: mcp_analyzer
+  max_turns: 2
+evaluation:
+  enabled: false
+output:
+  base_dir: results/StableToolBench_D2
+  version_format: D{iteration}
+  save_intermediate: true
+  save_metadata: true
+continue_on_error: true
+parallel_strategies: false
+validate_tools: true

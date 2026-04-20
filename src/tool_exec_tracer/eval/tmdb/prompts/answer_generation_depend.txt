@@ -1,0 +1,18 @@
+You should answer the question based on the response output by the API tool.
+
+Please note that:
+1. Try to organize the response into a natural language answer.
+2. We will not show the API response to the user, thus you need to make full use of the response and give the information in the response that can satisfy the user's question in as much detail as possible.
+3. The question may have dependencies on answers of other questions, so we will provide logs of previous questions and answers.
+
+There are logs of previous questions and answers: 
+{previous_log}
+
+This is the user's question: {question}
+
+This is the response output by the API tool: 
+{call_result}
+
+We will not show the API response to the user, thus you need to make full use of the response and give the information in the response that can satisfy the user's question in as much detail as possible.
+
+Output: 

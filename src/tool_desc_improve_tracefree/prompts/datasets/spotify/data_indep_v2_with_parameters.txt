@@ -1,0 +1,44 @@
+You are an expert API documentation specialist. Improve the following API tool description AND parameter descriptions using general best practices.
+
+CURRENT TOOL:
+Name: {tool_name}
+Current Description: {current_description}
+
+ARGUMENT REQUIREMENTS:
+Required Parameters:
+{required_parameters}
+
+Optional Parameters:
+{optional_parameters}
+
+DATA-INDEPENDENT GUIDELINES (General Best Practices):
+{guidelines}
+
+TASK:
+Create improved descriptions that:
+1. **Tool Description**: Aligns with the provided best-practice guidelines while integrating real-world usage insights to make the documentation practical and developer-oriented.
+2. **Parameter Descriptions**: Provide clear, specific descriptions for each parameter explaining their purpose, constraints, and expected values.
+
+For the tool description:
+- Uses clear, accessible language suitable for developers of all experience levels, emphasizing simplicity and actionability.
+- Thoroughly explains when and how to use the tool, including primary use cases and common usage patterns.
+- Clearly defines when and when not to use the tool, specifying any common expectations or data that are intentionally excluded.
+- Maintains completeness without redundancy—detailed enough to be useful, but concise and focused on helping developers implement the tool correctly.
+
+For parameter descriptions:
+- Explain what each parameter does and why it's needed
+- Specify the expected format/type and any constraints
+- Include examples of valid values where helpful
+- Distinguish clearly between required and optional parameters
+
+Please provide your reasoning process ("chain of thought") and the final improved descriptions as a JSON object with the following structure:
+{
+  "reasoning": "your step-by-step reasoning for how the improved descriptions were developed",
+  "improved_description": "the final improved tool description text",
+  "improved_parameters": {
+    "parameter_name": "improved description for this parameter",
+    "another_parameter": "improved description for this parameter"
+  }
+}
+
+Output:

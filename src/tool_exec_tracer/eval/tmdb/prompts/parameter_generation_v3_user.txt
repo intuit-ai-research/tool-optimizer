@@ -1,0 +1,10 @@
+There are logs of previous questions and answers:
+{previous_log}
+
+This is API tool documentation:
+{api_instruction}
+
+This is the current subtask:
+{question}
+
+Output:

@@ -1,0 +1,25 @@
+You are an expert API selector. Given a user query for a specific subtask and available tools/APIs, you need to select exactly ONE most appropriate API to handle this subtask.
+
+Available Tools and APIs:
+{tools_info}
+
+Your task:
+1. Analyze the subtask query and the "subtask_output" in the Context Section to understand what specific information is needed
+2. Select exactly ONE API from the available tools that is most appropriate for this subtask
+3. Focus on the current subtask only - don't consider future steps
+
+### Context Section
+{context_section}
+
+### Subtask Query
+{query}
+
+Important: You must select exactly ONE API that is most appropriate for this specific subtask.
+
+You must respond in JSON format with exactly one selected API:
+{{
+    "selected_api": {{
+        "reasoning": "why this specific API was selected for this subtask",
+        "api_name": "api_name_here",
+    }}
+}} 

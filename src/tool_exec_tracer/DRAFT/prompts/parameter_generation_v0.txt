@@ -1,0 +1,21 @@
+Given a user's question and a API tool documentation, you need to output parameters according to the API tool documentation to successfully call the API to solve the user's question.
+
+Please note that: 
+1. The Example in the API tool documentation can help you better understand the use of the API.
+2. Ensure the parameters you output are correct. The output must contain the required parameters, and can contain the optional parameters based on the question. If no parameters in the required parameters and optional parameters, just leave it as {{"Parameters":{{}}}}
+3. If the user's question mentions other APIs, you should ONLY consider the API tool documentation I give and do not consider other APIs.
+4. The question may have dependencies on answers of other questions, so we will provide logs of previous questions and answers for your reference.
+5. If you need to use this API multiple times, please set "Parameters" to a list.
+6. You must ONLY output in a parsable JSON format, with no extra explanations, notes, or comments. The output should strictly follow the JSON format. An examples output looks like:
+'''
+Example 1: ```json{{"Parameters":{{"keyword": "Artificial Intelligence", "language": "English"}}}}```
+'''
+
+There are logs of previous questions and answers: 
+{previous_log}
+
+This is the current user's question: {question}
+
+This is API tool documentation: {api_instruction}
+
+Output: 

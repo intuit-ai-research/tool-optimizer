@@ -1,0 +1,22 @@
+We have the following tools:
+{tools}
+
+You need to decompose the complex question into some simple subtasks and let the model execute it step by step.
+
+This is the complex question: {question}
+
+Please note that:
+
+1. You should decompose this complex question into some simple subtasks such that each subtask can be executed by a single tool.
+2. Each subtask should be expressed in natural language.
+3. Each subtask should contain the necessary information from the original question and should be atomic, explicit and consistent with other subtasks. Combining the subtasks into a single question should create a question that is equivalent to the original question.
+4. While creating the natural language subtask input, refer to the query, and avoid adding terms that overlap with multiple tool names.
+Example: If the query is 'When is xxx movie scheduled to be released?', the last subtask input should emphasize 'release date' not 'movie details'.
+5. For the first subtask, always consider if a search API (e.g., search_people) is needed to get the id of the entity for following subtasks.
+6. You must ONLY output in a parsable JSON format, with no extra explanations, notes, or comments. The output should strictly follow the JSON format. An example output looks like:
+
+```json
+{{"Tasks": ["Task 1", "Task 2", ...]}}
+```
+
+Output:

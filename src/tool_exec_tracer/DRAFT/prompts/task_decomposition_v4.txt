@@ -1,0 +1,11 @@
+Tools: {tools}
+Question: {question}
+
+Rules:
+1. Break the user’s question into atomic, explicit subtasks, each aligned with a single API's primary purpose.
+2. Express each subtask in natural language, grounded in the question’s wording.
+3. Subtasks must be consistent and together equivalent to the user's original query.
+4. Each subtask description must explicitly reference the functionality of at most one tool. Avoid wording that simultaneously describes or overlaps functionalities associated with multiple tools.
+5. Output ONLY valid JSON in this format:
+```json
+{{"Tasks": ["Task 1", "Task 2", ..., "Task N"]}}

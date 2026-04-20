@@ -1,0 +1,53 @@
+You are an expert API documentation specialist. Your task is to enhance the following API description by thoughtfully considering insights derived from past API selection and usage examples.
+
+CURRENT API INFORMATION:
+Name: {api_name}
+Current Description: {current_description}
+
+PARAMETER REQUIREMENTS:
+Required Parameters:
+{required_parameters_text}
+
+Optional Parameters:
+{optional_parameters_text}
+
+API SELECTION SAMPLES:
+- **Positive Samples (Correct API Selection)**:
+{list of all positive_sample_api_selection}
+
+- **Negative Samples (Incorrect API Selection)**:
+{list of all negative_sample_api_selection}
+
+API USAGE SAMPLES:
+{usage_guidelines_text}
+- **Positive Samples (Correct API Usage)**:
+{list of all positive_sample_api_usage}
+
+- **Negative Samples (Incorrect API Usage)**:
+{list of all negative_sample_api_usage}
+
+Perform the following three tasks sequentially and output your response as a JSON object:
+
+{{
+"api_selection_analysis": "Your detailed Chain of Thought analysis of API SELECTION SAMPLES.",
+"api_usage_analysis": "Your detailed Chain of Thought analysis of API USAGE SAMPLES.",
+"improved_description": "Your Improved API Description goes here."
+}}
+
+Task 1: api_selection_analysis
+
+- Analyze step-by-step why the LLM correctly selected APIs in positive samples and incorrectly selected APIs in negative samples.
+- Identify specific factors causing confusion, such as ambiguity in the API description or unclear distinctions between similar APIs, that led to incorrect API selection.
+- Propose ways to revise CURRENT API INFORMATION to reduce such api selection errors.
+
+Task 2: api_usage_analysis
+
+- Analyze step-by-step why the LLM correctly generated input arguments for the API in positive samples and incorrectly generated input arguments for the API in negative samples.
+- Identify specific factors causing confusion, such as ambiguity in the API description or unclear distinctions between similar APIs or input arguments, that led to incorrect API usage.
+- Propose ways to revise CURRENT API INFORMATION to reduce such api usage errors.
+
+Task 3: improved_description
+
+Using insights from your api_selection_analysis and  api_usage_analysis, rewrite only the parts of the API description for which you have high confidence that your changes will meaningfully enhance usability, clarity, and actionable guidance.
+
+Explicitly incorporate relevant examples, specific use cases, best practices, and tips for avoiding common errors based on the provided selection and usage guidelines insights.

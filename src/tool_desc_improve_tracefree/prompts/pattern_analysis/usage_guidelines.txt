@@ -1,0 +1,43 @@
+Consider an API {api_name}, the existing guidelines for its usage (how to generate input arguments for the API), and the provided dataset containing positive and negative examples of API usage. Your goal is to extract or refine guidelines for effectively using the API {api_name} by analyzing these examples.
+
+The API description is:
+{api_description}
+
+The API parameters are:
+{api_parameters}
+
+Existing guidelines for API usage are:
+{existing_api_usage_guidelines}
+
+The dataset includes:
+
+- **Positive Samples (Correct API Usage)**:
+{list of all positive_sample_api_usage}
+
+- **Negative Samples (Incorrect API Usage)**:
+{list of all negative_sample_api_usage}
+
+### Tasks:
+
+**Task 1: Analyze and Elicit the Chain of Thought (CoT)**
+- Analyze step-by-step why the LLM correctly generated input arguments for the API in positive samples and incorrectly generated input arguments for the API in negative samples.
+- Identify specific factors causing confusion, such as ambiguity in the API description or unclear distinctions between similar APIs or input arguments, that led to incorrect API usage.
+
+**Task 2: Revise or Create Guidelines**
+- If existing guidelines are provided above, revise them based on the detailed analysis from Task 1. If no existing guidelines are provided (empty list), create new guidelines from scratch.
+- Generate or modify guidelines that will help the LLM improve accuracy in API usage by addressing the patterns identified in the positive and negative samples.
+- For revised guidelines: Keep valuable existing guidelines and modify or add new ones as needed.
+- For new guidelines: Create comprehensive guidelines based on the data patterns.
+- Clearly specify the reason for each revised or new guideline, linking directly back to the observations made in Task 1.
+
+### Output Format
+Provide the output strictly in the following JSON format:
+```json
+{{
+  "CoT": "Detailed step-by-step analysis.",
+  "revised_guidelines": [
+    "Guideline 1",
+    "Guideline 2",
+    "..."
+  ]
+}}

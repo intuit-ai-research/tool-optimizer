@@ -9,7 +9,7 @@ from huggingface_hub import login
 from vllm import LLM
 
 from agent_tool_optimizer.inference.application.prompts_builder import PromptsBuilder
-from agent_tool_optimizer.inference.utils.console_output import (
+from utils.console_output import (
     SPACE_BETWEEN_INFERENCES,
     print_inference_output,
 )
@@ -68,12 +68,12 @@ class VLLMInference:
         end_time = datetime.datetime.now()
         log.info("Model loaded in %s seconds", (end_time - load_start_time).total_seconds())
 
-    def run_inference(self, dataset_id: str) -> None:
+    def run_inference(self, input_data_path: str) -> None:
         if self.llm is None:
             raise RuntimeError("Model not loaded")
 
         try:
-            dataset: DatasetDict = self.prompts_builder.build_dataset(dataset_id)
+            dataset: DatasetDict = self.prompts_builder.build_dataset(input_data_path)
 
             sampling_params = self.llm.get_default_sampling_params()
             sampling_params.max_tokens = SAMPLE_PARAMS_MAX_COMPLETION_TOKENS

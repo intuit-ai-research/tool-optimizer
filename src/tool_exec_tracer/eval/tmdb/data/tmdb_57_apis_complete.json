@@ -1,0 +1,1543 @@
+{
+    "total_apis": 57,
+    "source": "RestGPT repository - https://github.com/Yifan-Song793/RestGPT/blob/main/specs/tmdb_oas.json",
+    "categories": {
+      "movies": {
+        "count": 17,
+        "apis": [
+          {
+            "endpoint": "/movie/latest",
+            "method": "GET",
+            "function_name": "get_latest_movie",
+            "description": "Get Latest Movie",
+            "required_parameters": [],
+            "optional_parameters": [
+              {
+                "name": "language",
+                "type": "STRING",
+                "description": "ISO 639-1 language code",
+                "default": "en-US"
+              }
+            ]
+          },
+          {
+            "endpoint": "/movie/now_playing",
+            "method": "GET",
+            "function_name": "get_now_playing_movies",
+            "description": "Get Now Playing Movies",
+            "required_parameters": [],
+            "optional_parameters": [
+              {
+                "name": "language",
+                "type": "STRING",
+                "description": "ISO 639-1 language code",
+                "default": "en-US"
+              },
+              {
+                "name": "page",
+                "type": "NUMBER",
+                "description": "Page number for pagination",
+                "default": "1"
+              },
+              {
+                "name": "region",
+                "type": "STRING",
+                "description": "ISO 3166-1 country code",
+                "default": ""
+              }
+            ]
+          },
+          {
+            "endpoint": "/movie/popular",
+            "method": "GET",
+            "function_name": "get_popular_movies",
+            "description": "Get Popular Movies",
+            "required_parameters": [],
+            "optional_parameters": [
+              {
+                "name": "language",
+                "type": "STRING",
+                "description": "ISO 639-1 language code",
+                "default": "en-US"
+              },
+              {
+                "name": "page",
+                "type": "NUMBER",
+                "description": "Page number for pagination",
+                "default": "1"
+              },
+              {
+                "name": "region",
+                "type": "STRING",
+                "description": "ISO 3166-1 country code",
+                "default": ""
+              }
+            ]
+          },
+          {
+            "endpoint": "/movie/top_rated",
+            "method": "GET",
+            "function_name": "get_top_rated_movies",
+            "description": "Get Top Rated Movies",
+            "required_parameters": [],
+            "optional_parameters": [
+              {
+                "name": "language",
+                "type": "STRING",
+                "description": "ISO 639-1 language code",
+                "default": "en-US"
+              },
+              {
+                "name": "page",
+                "type": "NUMBER",
+                "description": "Page number for pagination",
+                "default": "1"
+              },
+              {
+                "name": "region",
+                "type": "STRING",
+                "description": "ISO 3166-1 country code",
+                "default": ""
+              }
+            ]
+          },
+          {
+            "endpoint": "/movie/upcoming",
+            "method": "GET",
+            "function_name": "get_upcoming_movies",
+            "description": "Get Upcoming Movies",
+            "required_parameters": [],
+            "optional_parameters": [
+              {
+                "name": "language",
+                "type": "STRING",
+                "description": "ISO 639-1 language code",
+                "default": "en-US"
+              },
+              {
+                "name": "page",
+                "type": "NUMBER",
+                "description": "Page number for pagination",
+                "default": "1"
+              },
+              {
+                "name": "region",
+                "type": "STRING",
+                "description": "ISO 3166-1 country code",
+                "default": ""
+              }
+            ]
+          },
+          {
+            "endpoint": "/movie/{movie_id}",
+            "method": "GET",
+            "function_name": "get_movie_details",
+            "description": "Get Movie Details",
+            "required_parameters": [
+              {
+                "name": "movie_id",
+                "type": "NUMBER",
+                "description": "The movie ID",
+                "default": ""
+              }
+            ],
+            "optional_parameters": [
+              {
+                "name": "language",
+                "type": "STRING",
+                "description": "ISO 639-1 language code",
+                "default": "en-US"
+              },
+              {
+                "name": "append_to_response",
+                "type": "STRING",
+                "description": "Append additional data like credits, images, videos",
+                "default": ""
+              }
+            ]
+          },
+          {
+            "endpoint": "/movie/{movie_id}/credits",
+            "method": "GET",
+            "function_name": "get_movie_credits",
+            "description": "Get Movie Credits",
+            "required_parameters": [
+              {
+                "name": "movie_id",
+                "type": "NUMBER",
+                "description": "The movie ID",
+                "default": ""
+              }
+            ],
+            "optional_parameters": [
+              {
+                "name": "language",
+                "type": "STRING",
+                "description": "ISO 639-1 language code",
+                "default": "en-US"
+              }
+            ]
+          },
+          {
+            "endpoint": "/movie/{movie_id}/images",
+            "method": "GET",
+            "function_name": "get_movie_images",
+            "description": "Get Movie Images",
+            "required_parameters": [
+              {
+                "name": "movie_id",
+                "type": "NUMBER",
+                "description": "The movie ID",
+                "default": ""
+              }
+            ],
+            "optional_parameters": [
+              {
+                "name": "language",
+                "type": "STRING",
+                "description": "ISO 639-1 language code",
+                "default": "en-US"
+              },
+              {
+                "name": "include_image_language",
+                "type": "STRING",
+                "description": "Comma separated language codes",
+                "default": ""
+              }
+            ]
+          },
+          {
+            "endpoint": "/movie/{movie_id}/keywords",
+            "method": "GET",
+            "function_name": "get_movie_keywords",
+            "description": "Get Movie Keywords",
+            "required_parameters": [
+              {
+                "name": "movie_id",
+                "type": "NUMBER",
+                "description": "The movie ID",
+                "default": ""
+              }
+            ],
+            "optional_parameters": []
+          },
+          {
+            "endpoint": "/movie/{movie_id}/recommendations",
+            "method": "GET",
+            "function_name": "get_movie_recommendations",
+            "description": "Get Movie Recommendations",
+            "required_parameters": [
+              {
+                "name": "movie_id",
+                "type": "NUMBER",
+                "description": "The movie ID",
+                "default": ""
+              }
+            ],
+            "optional_parameters": [
+              {
+                "name": "language",
+                "type": "STRING",
+                "description": "ISO 639-1 language code",
+                "default": "en-US"
+              },
+              {
+                "name": "page",
+                "type": "NUMBER",
+                "description": "Page number for pagination",
+                "default": "1"
+              }
+            ]
+          },
+          {
+            "endpoint": "/movie/{movie_id}/release_dates",
+            "method": "GET",
+            "function_name": "get_movie_release_dates",
+            "description": "Get Movie Release Dates",
+            "required_parameters": [
+              {
+                "name": "movie_id",
+                "type": "NUMBER",
+                "description": "The movie ID",
+                "default": ""
+              }
+            ],
+            "optional_parameters": []
+          },
+          {
+            "endpoint": "/movie/{movie_id}/reviews",
+            "method": "GET",
+            "function_name": "get_movie_reviews",
+            "description": "Get Movie Reviews",
+            "required_parameters": [
+              {
+                "name": "movie_id",
+                "type": "NUMBER",
+                "description": "The movie ID",
+                "default": ""
+              }
+            ],
+            "optional_parameters": [
+              {
+                "name": "language",
+                "type": "STRING",
+                "description": "ISO 639-1 language code",
+                "default": "en-US"
+              },
+              {
+                "name": "page",
+                "type": "NUMBER",
+                "description": "Page number for pagination",
+                "default": "1"
+              }
+            ]
+          },
+          {
+            "endpoint": "/movie/{movie_id}/similar",
+            "method": "GET",
+            "function_name": "get_similar_movies",
+            "description": "Get Similar Movies",
+            "required_parameters": [
+              {
+                "name": "movie_id",
+                "type": "NUMBER",
+                "description": "The movie ID",
+                "default": ""
+              }
+            ],
+            "optional_parameters": [
+              {
+                "name": "language",
+                "type": "STRING",
+                "description": "ISO 639-1 language code",
+                "default": "en-US"
+              },
+              {
+                "name": "page",
+                "type": "NUMBER",
+                "description": "Page number for pagination",
+                "default": "1"
+              }
+            ]
+          },
+          {
+            "endpoint": "/discover/movie",
+            "method": "GET",
+            "function_name": "discover_movies",
+            "description": "Movie Discover - Advanced search and filtering",
+            "required_parameters": [],
+            "optional_parameters": [
+              {
+                "name": "language",
+                "type": "STRING",
+                "description": "ISO 639-1 language code",
+                "default": "en-US"
+              },
+              {
+                "name": "region",
+                "type": "STRING",
+                "description": "ISO 3166-1 country code",
+                "default": ""
+              },
+              {
+                "name": "sort_by",
+                "type": "STRING",
+                "description": "Sort the results",
+                "default": "popularity.desc"
+              },
+              {
+                "name": "page",
+                "type": "NUMBER",
+                "description": "Page number for pagination",
+                "default": "1"
+              },
+              {
+                "name": "primary_release_year",
+                "type": "NUMBER",
+                "description": "Primary release year",
+                "default": ""
+              },
+              {
+                "name": "with_genres",
+                "type": "STRING",
+                "description": "Comma separated genre IDs",
+                "default": ""
+              },
+              {
+                "name": "with_cast",
+                "type": "STRING",
+                "description": "Comma separated person IDs",
+                "default": ""
+              },
+              {
+                "name": "with_crew",
+                "type": "STRING",
+                "description": "Comma separated person IDs",
+                "default": ""
+              },
+              {
+                "name": "vote_average_gte",
+                "type": "NUMBER",
+                "description": "Minimum vote average",
+                "default": ""
+              },
+              {
+                "name": "vote_average_lte",
+                "type": "NUMBER",
+                "description": "Maximum vote average",
+                "default": ""
+              }
+            ]
+          },
+          {
+            "endpoint": "/search/movie",
+            "method": "GET",
+            "function_name": "search_movies",
+            "description": "Search Movies by query",
+            "required_parameters": [
+              {
+                "name": "query",
+                "type": "STRING",
+                "description": "The movie title to search for",
+                "default": ""
+              }
+            ],
+            "optional_parameters": [
+              {
+                "name": "language",
+                "type": "STRING",
+                "description": "ISO 639-1 language code",
+                "default": "en-US"
+              },
+              {
+                "name": "page",
+                "type": "NUMBER",
+                "description": "Page number for pagination",
+                "default": "1"
+              },
+              {
+                "name": "include_adult",
+                "type": "BOOLEAN",
+                "description": "Include adult content in results",
+                "default": "false"
+              },
+              {
+                "name": "region",
+                "type": "STRING",
+                "description": "ISO 3166-1 country code",
+                "default": ""
+              },
+              {
+                "name": "year",
+                "type": "NUMBER",
+                "description": "Primary release year",
+                "default": ""
+              },
+              {
+                "name": "primary_release_year",
+                "type": "NUMBER",
+                "description": "Primary release year",
+                "default": ""
+              }
+            ]
+          },
+          {
+            "endpoint": "/genre/movie/list",
+            "method": "GET",
+            "function_name": "get_movie_genres",
+            "description": "Get Movie Genre List",
+            "required_parameters": [],
+            "optional_parameters": [
+              {
+                "name": "language",
+                "type": "STRING",
+                "description": "ISO 639-1 language code",
+                "default": "en-US"
+              }
+            ]
+          },
+          {
+            "endpoint": "/trending/movie/{time_window}",
+            "method": "GET",
+            "function_name": "get_trending_movies",
+            "description": "Get Trending Movies (day/week)",
+            "required_parameters": [
+              {
+                "name": "time_window",
+                "type": "STRING",
+                "description": "Time window: day, week",
+                "default": "day"
+              }
+            ],
+            "optional_parameters": [
+              {
+                "name": "language",
+                "type": "STRING",
+                "description": "ISO 639-1 language code",
+                "default": "en-US"
+              }
+            ]
+          }
+        ]
+      },
+      "tv_shows": {
+        "count": 17,
+        "apis": [
+          {
+            "endpoint": "/tv/airing_today",
+            "method": "GET",
+            "function_name": "get_tv_airing_today",
+            "description": "Get TV Shows Airing Today",
+            "required_parameters": [],
+            "optional_parameters": [
+              {
+                "name": "language",
+                "type": "STRING",
+                "description": "ISO 639-1 language code",
+                "default": "en-US"
+              },
+              {
+                "name": "page",
+                "type": "NUMBER",
+                "description": "Page number for pagination",
+                "default": "1"
+              }
+            ]
+          },
+          {
+            "endpoint": "/tv/latest",
+            "method": "GET",
+            "function_name": "get_latest_tv",
+            "description": "Get Latest TV Show",
+            "required_parameters": [],
+            "optional_parameters": [
+              {
+                "name": "language",
+                "type": "STRING",
+                "description": "ISO 639-1 language code",
+                "default": "en-US"
+              }
+            ]
+          },
+          {
+            "endpoint": "/tv/on_the_air",
+            "method": "GET",
+            "function_name": "get_tv_on_the_air",
+            "description": "Get TV Shows On The Air",
+            "required_parameters": [],
+            "optional_parameters": [
+              {
+                "name": "language",
+                "type": "STRING",
+                "description": "ISO 639-1 language code",
+                "default": "en-US"
+              },
+              {
+                "name": "page",
+                "type": "NUMBER",
+                "description": "Page number for pagination",
+                "default": "1"
+              }
+            ]
+          },
+          {
+            "endpoint": "/tv/popular",
+            "method": "GET",
+            "function_name": "get_popular_tv",
+            "description": "Get Popular TV Shows",
+            "required_parameters": [],
+            "optional_parameters": [
+              {
+                "name": "language",
+                "type": "STRING",
+                "description": "ISO 639-1 language code",
+                "default": "en-US"
+              },
+              {
+                "name": "page",
+                "type": "NUMBER",
+                "description": "Page number for pagination",
+                "default": "1"
+              }
+            ]
+          },
+          {
+            "endpoint": "/tv/top_rated",
+            "method": "GET",
+            "function_name": "get_top_rated_tv",
+            "description": "Get Top Rated TV Shows",
+            "required_parameters": [],
+            "optional_parameters": [
+              {
+                "name": "language",
+                "type": "STRING",
+                "description": "ISO 639-1 language code",
+                "default": "en-US"
+              },
+              {
+                "name": "page",
+                "type": "NUMBER",
+                "description": "Page number for pagination",
+                "default": "1"
+              }
+            ]
+          },
+          {
+            "endpoint": "/tv/{tv_id}",
+            "method": "GET",
+            "function_name": "get_tv_details",
+            "description": "Get TV Show Details",
+            "required_parameters": [
+              {
+                "name": "tv_id",
+                "type": "NUMBER",
+                "description": "The TV series ID",
+                "default": ""
+              }
+            ],
+            "optional_parameters": [
+              {
+                "name": "language",
+                "type": "STRING",
+                "description": "ISO 639-1 language code",
+                "default": "en-US"
+              },
+              {
+                "name": "append_to_response",
+                "type": "STRING",
+                "description": "Append additional data like credits, images, videos",
+                "default": ""
+              }
+            ]
+          },
+          {
+            "endpoint": "/tv/{tv_id}/credits",
+            "method": "GET",
+            "function_name": "get_tv_credits",
+            "description": "Get TV Show Credits",
+            "required_parameters": [
+              {
+                "name": "tv_id",
+                "type": "NUMBER",
+                "description": "The TV series ID",
+                "default": ""
+              }
+            ],
+            "optional_parameters": [
+              {
+                "name": "language",
+                "type": "STRING",
+                "description": "ISO 639-1 language code",
+                "default": "en-US"
+              }
+            ]
+          },
+          {
+            "endpoint": "/tv/{tv_id}/images",
+            "method": "GET",
+            "function_name": "get_tv_images",
+            "description": "Get TV Show Images",
+            "required_parameters": [
+              {
+                "name": "tv_id",
+                "type": "NUMBER",
+                "description": "The TV series ID",
+                "default": ""
+              }
+            ],
+            "optional_parameters": [
+              {
+                "name": "language",
+                "type": "STRING",
+                "description": "ISO 639-1 language code",
+                "default": "en-US"
+              },
+              {
+                "name": "include_image_language",
+                "type": "STRING",
+                "description": "Comma separated language codes",
+                "default": ""
+              }
+            ]
+          },
+          {
+            "endpoint": "/tv/{tv_id}/keywords",
+            "method": "GET",
+            "function_name": "get_tv_keywords",
+            "description": "Get TV Show Keywords",
+            "required_parameters": [
+              {
+                "name": "tv_id",
+                "type": "NUMBER",
+                "description": "The TV series ID",
+                "default": ""
+              }
+            ],
+            "optional_parameters": []
+          },
+          {
+            "endpoint": "/tv/{tv_id}/recommendations",
+            "method": "GET",
+            "function_name": "get_tv_recommendations",
+            "description": "Get TV Show Recommendations",
+            "required_parameters": [
+              {
+                "name": "tv_id",
+                "type": "NUMBER",
+                "description": "The TV series ID",
+                "default": ""
+              }
+            ],
+            "optional_parameters": [
+              {
+                "name": "language",
+                "type": "STRING",
+                "description": "ISO 639-1 language code",
+                "default": "en-US"
+              },
+              {
+                "name": "page",
+                "type": "NUMBER",
+                "description": "Page number for pagination",
+                "default": "1"
+              }
+            ]
+          },
+          {
+            "endpoint": "/tv/{tv_id}/reviews",
+            "method": "GET",
+            "function_name": "get_tv_reviews",
+            "description": "Get TV Show Reviews",
+            "required_parameters": [
+              {
+                "name": "tv_id",
+                "type": "NUMBER",
+                "description": "The TV series ID",
+                "default": ""
+              }
+            ],
+            "optional_parameters": [
+              {
+                "name": "language",
+                "type": "STRING",
+                "description": "ISO 639-1 language code",
+                "default": "en-US"
+              },
+              {
+                "name": "page",
+                "type": "NUMBER",
+                "description": "Page number for pagination",
+                "default": "1"
+              }
+            ]
+          },
+          {
+            "endpoint": "/tv/{tv_id}/similar",
+            "method": "GET",
+            "function_name": "get_similar_tv",
+            "description": "Get Similar TV Shows",
+            "required_parameters": [
+              {
+                "name": "tv_id",
+                "type": "NUMBER",
+                "description": "The TV series ID",
+                "default": ""
+              }
+            ],
+            "optional_parameters": [
+              {
+                "name": "language",
+                "type": "STRING",
+                "description": "ISO 639-1 language code",
+                "default": "en-US"
+              },
+              {
+                "name": "page",
+                "type": "NUMBER",
+                "description": "Page number for pagination",
+                "default": "1"
+              }
+            ]
+          },
+          {
+            "endpoint": "/discover/tv",
+            "method": "GET",
+            "function_name": "discover_tv",
+            "description": "TV Discover - Advanced search and filtering",
+            "required_parameters": [],
+            "optional_parameters": [
+              {
+                "name": "language",
+                "type": "STRING",
+                "description": "ISO 639-1 language code",
+                "default": "en-US"
+              },
+              {
+                "name": "sort_by",
+                "type": "STRING",
+                "description": "Sort the results",
+                "default": "popularity.desc"
+              },
+              {
+                "name": "page",
+                "type": "NUMBER",
+                "description": "Page number for pagination",
+                "default": "1"
+              },
+              {
+                "name": "first_air_date_year",
+                "type": "NUMBER",
+                "description": "First air date year",
+                "default": ""
+              },
+              {
+                "name": "with_genres",
+                "type": "STRING",
+                "description": "Comma separated genre IDs",
+                "default": ""
+              },
+              {
+                "name": "vote_average_gte",
+                "type": "NUMBER",
+                "description": "Minimum vote average",
+                "default": ""
+              },
+              {
+                "name": "vote_average_lte",
+                "type": "NUMBER",
+                "description": "Maximum vote average",
+                "default": ""
+              }
+            ]
+          },
+          {
+            "endpoint": "/search/tv",
+            "method": "GET",
+            "function_name": "search_tv",
+            "description": "Search TV Shows by query",
+            "required_parameters": [
+              {
+                "name": "query",
+                "type": "STRING",
+                "description": "The TV show name to search for",
+                "default": ""
+              }
+            ],
+            "optional_parameters": [
+              {
+                "name": "language",
+                "type": "STRING",
+                "description": "ISO 639-1 language code",
+                "default": "en-US"
+              },
+              {
+                "name": "page",
+                "type": "NUMBER",
+                "description": "Page number for pagination",
+                "default": "1"
+              },
+              {
+                "name": "include_adult",
+                "type": "BOOLEAN",
+                "description": "Include adult content in results",
+                "default": "false"
+              },
+              {
+                "name": "first_air_date_year",
+                "type": "NUMBER",
+                "description": "First air date year",
+                "default": ""
+              }
+            ]
+          },
+          {
+            "endpoint": "/genre/tv/list",
+            "method": "GET",
+            "function_name": "get_tv_genres",
+            "description": "Get TV Genre List",
+            "required_parameters": [],
+            "optional_parameters": [
+              {
+                "name": "language",
+                "type": "STRING",
+                "description": "ISO 639-1 language code",
+                "default": "en-US"
+              }
+            ]
+          },
+          {
+            "endpoint": "/trending/tv/{time_window}",
+            "method": "GET",
+            "function_name": "get_trending_tv",
+            "description": "Get Trending TV Shows (day/week)",
+            "required_parameters": [
+              {
+                "name": "time_window",
+                "type": "STRING",
+                "description": "Time window: day, week",
+                "default": "day"
+              }
+            ],
+            "optional_parameters": [
+              {
+                "name": "language",
+                "type": "STRING",
+                "description": "ISO 639-1 language code",
+                "default": "en-US"
+              }
+            ]
+          },
+          {
+            "endpoint": "/trending/all/{time_window}",
+            "method": "GET",
+            "function_name": "get_trending_all",
+            "description": "Get All Trending Media (movies + TV)",
+            "required_parameters": [
+              {
+                "name": "time_window",
+                "type": "STRING",
+                "description": "Time window: day, week",
+                "default": "day"
+              }
+            ],
+            "optional_parameters": [
+              {
+                "name": "language",
+                "type": "STRING",
+                "description": "ISO 639-1 language code",
+                "default": "en-US"
+              }
+            ]
+          }
+        ]
+      },
+      "tv_seasons_episodes": {
+        "count": 6,
+        "apis": [
+          {
+            "endpoint": "/tv/{tv_id}/season/{season_number}",
+            "method": "GET",
+            "function_name": "get_tv_season_details",
+            "description": "Get TV Season Details",
+            "required_parameters": [
+              {
+                "name": "tv_id",
+                "type": "NUMBER",
+                "description": "The TV series ID",
+                "default": ""
+              },
+              {
+                "name": "season_number",
+                "type": "NUMBER",
+                "description": "The season number",
+                "default": ""
+              }
+            ],
+            "optional_parameters": [
+              {
+                "name": "language",
+                "type": "STRING",
+                "description": "ISO 639-1 language code",
+                "default": "en-US"
+              },
+              {
+                "name": "append_to_response",
+                "type": "STRING",
+                "description": "Append additional data",
+                "default": ""
+              }
+            ]
+          },
+          {
+            "endpoint": "/tv/{tv_id}/season/{season_number}/credits",
+            "method": "GET",
+            "function_name": "get_tv_season_credits",
+            "description": "Get TV Season Credits",
+            "required_parameters": [
+              {
+                "name": "tv_id",
+                "type": "NUMBER",
+                "description": "The TV series ID",
+                "default": ""
+              },
+              {
+                "name": "season_number",
+                "type": "NUMBER",
+                "description": "The season number",
+                "default": ""
+              }
+            ],
+            "optional_parameters": [
+              {
+                "name": "language",
+                "type": "STRING",
+                "description": "ISO 639-1 language code",
+                "default": "en-US"
+              }
+            ]
+          },
+          {
+            "endpoint": "/tv/{tv_id}/season/{season_number}/images",
+            "method": "GET",
+            "function_name": "get_tv_season_images",
+            "description": "Get TV Season Images",
+            "required_parameters": [
+              {
+                "name": "tv_id",
+                "type": "NUMBER",
+                "description": "The TV series ID",
+                "default": ""
+              },
+              {
+                "name": "season_number",
+                "type": "NUMBER",
+                "description": "The season number",
+                "default": ""
+              }
+            ],
+            "optional_parameters": [
+              {
+                "name": "language",
+                "type": "STRING",
+                "description": "ISO 639-1 language code",
+                "default": "en-US"
+              },
+              {
+                "name": "include_image_language",
+                "type": "STRING",
+                "description": "Comma separated language codes",
+                "default": ""
+              }
+            ]
+          },
+          {
+            "endpoint": "/tv/{tv_id}/season/{season_number}/episode/{episode_number}",
+            "method": "GET",
+            "function_name": "get_tv_episode_details",
+            "description": "Get TV Episode Details",
+            "required_parameters": [
+              {
+                "name": "tv_id",
+                "type": "NUMBER",
+                "description": "The TV series ID",
+                "default": ""
+              },
+              {
+                "name": "season_number",
+                "type": "NUMBER",
+                "description": "The season number",
+                "default": ""
+              },
+              {
+                "name": "episode_number",
+                "type": "NUMBER",
+                "description": "The episode number",
+                "default": ""
+              }
+            ],
+            "optional_parameters": [
+              {
+                "name": "language",
+                "type": "STRING",
+                "description": "ISO 639-1 language code",
+                "default": "en-US"
+              },
+              {
+                "name": "append_to_response",
+                "type": "STRING",
+                "description": "Append additional data",
+                "default": ""
+              }
+            ]
+          },
+          {
+            "endpoint": "/tv/{tv_id}/season/{season_number}/episode/{episode_number}/credits",
+            "method": "GET",
+            "function_name": "get_tv_episode_credits",
+            "description": "Get TV Episode Credits",
+            "required_parameters": [
+              {
+                "name": "tv_id",
+                "type": "NUMBER",
+                "description": "The TV series ID",
+                "default": ""
+              },
+              {
+                "name": "season_number",
+                "type": "NUMBER",
+                "description": "The season number",
+                "default": ""
+              },
+              {
+                "name": "episode_number",
+                "type": "NUMBER",
+                "description": "The episode number",
+                "default": ""
+              }
+            ],
+            "optional_parameters": [
+              {
+                "name": "language",
+                "type": "STRING",
+                "description": "ISO 639-1 language code",
+                "default": "en-US"
+              }
+            ]
+          },
+          {
+            "endpoint": "/tv/{tv_id}/season/{season_number}/episode/{episode_number}/images",
+            "method": "GET",
+            "function_name": "get_tv_episode_images",
+            "description": "Get TV Episode Images",
+            "required_parameters": [
+              {
+                "name": "tv_id",
+                "type": "NUMBER",
+                "description": "The TV series ID",
+                "default": ""
+              },
+              {
+                "name": "season_number",
+                "type": "NUMBER",
+                "description": "The season number",
+                "default": ""
+              },
+              {
+                "name": "episode_number",
+                "type": "NUMBER",
+                "description": "The episode number",
+                "default": ""
+              }
+            ],
+            "optional_parameters": [
+              {
+                "name": "language",
+                "type": "STRING",
+                "description": "ISO 639-1 language code",
+                "default": "en-US"
+              },
+              {
+                "name": "include_image_language",
+                "type": "STRING",
+                "description": "Comma separated language codes",
+                "default": ""
+              }
+            ]
+          }
+        ]
+      },
+      "people": {
+        "count": 5,
+        "apis": [
+          {
+            "endpoint": "/person/popular",
+            "method": "GET",
+            "function_name": "get_popular_people",
+            "description": "Get Popular People",
+            "required_parameters": [],
+            "optional_parameters": [
+              {
+                "name": "language",
+                "type": "STRING",
+                "description": "ISO 639-1 language code",
+                "default": "en-US"
+              },
+              {
+                "name": "page",
+                "type": "NUMBER",
+                "description": "Page number for pagination",
+                "default": "1"
+              }
+            ]
+          },
+          {
+            "endpoint": "/person/{person_id}",
+            "method": "GET",
+            "function_name": "get_person_details",
+            "description": "Get Person Details",
+            "required_parameters": [
+              {
+                "name": "person_id",
+                "type": "NUMBER",
+                "description": "The person ID",
+                "default": ""
+              }
+            ],
+            "optional_parameters": [
+              {
+                "name": "language",
+                "type": "STRING",
+                "description": "ISO 639-1 language code",
+                "default": "en-US"
+              },
+              {
+                "name": "append_to_response",
+                "type": "STRING",
+                "description": "Append additional data like credits, images",
+                "default": ""
+              }
+            ]
+          },
+          {
+            "endpoint": "/person/{person_id}/images",
+            "method": "GET",
+            "function_name": "get_person_images",
+            "description": "Get Person Images",
+            "required_parameters": [
+              {
+                "name": "person_id",
+                "type": "NUMBER",
+                "description": "The person ID",
+                "default": ""
+              }
+            ],
+            "optional_parameters": []
+          },
+          {
+            "endpoint": "/person/{person_id}/movie_credits",
+            "method": "GET",
+            "function_name": "get_person_movie_credits",
+            "description": "Get Person Movie Credits",
+            "required_parameters": [
+              {
+                "name": "person_id",
+                "type": "NUMBER",
+                "description": "The person ID",
+                "default": ""
+              }
+            ],
+            "optional_parameters": [
+              {
+                "name": "language",
+                "type": "STRING",
+                "description": "ISO 639-1 language code",
+                "default": "en-US"
+              }
+            ]
+          },
+          {
+            "endpoint": "/person/{person_id}/tv_credits",
+            "method": "GET",
+            "function_name": "get_person_tv_credits",
+            "description": "Get Person TV Credits",
+            "required_parameters": [
+              {
+                "name": "person_id",
+                "type": "NUMBER",
+                "description": "The person ID",
+                "default": ""
+              }
+            ],
+            "optional_parameters": [
+              {
+                "name": "language",
+                "type": "STRING",
+                "description": "ISO 639-1 language code",
+                "default": "en-US"
+              }
+            ]
+          }
+        ]
+      },
+      "search": {
+        "count": 4,
+        "apis": [
+          {
+            "endpoint": "/search/collection",
+            "method": "GET",
+            "function_name": "search_collections",
+            "description": "Search Collections",
+            "required_parameters": [
+              {
+                "name": "query",
+                "type": "STRING",
+                "description": "The collection name to search for",
+                "default": ""
+              }
+            ],
+            "optional_parameters": [
+              {
+                "name": "language",
+                "type": "STRING",
+                "description": "ISO 639-1 language code",
+                "default": "en-US"
+              },
+              {
+                "name": "page",
+                "type": "NUMBER",
+                "description": "Page number for pagination",
+                "default": "1"
+              }
+            ]
+          },
+          {
+            "endpoint": "/search/company",
+            "method": "GET",
+            "function_name": "search_companies",
+            "description": "Search Companies",
+            "required_parameters": [
+              {
+                "name": "query",
+                "type": "STRING",
+                "description": "The company name to search for",
+                "default": ""
+              }
+            ],
+            "optional_parameters": [
+              {
+                "name": "page",
+                "type": "NUMBER",
+                "description": "Page number for pagination",
+                "default": "1"
+              }
+            ]
+          },
+          {
+            "endpoint": "/search/person",
+            "method": "GET",
+            "function_name": "search_people",
+            "description": "Search People",
+            "required_parameters": [
+              {
+                "name": "query",
+                "type": "STRING",
+                "description": "The person name to search for",
+                "default": ""
+              }
+            ],
+            "optional_parameters": [
+              {
+                "name": "language",
+                "type": "STRING",
+                "description": "ISO 639-1 language code",
+                "default": "en-US"
+              },
+              {
+                "name": "page",
+                "type": "NUMBER",
+                "description": "Page number for pagination",
+                "default": "1"
+              },
+              {
+                "name": "include_adult",
+                "type": "BOOLEAN",
+                "description": "Include adult content in results",
+                "default": "false"
+              }
+            ]
+          },
+          {
+            "endpoint": "/trending/{media_type}/{time_window}",
+            "method": "GET",
+            "function_name": "get_trending",
+            "description": "Get Trending (person/movie/tv/all for day/week)",
+            "required_parameters": [
+              {
+                "name": "media_type",
+                "type": "STRING",
+                "description": "Media type: all, movie, tv, person",
+                "default": "all"
+              },
+              {
+                "name": "time_window",
+                "type": "STRING",
+                "description": "Time window: day, week",
+                "default": "day"
+              }
+            ],
+            "optional_parameters": [
+              {
+                "name": "language",
+                "type": "STRING",
+                "description": "ISO 639-1 language code",
+                "default": "en-US"
+              }
+            ]
+          }
+        ]
+      },
+      "collections": {
+        "count": 2,
+        "apis": [
+          {
+            "endpoint": "/collection/{collection_id}",
+            "method": "GET",
+            "function_name": "get_collection_details",
+            "description": "Get Collection Details",
+            "required_parameters": [
+              {
+                "name": "collection_id",
+                "type": "NUMBER",
+                "description": "The collection ID",
+                "default": ""
+              }
+            ],
+            "optional_parameters": [
+              {
+                "name": "language",
+                "type": "STRING",
+                "description": "ISO 639-1 language code",
+                "default": "en-US"
+              }
+            ]
+          },
+          {
+            "endpoint": "/collection/{collection_id}/images",
+            "method": "GET",
+            "function_name": "get_collection_images",
+            "description": "Get Collection Images",
+            "required_parameters": [
+              {
+                "name": "collection_id",
+                "type": "NUMBER",
+                "description": "The collection ID",
+                "default": ""
+              }
+            ],
+            "optional_parameters": [
+              {
+                "name": "language",
+                "type": "STRING",
+                "description": "ISO 639-1 language code",
+                "default": "en-US"
+              },
+              {
+                "name": "include_image_language",
+                "type": "STRING",
+                "description": "Comma separated language codes",
+                "default": ""
+              }
+            ]
+          }
+        ]
+      },
+      "companies": {
+        "count": 2,
+        "apis": [
+          {
+            "endpoint": "/company/{company_id}",
+            "method": "GET",
+            "function_name": "get_company_details",
+            "description": "Get Company Details",
+            "required_parameters": [
+              {
+                "name": "company_id",
+                "type": "NUMBER",
+                "description": "The company ID",
+                "default": ""
+              }
+            ],
+            "optional_parameters": []
+          },
+          {
+            "endpoint": "/company/{company_id}/images",
+            "method": "GET",
+            "function_name": "get_company_images",
+            "description": "Get Company Images",
+            "required_parameters": [
+              {
+                "name": "company_id",
+                "type": "NUMBER",
+                "description": "The company ID",
+                "default": ""
+              }
+            ],
+            "optional_parameters": []
+          }
+        ]
+      },
+      "networks": {
+        "count": 2,
+        "apis": [
+          {
+            "endpoint": "/network/{network_id}",
+            "method": "GET",
+            "function_name": "get_network_details",
+            "description": "Get Network Details",
+            "required_parameters": [
+              {
+                "name": "network_id",
+                "type": "NUMBER",
+                "description": "The network ID",
+                "default": ""
+              }
+            ],
+            "optional_parameters": []
+          },
+          {
+            "endpoint": "/network/{network_id}/images",
+            "method": "GET",
+            "function_name": "get_network_images",
+            "description": "Get Network Images",
+            "required_parameters": [
+              {
+                "name": "network_id",
+                "type": "NUMBER",
+                "description": "The network ID",
+                "default": ""
+              }
+            ],
+            "optional_parameters": []
+          }
+        ]
+      },
+      "misc": {
+        "count": 2,
+        "apis": [
+          {
+            "endpoint": "/credit/{credit_id}",
+            "method": "GET",
+            "function_name": "get_credit_details",
+            "description": "Get Credit Details",
+            "required_parameters": [
+              {
+                "name": "credit_id",
+                "type": "STRING",
+                "description": "The credit ID",
+                "default": ""
+              }
+            ],
+            "optional_parameters": []
+          },
+          {
+            "endpoint": "/review/{review_id}",
+            "method": "GET",
+            "function_name": "get_review_details",
+            "description": "Get Review Details",
+            "required_parameters": [
+              {
+                "name": "review_id",
+                "type": "STRING",
+                "description": "The review ID",
+                "default": ""
+              }
+            ],
+            "optional_parameters": []
+          }
+        ]
+      }
+    },
+    "comparison_with_your_implementation": {
+      "your_apis": 13,
+      "restgpt_apis": 54,
+      "coverage_percentage": "24.1%",
+      "additional_apis_in_restgpt": 41,
+      "categories_you_implemented": [
+        "movies (7 APIs)",
+        "tv_shows (2 APIs)",
+        "people (2 APIs)",
+        "search (2 APIs)"
+      ],
+      "categories_missing_from_your_implementation": [
+        "tv_seasons_episodes (6 APIs)",
+        "collections (2 APIs)",
+        "companies (2 APIs)",
+        "networks (2 APIs)",
+        "misc - credits/reviews (2 APIs)",
+        "additional movie APIs (10 more)",
+        "additional tv APIs (15 more)",
+        "additional people APIs (3 more)",
+        "additional search APIs (2 more)"
+      ]
+    }
+  }

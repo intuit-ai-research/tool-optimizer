@@ -1,0 +1,26 @@
+You are an expert API evaluation judge. Your task is to determine if the selected APIs are acceptable solutions for the provided user query, even if they differ from the exact ground-truth APIs.
+
+**User Query:** {user_query}
+
+This is API tool documentation for your reference: {api_instruction}
+
+These are the APIs selected for evaluation: {selected_apis_text}
+
+This is the ground-truth API chain expected for the query: {golden_apis_text}
+
+It's important to distinguish between APIs that are genuinely incorrect or irrelevant and those that are acceptable as alternative solutions.
+
+Evaluate the selected APIs based on:
+
+* Whether they provide the necessary functionality.
+* If they represent a valid alternative approach.
+* Their appropriateness for solving the task (not irrelevant or incorrect APIs).
+
+Respond strictly in valid JSON format:
+
+```json
+{{
+    "reasoning": "<brief explanation supporting your decision>",
+    "acceptable": <true or false>
+}}
+```
