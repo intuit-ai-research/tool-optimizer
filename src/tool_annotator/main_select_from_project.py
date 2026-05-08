@@ -1,5 +1,5 @@
 """
-python main_select.py --eval_results_folders ../FunctionWrapper/experiments_track/D0_agent_20251121_193228/* --mcp_yaml_path ../FunctionWrapper/eval/StableToolBench_D0_by_agent ../FunctionWrapper/eval/StableToolBench --tool_root_dir ../FunctionWrapper/StableToolBench/data/toolenv/tools/ --output_folder ../FunctionWrapper/tmp --debug
+python main_select.py --tool_traces_path ../FunctionWrapper/experiments_track/D0_agent_20251121_193228/* --mcp_yaml_path ../FunctionWrapper/eval/StableToolBench_D0_by_agent ../FunctionWrapper/eval/StableToolBench --tool_root_dir ../FunctionWrapper/StableToolBench/data/toolenv/tools/ --output_folder ../FunctionWrapper/tmp --debug
 
 This script is used to select the health tools.
 """

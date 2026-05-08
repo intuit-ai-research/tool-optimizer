@@ -150,72 +150,7 @@ cp .env.example .env
 > **Skip this step?** Pre-computed annotations are available using `src/utils/pull_hf_data.py` (pulled as part of `tools_mcp_yaml_annotated/`). You can proceed directly to Step 3 using these, or use the raw D0 YAMLs from (pulled as part of `tools_mcp_yaml_raw/`). See [Training Data](#training-data-option-1---download-existing-example-training-data) for more info.
 
 
-##### Step 1.1. Install the CUDA
-
-Check this [link](https://verl.readthedocs.io/en/latest/start/install.html) for more details.
-
-Quick setup if you restart the SageMaker instance:
-```bash
-# At where the file is downloaded
-sudo dpkg -i cuda-repo-ubuntu2204-12-8-local_12.8.1-570.124.06-1_amd64.deb
-sudo cp /var/cuda-repo-ubuntu2204-12-8-local/cuda-*-keyring.gpg /usr/share/keyrings/
-sudo apt-get update
-sudo apt-get -y install cuda-toolkit-12-8
-sudo update-alternatives --set cuda /usr/local/cuda-12.8
-```
-
-```bash
-# At where the file is downloaded
-sudo dpkg -i cudnn-local-repo-ubuntu2204-9.10.2_1.0-1_amd64.deb
-sudo cp /var/cudnn-local-repo-ubuntu2204-9.10.2/cudnn-*-keyring.gpg /usr/share/keyrings/
-sudo apt-get update
-sudo apt-get -y install cudnn-cuda-12
-```
-
-Check if CUDA is 12.8:
-```bash
-nvcc --version
-```
-
-If not, run the following command:
-```bash
-echo 'export PATH=/usr/local/cuda/bin:$PATH' >> ~/.bashrc && export PATH=/usr/local/cuda/bin:$PATH && nvcc --version
-```
-
-##### Step 1.2. Install the python dependencies
-
-Use [environment.yml](environment.yml)
-```bash
-conda env create -f environment.yml
-conda activate agent_train
-```
-
-Install based on the docs
-```bash
-conda create -n verl python==3.12
-conda activate verl
-```
-
-Then, execute the install.sh script that we provided in verl:
-```bash
-# Make sure you have activated verl conda env
-# If you need to run with megatron
-bash scripts/install_vllm_sglang_mcore.sh
-# Or if you simply need to run with FSDP
-USE_MEGATRON=0 bash scripts/install_vllm_sglang_mcore.sh
-```
-
-##### Step 1.3. Install the verl
-```bash
-git clone https://github.com/volcengine/verl.git
-cd verl
-pip install --no-deps -e .
-```
-
-Currently, Verl is at commit b9bd00efba253ea90072555c45692054cf703de2.
-
-
-##### Step 1.4. Execute script to generate output data
+##### Step 1.1. Execute script to generate output data
 
 **Entry point**
 > `src/tool_annotator/main_select.py`
@@ -223,7 +158,7 @@ Currently, Verl is at commit b9bd00efba253ea90072555c45692054cf703de2.
 **Arguments**
 | Argument | Required | Default | Description |
 |----------|----------|---------|-------------|
-| `--eval_results_folders` | Yes | `None` | Directory path to tools usage logs |
+| `--tool_traces_path` | Yes | `None` | Directory path to tools usage traces, including which APIs were called, which succeeded (i.e. healthy) and which threw errors (i.e. unhealthy). |
 | `--mcp_yaml_path` | Yes | `None` | Directory path to raw tools mcp yamls |
 | `--tool_root_dir` | Yes | `None` | Directory path to tools API definitions |
 | `--openai_api_key` | No | `None` | API key for LLM calls using OpenAI models. Must either be provided as CLI arg or already exist as OPENAI_API_KEY env variable |
@@ -235,7 +170,7 @@ Currently, Verl is at commit b9bd00efba253ea90072555c45692054cf703de2.
 cd src/tool_annotator
 
 python main_select.py \
-  --eval_results_folders data/StableToolBench/tools_usage/ \
+  --tool_traces_path data/StableToolBench/tools_usage/ \
   --mcp_yaml_path data/StableToolBench/tools_mcp_yaml_raw/ \
   --tool_root_dir data/StableToolBench/tools_api/ \
   --model_name  "gpt-4.1-2025-04-14" \
@@ -445,8 +380,8 @@ python main.py --openai_api_key "<key>" \
 ```bash
 cd src/tool_exec_tracer
 
-python tmdb/examples/main_tmdb.py \
-  --config tmdb/configs/tmdb_base.yaml \
+python eval/tmdb/examples/main_tmdb.py \
+  --config eval/tmdb/configs/tmdb_base.yaml \
   --dataset ../../data/StableToolBench/tools_synthetic_queries/ToolUse_smithery_198_3tool_1775806399/combined_queries.json \
   --mcp_yaml_path ../../data/StableToolBench/tools_mcp_yaml_desc_improve_tracefree \
   --tool_root_dir ../../data/StableToolBench/tools_api \
@@ -518,7 +453,7 @@ The script iterates over each eval result subfolder, matches it to the correspon
 
 **Purpose**: Train a model that takes D0 (sparse) descriptions as input and generates D2 (rule-enriched) descriptions as output.
 
-**Requirements**: GPU Linux machine, Python 3.10, separate conda environment with VERL framework.
+**Requirements**: GPU machine (Linux or Windows), Python 3.10, separate conda environment with VERL framework.
 
 ##### 6.1 Environment Setup
 ```bash

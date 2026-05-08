@@ -1,5 +1,5 @@
 """
-python main_select.py --eval_results_folders ../FunctionWrapper/experiments_track/D0_agent_20251121_193228/* --mcp_yaml_path ../FunctionWrapper/eval/StableToolBench_D0_by_agent ../FunctionWrapper/eval/StableToolBench --tool_root_dir ../FunctionWrapper/StableToolBench/data/toolenv/tools/ --output_path ../FunctionWrapper/tmp --debug
+python main_select.py --tool_traces_path ../FunctionWrapper/experiments_track/D0_agent_20251121_193228/* --mcp_yaml_path ../FunctionWrapper/eval/StableToolBench_D0_by_agent ../FunctionWrapper/eval/StableToolBench --tool_root_dir ../FunctionWrapper/StableToolBench/data/toolenv/tools/ --output_path ../FunctionWrapper/tmp --debug
 
 This script is used to select the health tools.
 """
@@ -50,7 +50,7 @@ def main():
     parser = argparse.ArgumentParser(description="Run TMDB step-wise evaluation")
 
     parser = add_FunctionWrapper_args(parser)
-    parser.add_argument("--eval_results_folders", nargs="+", type=str, required=True, help="Directory path to tools usage logs")
+    parser.add_argument("--tool_traces_path", nargs="+", type=str, required=True, help="Directory path to tools usage traces, including which APIs were called, which succeeded (i.e. healthy) and which threw errors (i.e. unhealthy).")
     date_time = datetime.now().strftime("%Y%m%d_%H%M%S")
     parser.add_argument("--output_path", type=str, default=f"../../data/tools_mcp_yaml_annotated_{date_time}", help="the folder to save the output (default: ../../data/tools_mcp_yaml_annotated_<timestamp>)")
     # mcp_yaml_path will be overridden
@@ -66,7 +66,7 @@ def main():
     all_json_paths = load_json_paths(args.tool_root_dir) # dict[(category_name, tool_name)] -> json_file
     # read all eval result folders and collect all mcp logs, with the corresponding mcp yaml file path
     # output: dict[mcp_yaml_path] -> list[mcp_log]
-    mcp_logs = load_mcp_logs(args.eval_results_folders, all_json_paths)
+    mcp_logs = load_mcp_logs(args.tool_traces_path, all_json_paths)
     print(termcolor.colored(f"Loaded {len(mcp_logs)} mcp logs by mcp yaml file.", "green"))
 
     # Per each mcp yaml file, we first build a dummy query file such that the tool manager and env can be built
