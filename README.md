@@ -158,7 +158,7 @@ cp .env.example .env
 **Arguments**
 | Argument | Required | Default | Description |
 |----------|----------|---------|-------------|
-| `--tool_traces_path` | Yes | `None` | Directory path to tools usage traces, including which APIs were called, which succeeded (i.e. healthy) and which threw errors (i.e. unhealthy). |
+| `--tool_usage_path` | Yes | `None` | Directory path to tool usage logs, including which APIs were called, which succeeded (i.e. healthy) and which threw errors (i.e. unhealthy). |
 | `--mcp_yaml_path` | Yes | `None` | Directory path to raw tools mcp yamls |
 | `--tool_root_dir` | Yes | `None` | Directory path to tools API definitions |
 | `--openai_api_key` | No | `None` | API key for LLM calls using OpenAI models. Must either be provided as CLI arg or already exist as OPENAI_API_KEY env variable |
@@ -170,7 +170,7 @@ cp .env.example .env
 cd src/tool_annotator
 
 python main_select.py \
-  --tool_traces_path data/StableToolBench/tools_usage/ \
+  --tool_usage_path data/StableToolBench/tools_usage/ \
   --mcp_yaml_path data/StableToolBench/tools_mcp_yaml_raw/ \
   --tool_root_dir data/StableToolBench/tools_api/ \
   --model_name  "gpt-4.1-2025-04-14" \

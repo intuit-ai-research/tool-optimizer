@@ -1,5 +1,5 @@
 """
-python main_rewrite.py --tool_traces_path ../FunctionWrapper/experiments_track/20251115_031551/StableToolBench/* --mcp_yaml_path ../FunctionWrapper/eval/StableToolBench --tool_root_dir ../FunctionWrapper/StableToolBench/data/toolenv/tools/ --output_folder ../FunctionWrapper/outputs
+python main_rewrite.py --tool_usage_path ../FunctionWrapper/experiments_track/20251115_031551/StableToolBench/* --mcp_yaml_path ../FunctionWrapper/eval/StableToolBench --tool_root_dir ../FunctionWrapper/StableToolBench/data/toolenv/tools/ --output_folder ../FunctionWrapper/outputs
 """
 import argparse
 import os, sys
@@ -100,9 +100,9 @@ def is_valid_eval_result(eval_result_path):
     return True
 
 
-def load_mcp_logs_under_one_folder(tool_traces_path: str, all_json_paths: Dict[Tuple[str, str], Path]):
+def load_mcp_logs_under_one_folder(tool_usage_path: str, all_json_paths: Dict[Tuple[str, str], Path]):
     # read logs, along with its query id
-    mcp_log_path = Path(tool_traces_path) / "mcp_call_log.jsonl"
+    mcp_log_path = Path(tool_usage_path) / "mcp_call_log.jsonl"
     logs_under_one_folder = []
     mcp_logs_under_one_folder = defaultdict[Tuple[str, str], List[Dict]](list)
     with open(mcp_log_path, "r") as f:
@@ -112,7 +112,7 @@ def load_mcp_logs_under_one_folder(tool_traces_path: str, all_json_paths: Dict[T
             logs_under_one_folder.append(log)
     # read the queries, and find the query with the same query id. this leads to the category and tool name
     # read "run_parameters.json"
-    with open(Path(tool_traces_path) / "run_parameters.json", "r") as f:
+    with open(Path(tool_usage_path) / "run_parameters.json", "r") as f:
         run_parameters = json.load(f)
     # use the dataset to find the corresponding query file
     queries_path = Path(run_parameters["dataset"])
@@ -164,16 +164,16 @@ def prune_tools_in_query(category_name: str, tool_name: str, all_json_paths: Dic
     return query_copy
 
 
-def load_mcp_logs(tool_traces_paths: List[str], all_json_paths: Dict[Tuple[str, str], Path]) -> Dict[Tuple[str, str], List[Dict]]:
+def load_mcp_logs(tool_usage_paths: List[str], all_json_paths: Dict[Tuple[str, str], Path]) -> Dict[Tuple[str, str], List[Dict]]:
     mcp_logs = defaultdict[Tuple[str, str], List[Dict]](list)
-    if tool_traces_paths is None:
+    if tool_usage_paths is None:
         return mcp_logs
     # If a single directory is passed, expand it into its subdirectories
-    if len(tool_traces_paths) == 1 and Path(tool_traces_paths[0]).is_dir():
-        parent = Path(tool_traces_paths[0])
+    if len(tool_usage_paths) == 1 and Path(tool_usage_paths[0]).is_dir():
+        parent = Path(tool_usage_paths[0])
         if not (parent / "evaluation_statistics.json").exists():
-            tool_traces_paths = sorted(str(p) for p in parent.iterdir() if p.is_dir())
-    for trace_path in tool_traces_paths:
+            tool_usage_paths = sorted(str(p) for p in parent.iterdir() if p.is_dir())
+    for trace_path in tool_usage_paths:
         if is_valid_eval_result(trace_path):
             mcp_logs_under_one_folder = load_mcp_logs_under_one_folder(trace_path, all_json_paths)
             for (category_name, tool_name), logs in mcp_logs_under_one_folder.items():
@@ -185,7 +185,7 @@ def main():
     parser = argparse.ArgumentParser(description="Run TMDB step-wise evaluation")
 
     parser = add_FunctionWrapper_args(parser)
-    parser.add_argument("--tool_traces_path", nargs="+", type=str, help="Directory path to tools usage traces, including which APIs were called, which succeeded (i.e. healthy) and which threw errors (i.e. unhealthy).")
+    parser.add_argument("--tool_usage_path", nargs="+", type=str, help="Directory path to tools usage traces, including which APIs were called, which succeeded (i.e. healthy) and which threw errors (i.e. unhealthy).")
     parser.add_argument("--output_folder", type=str, help="the folder to save the output")
     # mcp_yaml_path will be overridden
     args = parser.parse_args()
@@ -202,7 +202,7 @@ def main():
     all_json_paths = load_json_paths(args.tool_root_dir) # dict[(category_name, tool_name)] -> json_file
     # read all eval result folders and collect all mcp logs, with the corresponding mcp yaml file path
     # output: dict[mcp_yaml_path] -> list[mcp_log]
-    mcp_logs = load_mcp_logs(args.tool_traces_path, all_json_paths)
+    mcp_logs = load_mcp_logs(args.tool_usage_path, all_json_paths)
     # Rebuild the mcp_logs,only collect logs with failed api calls
     for key, logs in mcp_logs.items():
         logs_failed = [log for log in logs if log["response"]["success"] == False]
