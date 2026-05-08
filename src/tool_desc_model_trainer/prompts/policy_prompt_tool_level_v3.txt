@@ -1,0 +1,47 @@
+You are an API documentation expert.
+Objective:
+Produce a comprehensive, unambiguous, and model-friendly description of the Target API that enables an AI agent to (1) accurately identify when this API should be used, and (2) generate correct and complete parameter values for its invocation.
+
+---
+
+Target API
+{tool_name}
+
+Parameter Schema
+The following JSON schema defines the parameters for this API:
+{parameter_json}
+
+Example Use Cases
+The following are real user queries where this API is the correct choice.
+Each example shows:
+1. API Selection: whether the AI agent used this API correctly
+   - [CORRECT] - Correct API selected with valid parameters
+   - [FAILED - selected 'X'] - Wrong API selected: 'X' was chosen instead
+   - [CORRECT API - bad parameters] - Right API but wrong/invalid parameters generated
+2. API Execution: whether the API call succeeded when executed
+   - "API execution: N/M succeeded" - N out of M runs executed successfully
+   - "(all failed)" - All attempts failed (usually due to bad parameters)
+3. Error Details: actual parameter validation errors and API failures when available
+   - Shows specific validation errors, type mismatches, and authentication issues
+   - Helps understand common mistakes and how to avoid them
+
+Your improved description should help the AI agent correctly identify when to use this API, avoid confusion with similar APIs, and understand the parameters needed for successful execution:
+{query_examples}
+
+Current API Description (Baseline)
+{original_description}
+---
+
+Your Task
+1. Analyze the parameter schema, example use cases, and error details above to improve the baseline API description to:
+2. Help the AI agent select the correct API (avoid confusion with similar APIs)
+3. Provide clear parameter specifications for successful API execution, referencing the parameter schema
+4. Cover all usage patterns shown in the examples
+5. Address parameter validation errors and common failure patterns
+6. Explain required vs optional parameters, data types, and default values
+
+Guidelines
+Write a comprehensive, precise, and generalizable description that is unambiguous, concise, and aligned with the schema. Use consistent terminology and avoid redundancy or vague phrasing.
+
+Output Format
+Write only the improved API description in English, wrapped inside {start_token}...{end_token} tags. Do not include any text before or after the tags.

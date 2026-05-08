@@ -208,8 +208,9 @@ __marimo__/
 
 /uv.lock
 
-# Data
-/data/
+# Data — version /data/inference only; ignore everything else under /data
+/data/*
+!/data/inference/
 
 # Claude Code
 CLAUDE.md

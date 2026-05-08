@@ -1,0 +1,456 @@
+prompt_template,prompt,tool_name,parameters,original_description
+"You are an API documentation specialist.
+
+Rewrite the API description so an AI agent can:
+1) Decide when to use this API
+2) Generate valid parameters
+
+Inputs:
+- API name: {tool_name}
+- Parameter schema: {parameter_json}
+- Baseline description: {original_description}
+
+Infer (do not output):
+- When to use vs not use this API
+- Required vs optional parameters
+- Parameter meanings and constraints
+- Cross-parameter dependencies or exclusions
+- Common parameter mistakes
+  - no examples are provided, infer from the schema and baseline description only
+
+Write a clear API description that:
+- States when to use and NOT use the API
+- Does not invent or reference non-provided APIs
+- Explains each parameter's meaning, type, required/optional status, constraints, and defaults
+- Describes likely validation failures and how to avoid them
+- Abstracts patterns into general rules
+- Does not restate the full schema verbatim
+- Does not mention whether examples were provided
+
+You may replace the baseline description entirely.
+
+Output ONLY valid JSON (no markdown, no code blocks):
+{{""description"": ""<your improved API description here>""}}
+","You are an API documentation specialist.
+
+Rewrite the API description so an AI agent can:
+1) Decide when to use this API
+2) Generate valid parameters
+
+Inputs:
+- API name: Reels Downloader
+- Parameter schema: {""parameters"": {""link"": {""type"": ""str"", ""required"": true, ""description"": ""The full URL of a public Instagram reel or post to download. Only public reels and posts are supported.""}}, ""metadata"": {""endpoint"": ""/n/"", ""method"": ""GET"", ""category"": """"}}
+- Baseline description: You only need to provide the link to your Instagram media, and our API will give you the results in Download links of reels and posts
+
+Infer (do not output):
+- When to use vs not use this API
+- Required vs optional parameters
+- Parameter meanings and constraints
+- Cross-parameter dependencies or exclusions
+- Common parameter mistakes
+  - no examples are provided, infer from the schema and baseline description only
+
+Write a clear API description that:
+- States when to use and NOT use the API
+- Does not invent or reference non-provided APIs
+- Explains each parameter's meaning, type, required/optional status, constraints, and defaults
+- Describes likely validation failures and how to avoid them
+- Abstracts patterns into general rules
+- Does not restate the full schema verbatim
+- Does not mention whether examples were provided
+
+You may replace the baseline description entirely.
+
+Output ONLY valid JSON (no markdown, no code blocks):
+{""description"": ""<your improved API description here>""}
+",Reels Downloader,"{
+    ""parameters"": {
+        ""link"": {
+            ""type"": ""str"",
+            ""required"": true,
+            ""description"": ""The full URL of a public Instagram reel or post to download. Only public reels and posts are supported.""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""/n/"",
+        ""method"": ""GET"",
+        ""category"": """"
+    }
+}","You only need to provide the link to your Instagram media, and our API will give you the results in Download links of reels and posts"
+"You are an API documentation specialist.
+
+Rewrite the API description so an AI agent can:
+1) Decide when to use this API
+2) Generate valid parameters
+
+Inputs:
+- API name: {tool_name}
+- Parameter schema: {parameter_json}
+- Baseline description: {original_description}
+
+Infer (do not output):
+- When to use vs not use this API
+- Required vs optional parameters
+- Parameter meanings and constraints
+- Cross-parameter dependencies or exclusions
+- Common parameter mistakes
+  - no examples are provided, infer from the schema and baseline description only
+
+Write a clear API description that:
+- States when to use and NOT use the API
+- Does not invent or reference non-provided APIs
+- Explains each parameter's meaning, type, required/optional status, constraints, and defaults
+- Describes likely validation failures and how to avoid them
+- Abstracts patterns into general rules
+- Does not restate the full schema verbatim
+- Does not mention whether examples were provided
+
+You may replace the baseline description entirely.
+
+Output ONLY valid JSON (no markdown, no code blocks):
+{{""description"": ""<your improved API description here>""}}
+","You are an API documentation specialist.
+
+Rewrite the API description so an AI agent can:
+1) Decide when to use this API
+2) Generate valid parameters
+
+Inputs:
+- API name: Weather Forecast API
+- Parameter schema: {""parameters"": {""location"": {""type"": ""str"", ""required"": true, ""description"": ""City name or coordinates""}, ""days"": {""type"": ""int"", ""required"": false, ""description"": ""Number of days for forecast (1-14)""}, ""units"": {""type"": ""str"", ""required"": false, ""description"": ""Temperature units: metric or imperial""}}, ""metadata"": {""endpoint"": ""/forecast"", ""method"": ""GET"", ""category"": ""weather""}}
+- Baseline description: Get weather forecast for any location
+
+Infer (do not output):
+- When to use vs not use this API
+- Required vs optional parameters
+- Parameter meanings and constraints
+- Cross-parameter dependencies or exclusions
+- Common parameter mistakes
+  - no examples are provided, infer from the schema and baseline description only
+
+Write a clear API description that:
+- States when to use and NOT use the API
+- Does not invent or reference non-provided APIs
+- Explains each parameter's meaning, type, required/optional status, constraints, and defaults
+- Describes likely validation failures and how to avoid them
+- Abstracts patterns into general rules
+- Does not restate the full schema verbatim
+- Does not mention whether examples were provided
+
+You may replace the baseline description entirely.
+
+Output ONLY valid JSON (no markdown, no code blocks):
+{""description"": ""<your improved API description here>""}
+",Weather Forecast API,"{
+    ""parameters"": {
+        ""location"": {
+            ""type"": ""str"",
+            ""required"": true,
+            ""description"": ""City name or coordinates""
+        },
+        ""days"": {
+            ""type"": ""int"",
+            ""required"": false,
+            ""description"": ""Number of days for forecast (1-14)""
+        },
+        ""units"": {
+            ""type"": ""str"",
+            ""required"": false,
+            ""description"": ""Temperature units: metric or imperial""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""/forecast"",
+        ""method"": ""GET"",
+        ""category"": ""weather""
+    }
+}",Get weather forecast for any location
+"You are an API documentation specialist.
+
+Rewrite the API description so an AI agent can:
+1) Decide when to use this API
+2) Generate valid parameters
+
+Inputs:
+- API name: {tool_name}
+- Parameter schema: {parameter_json}
+- Baseline description: {original_description}
+
+Infer (do not output):
+- When to use vs not use this API
+- Required vs optional parameters
+- Parameter meanings and constraints
+- Cross-parameter dependencies or exclusions
+- Common parameter mistakes
+  - no examples are provided, infer from the schema and baseline description only
+
+Write a clear API description that:
+- States when to use and NOT use the API
+- Does not invent or reference non-provided APIs
+- Explains each parameter's meaning, type, required/optional status, constraints, and defaults
+- Describes likely validation failures and how to avoid them
+- Abstracts patterns into general rules
+- Does not restate the full schema verbatim
+- Does not mention whether examples were provided
+
+You may replace the baseline description entirely.
+
+Output ONLY valid JSON (no markdown, no code blocks):
+{{""description"": ""<your improved API description here>""}}
+","You are an API documentation specialist.
+
+Rewrite the API description so an AI agent can:
+1) Decide when to use this API
+2) Generate valid parameters
+
+Inputs:
+- API name: Email Sender
+- Parameter schema: {""parameters"": {""to"": {""type"": ""list"", ""required"": true, ""description"": ""List of recipient email addresses""}, ""subject"": {""type"": ""str"", ""required"": true, ""description"": ""Email subject line""}, ""body"": {""type"": ""str"", ""required"": true, ""description"": ""Email body content""}, ""attachments"": {""type"": ""list"", ""required"": false, ""description"": ""List of file URLs to attach""}, ""cc"": {""type"": ""list"", ""required"": false, ""description"": ""CC recipients""}}, ""metadata"": {""endpoint"": ""/send"", ""method"": ""POST"", ""category"": ""email""}}
+- Baseline description: Send emails with optional attachments and CC
+
+Infer (do not output):
+- When to use vs not use this API
+- Required vs optional parameters
+- Parameter meanings and constraints
+- Cross-parameter dependencies or exclusions
+- Common parameter mistakes
+  - no examples are provided, infer from the schema and baseline description only
+
+Write a clear API description that:
+- States when to use and NOT use the API
+- Does not invent or reference non-provided APIs
+- Explains each parameter's meaning, type, required/optional status, constraints, and defaults
+- Describes likely validation failures and how to avoid them
+- Abstracts patterns into general rules
+- Does not restate the full schema verbatim
+- Does not mention whether examples were provided
+
+You may replace the baseline description entirely.
+
+Output ONLY valid JSON (no markdown, no code blocks):
+{""description"": ""<your improved API description here>""}
+",Email Sender,"{
+    ""parameters"": {
+        ""to"": {
+            ""type"": ""list"",
+            ""required"": true,
+            ""description"": ""List of recipient email addresses""
+        },
+        ""subject"": {
+            ""type"": ""str"",
+            ""required"": true,
+            ""description"": ""Email subject line""
+        },
+        ""body"": {
+            ""type"": ""str"",
+            ""required"": true,
+            ""description"": ""Email body content""
+        },
+        ""attachments"": {
+            ""type"": ""list"",
+            ""required"": false,
+            ""description"": ""List of file URLs to attach""
+        },
+        ""cc"": {
+            ""type"": ""list"",
+            ""required"": false,
+            ""description"": ""CC recipients""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""/send"",
+        ""method"": ""POST"",
+        ""category"": ""email""
+    }
+}",Send emails with optional attachments and CC
+"You are an API documentation specialist.
+
+Rewrite the API description so an AI agent can:
+1) Decide when to use this API
+2) Generate valid parameters
+
+Inputs:
+- API name: {tool_name}
+- Parameter schema: {parameter_json}
+- Baseline description: {original_description}
+
+Infer (do not output):
+- When to use vs not use this API
+- Required vs optional parameters
+- Parameter meanings and constraints
+- Cross-parameter dependencies or exclusions
+- Common parameter mistakes
+  - no examples are provided, infer from the schema and baseline description only
+
+Write a clear API description that:
+- States when to use and NOT use the API
+- Does not invent or reference non-provided APIs
+- Explains each parameter's meaning, type, required/optional status, constraints, and defaults
+- Describes likely validation failures and how to avoid them
+- Abstracts patterns into general rules
+- Does not restate the full schema verbatim
+- Does not mention whether examples were provided
+
+You may replace the baseline description entirely.
+
+Output ONLY valid JSON (no markdown, no code blocks):
+{{""description"": ""<your improved API description here>""}}
+","You are an API documentation specialist.
+
+Rewrite the API description so an AI agent can:
+1) Decide when to use this API
+2) Generate valid parameters
+
+Inputs:
+- API name: Image Resizer
+- Parameter schema: {""parameters"": {""image_url"": {""type"": ""str"", ""required"": true, ""description"": ""URL of the image to resize. Supports JPEG, PNG, GIF, WebP formats""}, ""width"": {""type"": ""int"", ""required"": true, ""description"": ""Target width in pixels (1-4000)""}, ""height"": {""type"": ""int"", ""required"": true, ""description"": ""Target height in pixels (1-4000)""}, ""maintain_aspect_ratio"": {""type"": ""bool"", ""required"": false, ""description"": ""Whether to maintain aspect ratio when resizing""}}, ""metadata"": {""endpoint"": ""/resize"", ""method"": ""POST"", ""category"": ""image""}}
+- Baseline description: Resize images to your desired dimensions
+
+Infer (do not output):
+- When to use vs not use this API
+- Required vs optional parameters
+- Parameter meanings and constraints
+- Cross-parameter dependencies or exclusions
+- Common parameter mistakes
+  - no examples are provided, infer from the schema and baseline description only
+
+Write a clear API description that:
+- States when to use and NOT use the API
+- Does not invent or reference non-provided APIs
+- Explains each parameter's meaning, type, required/optional status, constraints, and defaults
+- Describes likely validation failures and how to avoid them
+- Abstracts patterns into general rules
+- Does not restate the full schema verbatim
+- Does not mention whether examples were provided
+
+You may replace the baseline description entirely.
+
+Output ONLY valid JSON (no markdown, no code blocks):
+{""description"": ""<your improved API description here>""}
+",Image Resizer,"{
+    ""parameters"": {
+        ""image_url"": {
+            ""type"": ""str"",
+            ""required"": true,
+            ""description"": ""URL of the image to resize. Supports JPEG, PNG, GIF, WebP formats""
+        },
+        ""width"": {
+            ""type"": ""int"",
+            ""required"": true,
+            ""description"": ""Target width in pixels (1-4000)""
+        },
+        ""height"": {
+            ""type"": ""int"",
+            ""required"": true,
+            ""description"": ""Target height in pixels (1-4000)""
+        },
+        ""maintain_aspect_ratio"": {
+            ""type"": ""bool"",
+            ""required"": false,
+            ""description"": ""Whether to maintain aspect ratio when resizing""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""/resize"",
+        ""method"": ""POST"",
+        ""category"": ""image""
+    }
+}",Resize images to your desired dimensions
+"You are an API documentation specialist.
+
+Rewrite the API description so an AI agent can:
+1) Decide when to use this API
+2) Generate valid parameters
+
+Inputs:
+- API name: {tool_name}
+- Parameter schema: {parameter_json}
+- Baseline description: {original_description}
+
+Infer (do not output):
+- When to use vs not use this API
+- Required vs optional parameters
+- Parameter meanings and constraints
+- Cross-parameter dependencies or exclusions
+- Common parameter mistakes
+  - no examples are provided, infer from the schema and baseline description only
+
+Write a clear API description that:
+- States when to use and NOT use the API
+- Does not invent or reference non-provided APIs
+- Explains each parameter's meaning, type, required/optional status, constraints, and defaults
+- Describes likely validation failures and how to avoid them
+- Abstracts patterns into general rules
+- Does not restate the full schema verbatim
+- Does not mention whether examples were provided
+
+You may replace the baseline description entirely.
+
+Output ONLY valid JSON (no markdown, no code blocks):
+{{""description"": ""<your improved API description here>""}}
+","You are an API documentation specialist.
+
+Rewrite the API description so an AI agent can:
+1) Decide when to use this API
+2) Generate valid parameters
+
+Inputs:
+- API name: Database Query API
+- Parameter schema: {""parameters"": {""query"": {""type"": ""str"", ""required"": true, ""description"": ""Search query text""}, ""filters"": {""type"": ""dict"", ""required"": false, ""description"": ""Filter criteria including date_range, status, category""}, ""sort_by"": {""type"": ""str"", ""required"": false, ""description"": ""Sort field: relevance, created_at, updated_at, or title""}, ""limit"": {""type"": ""int"", ""required"": false, ""description"": ""Maximum number of results (1-100)""}, ""offset"": {""type"": ""int"", ""required"": false, ""description"": ""Number of results to skip for pagination""}}, ""metadata"": {""endpoint"": ""/query"", ""method"": ""POST"", ""category"": ""database""}}
+- Baseline description: Query database with filters and sorting
+
+Infer (do not output):
+- When to use vs not use this API
+- Required vs optional parameters
+- Parameter meanings and constraints
+- Cross-parameter dependencies or exclusions
+- Common parameter mistakes
+  - no examples are provided, infer from the schema and baseline description only
+
+Write a clear API description that:
+- States when to use and NOT use the API
+- Does not invent or reference non-provided APIs
+- Explains each parameter's meaning, type, required/optional status, constraints, and defaults
+- Describes likely validation failures and how to avoid them
+- Abstracts patterns into general rules
+- Does not restate the full schema verbatim
+- Does not mention whether examples were provided
+
+You may replace the baseline description entirely.
+
+Output ONLY valid JSON (no markdown, no code blocks):
+{""description"": ""<your improved API description here>""}
+",Database Query API,"{
+    ""parameters"": {
+        ""query"": {
+            ""type"": ""str"",
+            ""required"": true,
+            ""description"": ""Search query text""
+        },
+        ""filters"": {
+            ""type"": ""dict"",
+            ""required"": false,
+            ""description"": ""Filter criteria including date_range, status, category""
+        },
+        ""sort_by"": {
+            ""type"": ""str"",
+            ""required"": false,
+            ""description"": ""Sort field: relevance, created_at, updated_at, or title""
+        },
+        ""limit"": {
+            ""type"": ""int"",
+            ""required"": false,
+            ""description"": ""Maximum number of results (1-100)""
+        },
+        ""offset"": {
+            ""type"": ""int"",
+            ""required"": false,
+            ""description"": ""Number of results to skip for pagination""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""/query"",
+        ""method"": ""POST"",
+        ""category"": ""database""
+    }
+}",Query database with filters and sorting

@@ -130,7 +130,7 @@ build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
 packages = [
-    "src/agent_tool_annotator",
+    "src/tool_annotator",
     "src/agent_tool_optimizer",
     "src/tool_desc_improve_tracefree",
     "src/tool_exec_tracer",

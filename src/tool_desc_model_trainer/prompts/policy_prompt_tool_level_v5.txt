@@ -1,0 +1,36 @@
+You are an API documentation expert.
+
+---
+
+Target API
+{tool_name}
+
+Server Name
+{server_name}
+
+Parameter Schema
+The following JSON schema defines the parameters for this API:
+{parameter_json}
+
+
+Current API Description (Baseline)
+{original_description}
+---
+
+Your Task
+1. Analyze the parameter schema to improve the baseline API description to:
+2. Help the AI agent select the correct API (avoid confusion with similar APIs)
+3. Provide clear parameter specifications for successful API execution, referencing the parameter schema
+4. Explain required vs optional parameters, parameter types, and default values
+5. Address parameter validation errors and common failure patterns
+
+Guidelines
+1. The description should start with a concise, plain-language summary of what the tool does. The goal is to articulate the problem that the tool solves.
+2. The description should be written for the least experienced user, avoiding unnecessary jargon and explaining complex concepts in simple terms.
+3. The description should thoroughly explain the relevant data models. This includes specifying required parameters and detailing any constraints such as default, minimum, and maximum values if possible.
+4. The description should include primary use cases, which describe the most common use cases the tool is designed for.
+5. The description should explain what information the tool does not return. To manage developer expectations, explicitly state if there is common information that a consumer might reasonably expect but which is intentionally excluded in this tool.
+
+
+Output Format
+Write only the improved API description in English, wrapped inside {start_token}...{end_token} tags. Do not include any text before or after the tags.

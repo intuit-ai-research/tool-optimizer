@@ -19,10 +19,12 @@ Inference runs a language model over a prompt dataset and logs model responses. 
   - If using **Hugging Face** for inference: `uv sync --active --no-install-project`
 - Start virtual environment: `source .venv/bin/activate` 
 
-### CLI
+### CLI Usage
 
-Entry point: `src/agent_tool_optimizer/inference_main.py`
+**Entry point**
+> `src/agent_tool_optimizer/inference_main.py`
 
+**Arguments**
 | Argument | Required | Default | Description |
 |----------|----------|---------|-------------|
 | `--model_name` | Yes | `intuit/agent-tool-optimizer` | Hugging Face model id or local path (e.g. `/opt/ml/model`) |
@@ -30,22 +32,35 @@ Entry point: `src/agent_tool_optimizer/inference_main.py`
 | `--inference_engine` | No | `vllm` | Engine: `vllm` or `hf` |
 | `--hf_access_token` | No | `None` | Hugging Face access token for authentication (required for gated models) |
 
-**Examples**
+**Data**
+- **Example Data:** Example tool descriptions and prompts are available by running `src/utils/pull_hf_data.py` (pulled under `inference/`). See [Training Data](#training-data-option-1---download-existing-example-training-data) for more info.
+- **CSV file**: Pass `--input_data_path path/to/file.csv`. The file must be comma-delimited with columns: `tool_name`, `parameters`, `original_description`.
+- **Local / demo**: If no `input_data_path` is provided, `PromptsBuilder` uses built-in demo prompts (e.g. tool descriptions and parameters) from `inference/application/prompts_builder.py`.
 
+**Example Usage**
 ```bash
+# Hugging Face engine with gated model and access token
+python src/agent_tool_optimizer/inference_main.py \
+  --model_name "intuit/agent-tool-optimizer" \ 
+  --input_data_path data/inference/tool_descs.example.csv \ 
+  --hf_access_token <your_token_here> \ 
+  --inference_engine "hf"
+
 # vLLM (default) with a local model and a CSV data file
-python src/agent_tool_optimizer/inference_main.py --model_name /opt/ml/model --input_data_path data/inference/tool_descs.example.csv
+python src/agent_tool_optimizer/inference_main.py \
+  --model_name /opt/ml/model \ 
+  --input_data_path data/inference/tool_descs.example.csv
 
 # Hugging Face engine with a Hub model
-python src/agent_tool_optimizer/inference_main.py --model_name Qwen/Qwen3-8B --inference_engine hf --input_data_path data/inference/tool_descs.example.csv
-
-# Using a gated model with Hugging Face access token
-python src/agent_tool_optimizer/inference_main.py --model_name meta-llama/Llama-3.1-8B --input_data_path data/inference/tool_descs.example.csv --hf_access_token hf_your_token_here
+python src/agent_tool_optimizer/inference_main.py \
+  --model_name Qwen/Qwen3-8B \
+  --input_data_path data/inference/tool_descs.example.csv \
+  --inference_engine "hf"
 ```
 
 Set `PYTHONPATH` to include `src` (e.g. `export PYTHONPATH=/path/to/project/src`).
 
-### Docker
+### Docker Usage
 
 - **Build** (from project root):
 
@@ -65,12 +80,7 @@ Set `PYTHONPATH` to include `src` (e.g. `export PYTHONPATH=/path/to/project/src`
 
 The image uses the Dockerfile’s conda env, installs PyTorch (CUDA 12.6) and the `vllm` extra, and runs `entrypoint.sh`.
 
-### Dataset
-
-- **CSV file**: Pass `--input_data_path path/to/file.csv`. The file must be comma-delimited with columns: `tool_name`, `parameters`, `original_description`.
-- **Local / demo**: If no `input_data_path` is provided, `PromptsBuilder` uses built-in demo prompts (e.g. tool descriptions and parameters) from `inference/application/prompts_builder.py`.
-
-### Components
+### Key Components
 
 - **`src/agent_tool_optimizer/inference_main.py`** — Parses CLI, selects engine (vLLM or HF), runs inference.
 - **`src/agent_tool_optimizer/inference/application/vllm_inference.py`** — vLLM backend; configurable sampling (max_tokens, temperature, top_p, top_k).
@@ -94,7 +104,7 @@ To retrieve that data, execute `python src/utils/pull_hf_data.py` using the foll
 | `--data_dir` | No | `None` | Optional. Pulls only specific directory from HF repo |
 | `--output_path` | No | `"../../data"` | Local path where to store files pulled from HF repo |
 
-#### Training Data (Option 2) - Generate training data using pipeline
+### Training Data (Option 2) - Generate training data using pipeline
 
 The pipeline has **three main stages** that progressively improves tool descriptions:
 
@@ -125,11 +135,7 @@ source .venv/bin/activate
 # Configure environment variables (first time only)
 cp .env.example .env
 # Edit .env — key fields:
-#   PYTHONPATH=<path_to_StableToolBench>:${PYTHONPATH}
 #   TOOLBENCH_KEY=<your_toolbench_key>
-#   ROOT_DIR=<path_to_FunctionWrapper>
-#   SKIP_REAL_REQUEST=False
-#   SKIP_SIMULATION=True
 ```
 
 #### Step 1. Annotate tool usage and health signals
@@ -141,10 +147,11 @@ cp .env.example .env
 
 **Purpose**: For each tool, an LLM agent calls the tool's APIs to check health and collect running examples. This produces annotated YAML files with health status and example call/response pairs.
 
-> **Skip this step?** Pre-computed annotations are available using `src/utils/pull_hf_data.py` (pulled as part of `tools_mcp_yaml_annotated/`). You can proceed directly to Step 3 using these, or use the raw D0 YAMLs from (pulled as part of `tools_mcp_yaml_raw/`).
+> **Skip this step?** Pre-computed annotations are available using `src/utils/pull_hf_data.py` (pulled as part of `tools_mcp_yaml_annotated/`). You can proceed directly to Step 3 using these, or use the raw D0 YAMLs from (pulled as part of `tools_mcp_yaml_raw/`). See [Training Data](#training-data-option-1---download-existing-example-training-data) for more info.
 
 
 ##### Step 1.1. Install the CUDA
+
 Check this [link](https://verl.readthedocs.io/en/latest/start/install.html) for more details.
 
 Quick setup if you restart the SageMaker instance:
@@ -207,15 +214,13 @@ pip install --no-deps -e .
 
 Currently, Verl is at commit b9bd00efba253ea90072555c45692054cf703de2.
 
-**TODO: Confirm that this can be removed.**
-
-~~##### Step 1.4. Install the smolagents lib~~
-
-~~pip install "smolagents[toolkit,openai,telemetry,vllm]>=1.23.0" "tqdm>=4.67.1" "termcolor>=3.2.0" "rank-bm25>=0.2.2" "tenacity>=9.1.2" "joblib>=1.5.2"~~
 
 ##### Step 1.4. Execute script to generate output data
 
-TODO: Change arg "tool_root_dir" with "tools_root_dir"
+**Entry point**
+> `src/tool_annotator/main_select.py`
+
+**Arguments**
 | Argument | Required | Default | Description |
 |----------|----------|---------|-------------|
 | `--eval_results_folders` | Yes | `None` | Directory path to tools usage logs |
@@ -225,24 +230,9 @@ TODO: Change arg "tool_root_dir" with "tools_root_dir"
 | `--model_name` | No | `gpt-4.1-2025-04-14` | OpenAI model name to be used for LLM calls |
 | `--output_path` | No | `"../../data/tools_mcp_yaml_annotated_<timestamp>"` | Local path where to store output of annotated tools mcp yamls |
 
+**Example Usage**
 ```bash
-cd src/agent_tool_annotator
-
-python main_select.py \
-  --eval_results_folders <path_to_tool_usage_logs_dir> \
-  --mcp_yaml_path <path_to_tools_mcp_yaml_raws> \
-  --tool_root_dir <path_to_tools_apis> \
-  --openai_api_key <openai_key_str> \
-  --model_name <openai_model_name> \
-  --output_path <path_to_output_dir>
-
-cd ../..
-```
-
-**Example command used** (from history):
-
-```bash
-cd src/agent_tool_annotator
+cd src/tool_annotator
 
 python main_select.py \
   --eval_results_folders data/StableToolBench/tools_usage/ \
@@ -267,8 +257,12 @@ cd ../..
 
 **Purpose**: Transform sparse, vague D0 descriptions into structured, clear D1 descriptions using LLM-based guidelines. No execution data is needed — this is purely prompt-driven improvement.
 
-> **Skip this step?** Pre-computed trace-free and data independent descriptions are available using `src/utils/pull_hf_data.py` (pulled as part of `tools_mcp_yaml_tracefree_desc_improve/`).
+> **Skip this step?** Pre-computed trace-free and data independent descriptions are available using `src/utils/pull_hf_data.py` (pulled as part of `tools_mcp_yaml_tracefree_desc_improve/`). See [Training Data](#training-data-option-1---download-existing-example-training-data) for more info.
 
+**Entry point**
+> `src/tool_desc_improve_tracefree/main_StableToolBench.py`
+
+**Arguments**
 | Argument | Required | Default | Description |
 |----------|----------|---------|-------------|
 | `--mcp_yaml_path` | Yes | `None` | Directory path to raw tools mcp yamls |
@@ -277,23 +271,9 @@ cd ../..
 | `--output_path` | No | `"../../data/StableToolBench/tools_mcp_yaml_desc_improve_tracefree_<timestamp>"` | Local path where to store output of tools mcp yamls with trace-free improved descriptions |
 | `--config` | Yes | -- | Path to config file |
 
+**Example Usage**
 ```bash
-cd src/description_improvement
-
-python main_StableToolBench.py \
-  --mcp_yaml_path <path_to_tools_mcp_yaml_raws> \
-  --openai_api_key <openai_key_str> \
-  --model_name <openai_model_name> \
-  --output_path <path_to_output_dir> \
-  --config <path_to_config_file>
-
-cd ../..
-```
-
-**Actual command used** (from history):
-
-```bash
-cd src/description_improvement
+cd src/tool_desc_improve_tracefree
 
 python main_StableToolBench.py \
   --mcp_yaml_path ../../data/StableToolBench/tools_mcp_yaml_raw \
@@ -313,7 +293,7 @@ This automatically loops through all YAML files under `<path_to_tools_mcp_yaml_r
 
 **Config details** (`StableToolBench.yaml`):
 - Strategy: `generic_llm_guidelines` (data-independent)
-- Model: `gpt-41-2025-04-14-oai` (temperature 0.3)
+- Model: `gpt-4.1-2025-04-14` (temperature 0.3)
 - Prompt: `data_indep_v1.txt`
 
 ---
@@ -328,19 +308,13 @@ This automatically loops through all YAML files under `<path_to_tools_mcp_yaml_r
 
 **Purpose**: Generate realistic, multi-step user queries that exercise the tools. The TOUCAN pipeline converts tool YAMLs to MCP JSON, synthesizes questions via LLM, validates quality, generates agent trajectories, and produces a combined query file.
 
-> **Skip this step?** Synthetic queries using MCP servers with at least 3 tools and generating 24 questions per server are available using `src/utils/pull_hf_data.py` (pulled as part of `tools_synthetic_queries/`).
-
-**New Repo**: `TOUCAN` (branch `main`)
-**Script**: `datagen/run_pipeline.sh`
+> **Skip this step?** Synthetic queries using MCP servers with at least 3 tools and generating 24 questions per server are available using `src/utils/pull_hf_data.py` (pulled as part of `tools_synthetic_queries/`). See [Training Data](#training-data-option-1---download-existing-example-training-data) for more info.
 
 
 ##### Environment setup
 ```bash
 # Exit tool-optimizer directory
-cd ..
-# Pull separate TOUCAN package
-git clone https://github.com/intuit-ai-research/TOUCAN
-cd TOUCAN
+cd src/submodules/TOUCAN
 ```
 
 **OPTION 1: USING UV**
@@ -377,7 +351,10 @@ export MKL_NUM_THREADS=1
 export TOKENIZERS_PARALLELISM=false
 ```
 
+**Entry point**
+> `src/submodules/TOUCAN/datagen/run_pipeline.sh`
 
+**Arguments**
 | Argument | Required | Default | Description |
 |----------|----------|---------|-------------|
 | `--input_dir` | Yes | -- | Input directory for YAML tool specs. Can use annotated files from --output_path of Step 1 or filtered files from --output_path of Step 2 |
@@ -396,7 +373,7 @@ export TOKENIZERS_PARALLELISM=false
 | `--start_vllm_service` | No | `false` | Whether to auto-start a vLLM server (`true` or `false`) |
 
 
-##### Script execution
+**Example Usage**
 ```bash
 cd datagen
 
@@ -409,7 +386,8 @@ cd datagen
   --output_folder ../../tool-optimizer/data/StableToolBench/tools_synthetic_queries
 # Output: ../../tool-optimizer/data/StableToolBench/tools_synthetic_queries/ToolUse_smithery_2508_3tool_1766028185
 
-cd ../../tool-optimizer
+# Return to root
+cd ../../../..
 ```
 
 **Sub-stages** (run automatically by `run_pipeline.sh`):
@@ -426,7 +404,7 @@ For manual step-by-step execution (including optional quality checks in Steps 2-
 
 ---
 
-## Step 4: Synthesized Queries to Execution Traces
+#### Step 4: Synthesized Queries to Execution Traces
 
 > **Diagram mapping (Stage 3: Two-Stage Description Improvement — trace generation)**
 > - **Input**: `Tool Call Queries` (from Step 3) + `Improved Description (D1)` (from Step 2)
@@ -435,11 +413,20 @@ For manual step-by-step execution (including optional quality checks in Steps 2-
 
 **Purpose**: Execute the synthesized queries against the actual tools to produce success/failure execution traces. These traces are used in Step 5 to refine descriptions.
 
-**Directory**: `tool_exec_tracer`
-**Script**: `eval/tmdb/examples/main_tmdb.py`
+##### Step 4.1. Start StableToolBench server
+**Entry point**
+> `src/submodules/StableToolBench/server/main.py`
 
+**Arguments**
+| Argument | Required | Default | Description |
+|----------|----------|---------|-------------|
+| `--tool_root_dir` | Yes | `None` | Directory path to tools API definitions |
+| `--openai_api_key` | No | `None` | API key for LLM calls using OpenAI models. Must either be provided as CLI arg or already exist as OPENAI_API_KEY env variable |
+| `--model_name` | No | `gpt-4.1-2025-04-14` | OpenAI model name to be used for LLM calls |
+
+**Example Usage**
 ```bash
-cd src/tool_exec_tracer/StableToolBench/server 
+cd src/submodules/StableToolBench/server
 
 # Start the StableToolBench server (and leave it running)
 python main.py --openai_api_key "<key>" \
@@ -447,55 +434,28 @@ python main.py --openai_api_key "<key>" \
   --tool_root_dir ../../../../data/StableToolBench/tools_api 
 ```
 
-**In a separate terminal window**
+##### Step 4.2. Start StableToolBench server
 
+**Entry point**
+> `src/tool_exec_tracer/tmdb/examples/main_tmdb.py`
+
+**Example Usage**
+
+*In a separate terminal window*
 ```bash
-cd src/tool_exec_tracer/StableToolBench/server 
+cd src/tool_exec_tracer
 
-cd FunctionWrapper
-
-python eval/tmdb/examples/main_tmdb.py \
-  --config eval/tmdb/configs/tmdb_base.yaml \
-  --dataset <path_to_combined_queries.json> \
-  --mcp_yaml_path description_improvement/results/StableToolBench_D1 \
-  --decompo_mcp_yaml_path description_improvement/results/StableToolBench_D1 \
-  --tool_root_dir StableToolBench/data/toolenv/tools/ \
-  --output_dir experiments/<experiment_name>
-```
-
-**Actual commands used** (from history, chained from Step 3 output):
-
-
-python eval/tmdb/examples/main_tmdb.py \
-  --config eval/tmdb/configs/tmdb_base.yaml \
-  --dataset /Users/csoares1/dev/git-repos/tool-optimizer/data/StableToolBench/tools_synthetic_queries/ToolUse_smithery_198_3tool_1775806399/combined_queries.json \
-  --mcp_yaml_path /Users/csoares1/dev/git-repos/tool-optimizer/data/StableToolBench/tools_mcp_yaml_desc_improve_tracefree \
-  --tool_root_dir /Users/csoares1/dev/git-repos/tool-optimizer/data/StableToolBench/tools_api \
-  --output_dir /Users/csoares1/dev/git-repos/tool-optimizer/data/StableToolBench/tools_exec_traces/20260415_111700 \
+python tmdb/examples/main_tmdb.py \
+  --config tmdb/configs/tmdb_base.yaml \
+  --dataset ../../data/StableToolBench/tools_synthetic_queries/ToolUse_smithery_198_3tool_1775806399/combined_queries.json \
+  --mcp_yaml_path ../../data/StableToolBench/tools_mcp_yaml_desc_improve_tracefree \
+  --tool_root_dir ../../data/StableToolBench/tools_api \
+  --output_dir ../../data/StableToolBench/tools_exec_traces/20260415_111700 \
   --openai_api_key <key> \
   --model_name "gpt-4.1-2025-04-14"
 
-
-
-```bash
-cd FunctionWrapper
-
-# Running synthesized queries from TOUCAN against D1 descriptions (2025-11-12)
-# Input: combined_queries.json from Step 3
-python eval/tmdb/examples/main_tmdb.py \
-  --config eval/tmdb/configs/tmdb_base.yaml \
-  --dataset /path/to/TOUCAN/data/ToolUse_smithery_49350_2tool_1762908421/queries/advertising_as.json \
-  --mcp_yaml_path description_improvement/results/StableToolBench_D1/ \
-  --tool_root_dir StableToolBench/data/toolenv/tools/ \
-  --output_dir experiments/20251112_212230/advertising_as
-
-# Running with standard StableToolBench eval queries using D1 descriptions (2025-11-13)
-python eval/tmdb/examples/main_tmdb.py \
-  --config eval/tmdb/configs/tmdb_base.yaml \
-  --dataset StableToolBench/solvable_queries/test_instruction/G2_instruction.json \
-  --mcp_yaml_path description_improvement/results/StableToolBench_D1/ \
-  --tool_root_dir StableToolBench/data/toolenv/tools/ \
-  --output_dir experiments/20251113_141608_D1_EBL/BM25/baseline/G2_instruction
+# Return to root directory
+cd ../..
 ```
 
 - `--dataset`: The `combined_queries.json` from Step 3, or individual query JSONs from `queries/` subfolder
@@ -509,12 +469,138 @@ python eval/tmdb/examples/main_tmdb.py \
 - `mcp_call_log.jsonl` — raw MCP API call logs
 
 
+---
+
+#### Step 5: D1 to D2 — Trace-Aware Refinement
+
+> **Diagram mapping (Stage 3: Two-Stage Description Improvement — second half)**
+> - **Input**: `Improved Description (D1)` + `(Success & Failure) Execution Traces` (from Step 4) + `Analyze Tool Dependencies`
+> - **Process**: `Trace-Aware Refinement`
+> - **Output**: `Final Description (D2)` (Rule-Enriched, Robust) → `description_improvement/results/StableToolBench_D2/`
+> - **Also produces**: `SFT Training Data`
+
+**Purpose**: Analyze execution traces (successes and failures) to generate rule-enriched D2 descriptions. Uses Explanation-Based Learning (EBL) to extract rules from traces and incorporate them into tool descriptions.
+
+**Entry point**
+> `src/submodules/tool_desc_atomic/main.py`
+
+**Example Usage**
+```bash
+cd src/submodules/tool_desc_atomic
+
+# D1 yamls from Step 2 + execution traces from Step 4 → D2
+python main.py \
+  --yaml_folder ../../data/StableToolBench/tools_mcp_yaml_desc_improve_tracefree \
+  --eval_results_dir ../../data/StableToolBench/tools_exec_traces/20260415_111700 \
+  --output_dir ../../data/StableToolBench/tool_mcp_yaml_desc_atomic
+
+# Return to root directory
+cd ../..
+```
+
+- `--yaml_folder`: D1 YAML files from Step 2
+- `--eval_results_dir`: Execution trace directory from Step 4 (e.g., `tools_exec_traces/20251113_051305/`)
+- `--output_dir`: Where to write the refined D2 YAML files
+
+The script iterates over each eval result subfolder, matches it to the corresponding tool YAML, runs the EBL pipeline (collect samples, generate rules, consolidate rules), and substitutes the improved descriptions.
+
+**Output**: `<output_dir>/<Category>/<tool>.yaml`
 
 
-- Dataset format and preparation
-  - Set your HuggingFace token: `export HF_TOKEN=your_token_here`
-- Training scripts and configs
-- Hardware and environment setup
-- Checkpointing and evaluation
+---
 
-When training is added, usage and examples will be documented here.
+#### Step 6: Supervised Fine-Tuning (SFT)
+
+> **Diagram mapping (Stage 3: Two-Stage Description Improvement — SFT)**
+> - **Input**: `Initial Description (D0)` (as model input) + `Final Description (D2)` (as training target) + `SFT Training Data`
+> - **Process**: Supervised Fine-Tuning
+> - **Output**: Fine-tuned model that generates D2-quality descriptions from D0
+
+**Purpose**: Train a model that takes D0 (sparse) descriptions as input and generates D2 (rule-enriched) descriptions as output.
+
+**Requirements**: GPU Linux machine, Python 3.10, separate conda environment with VERL framework.
+
+##### 6.1 Environment Setup
+```bash
+# Deactivate prev virtual environment
+deactivate
+
+# Go into model training directory
+cd tool_desc_model_trainer
+```
+
+```bash
+conda create -n verl python=3.10
+conda activate verl
+poetry install --sync
+```
+
+If flash attention is not available, reinstall it:
+```bash
+python -m pip uninstall -y flash-attn flash_attn
+python -m pip install --no-cache-dir --no-build-isolation "flash-attn==2.7.4.post1"
+```
+
+The SFT step also uses a local fork of VERL (included as a submodule):
+```
+https://github.com/intuit-ai-research/verl
+```
+
+### 6.2 Data Preprocessing
+
+Prepare training data from D0/D2 descriptions and execution traces:
+
+```bash
+# MODE can be 1/2/3 depending on what you need
+bash scripts/data_proc.sh $MODE
+```
+
+This uses `tools/generate_tool_descriptions_vllm.py` and produces datasets into `data_stb/split2x_yyy/`.
+
+**Data variants**:
+- `w_eval` — training data is `((D0, D0_traces), D2)` (trace-based)
+- `no_eval` — training data is `(D0, D2)` (trace-free)
+- `_inference` — data formatted for inference only
+
+**Prompt templates** (in `prompts/`):
+- Trace-free: `policy_prompt_tool_level_v5.txt`, `policy_prompt_tool_level_v6.txt`
+- Trace-based: `policy_prompt_tool_level_v3.txt`, `policy_prompt_tool_level_v3.5.txt`
+
+To mix trace-free and trace-based data:
+```bash
+bash scripts/run_mix_data.sh
+```
+
+### 6.3 SFT Training
+
+```bash
+bash run_sft_simple.sh
+```
+
+This uses the function in `lib/training_sft.sh`. The checkpoint is saved into the training data folder, e.g.:
+```
+data_stb/split2b_no_eval/dataset/checkpoints_<timestamp>/tool-level-sft-simple-<timestamp>/global_step_105
+```
+
+### 6.4 Inference
+
+Generate tool descriptions from the fine-tuned model for evaluation.
+
+For trace-free inference, the data is at:
+```
+data_stb/split2a_no_eval_inference
+```
+
+For trace-based inference, prepare the data first:
+```bash
+cd scripts
+bash data_proc.sh 4
+# Set EVAL_DIR to the path of D0 traces for split2a
+```
+
+After inference, you get a folder of generated description YAMLs, e.g.:
+```
+eval/split2a_StableToolBench_D1_fix_only2
+```
+
+This can then be evaluated using the standard evaluation pipeline (see Evaluation section below).
