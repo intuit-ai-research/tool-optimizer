@@ -18,6 +18,10 @@ def pull_hf_data(
     script_dir = os.path.dirname(os.path.abspath(__file__))
     output_path = os.path.normpath(os.path.join(script_dir, output_path))
 
+    if not os.path.exists(output_path):
+        log.info(f"Output path '{output_path}' does not exist. Creating it.")
+        os.makedirs(output_path, exist_ok=True)
+
     token = hf_access_token or os.environ.get("HF_TOKEN")
     if not token:
         raise ValueError("No HuggingFace access token provided. Pass --hf_access_token or set the HF_TOKEN environment variable.")

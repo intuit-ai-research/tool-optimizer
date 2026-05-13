@@ -1,0 +1,4892 @@
+tool_name,parameters,original_description
+AdCopy AI - Google Ads AI Text Generation,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""API Key Validation"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}","This endpoint is used only to validate API Keys, it simply returns a status of 200 and a message of 'OK'. 
+The use of this endpoint is Free, and is useful for server-to-server FREE API validation."
+AdCopy AI - Google Ads AI Text Generation,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""20+ Ad Descriptions Generator"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}","Get relevant & Complint Google Ad headlines for SEM and PPC marketers, created by SEM Experts. Results include 10+ ad headlines, and are based on user inputs as well as A.I. Intelligence based on OpenAI's engine. 
+
+**Detailed description:**
+The Headlines generator endpoint uses advanced prompt engineering to analyze user inputs in the form of URL, subject, and important keywords to create high-quality ad headlines that are tailored to the product or service being advertised. By leveraging the advanced capabilities of OpenAI's ChatGPT engine, the endpoint is able to deliver top-of-the-line ad headlines that are optimized for relevance, clarity, and engagement.
+
+**Detailed Technical Documentation:**
+The Headlines generator endpoint of AdCopy AI can be accessed through a GET request, with the following query parameters:
+
+**subject:** Required. A string of between 10 and 60 characters, which represents the ""value proposition"" of the product or service being advertised. The user is advised to provide keywords in a comma-delimited format.
+
+**url:** Required. A string that represents the URL of a page that describes the product or service being advertised. The API will fetch the content from the page and extract relevant keywords to help generate quality ads.
+
+**mostImportantKeywords:** Optional. A string of up to 100 characters, representing the most important keywords about the ad group being advertised. The presence of these keywords in the resulting content is not guaranteed.
+
+**language:** Optional. A string that represents the target audience's language in ISO-2 format (e.g. EN, IT, ES, etc.). The field is currently in alpha testing and may not provide results in the requested language.
+
+**country:** Optional. A string that represents the target audience's country in ISO-2 format (e.g. US, CA, IT, etc.). The field is currently in alpha testing and may not provide country-specific content.
+
+**exampleHeadlines:** Optional. A string of at most 200 characters, representing example headlines that the user may provide to fine-tune the results.
+
+The endpoint will return up to 10 ad headlines that are tailored to the product or service being advertised. The headlines will be optimized for relevance, clarity, and engagement, leveraging the advanced capabilities of OpenAI's ChatGPT engine and Significat Prompt Optimization."
+AdCopy AI - Google Ads AI Text Generation,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""20+ Ad Headlines Generator"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}","Get relevant & Complint Google Ad headlines for SEM and PPC marketers, created by SEM Experts. Results include 10+ ad headlines, and are based on user inputs as well as A.I. Intelligence based on OpenAI's engine. 
+
+**Detailed description:**
+The Headlines generator endpoint uses advanced prompt engineering to analyze user inputs in the form of URL, subject, and important keywords to create high-quality ad headlines that are tailored to the product or service being advertised. By leveraging the advanced capabilities of OpenAI's ChatGPT engine, the endpoint is able to deliver top-of-the-line ad headlines that are optimized for relevance, clarity, and engagement.
+
+**Detailed Technical Documentation:**
+The Headlines generator endpoint of AdCopy AI can be accessed through a GET request, with the following query parameters:
+
+**subject:** Required. A string of between 10 and 60 characters, which represents the ""value proposition"" of the product or service being advertised. The user is advised to provide keywords in a comma-delimited format.
+
+**url:** Required. A string that represents the URL of a page that describes the product or service being advertised. The API will fetch the content from the page and extract relevant keywords to help generate quality ads.
+
+**mostImportantKeywords:** Optional. A string of up to 100 characters, representing the most important keywords about the ad group being advertised. The presence of these keywords in the resulting content is not guaranteed.
+
+**language:** Optional. A string that represents the target audience's language in ISO-2 format (e.g. EN, IT, ES, etc.). The field is currently in alpha testing and may not provide results in the requested language.
+
+**country:** Optional. A string that represents the target audience's country in ISO-2 format (e.g. US, CA, IT, etc.). The field is currently in alpha testing and may not provide country-specific content.
+
+**exampleHeadlines:** Optional. A string of at most 200 characters, representing example headlines that the user may provide to fine-tune the results.
+
+The endpoint will return up to 10 ad headlines that are tailored to the product or service being advertised. The headlines will be optimized for relevance, clarity, and engagement, leveraging the advanced capabilities of OpenAI's ChatGPT engine and Significat Prompt Optimization."
+anadolu,"{
+    ""parameters"": {
+        ""userId"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""(Required) User's Instagram handle or user ID from Instagram"",
+            ""default"": ""nostrud proident qui eu Lorem""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""generateReportPdf"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}", 
+anadolu,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""searchInfluencers"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",Get a list of influencers that match your filters.
+anadolu,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""audienceOverlapReports"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",Check audience (followers) overlap for several influencers. </br> <strong>This feature is not enabled by default.</strong> [Contact us](mailto:hello@modash.io) to unlock it.
+as,"{
+    ""parameters"": {
+        ""customerId"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""The id of the customer object of your account""
+        },
+        ""productId"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""The id of the product this order is for""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""/customers/{customerId}/orders/{productId}/numbers/port"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}","<p>Allows you to port a quantity of your phone numbers into the specified product.</p><p>Use this to port one/more of your phone numbers into the specified product.</p><p>Make a new request if you wish to vary the elements of the order, and use the requestId field to correlate multiple orders together.</p>"
+as,"{
+    ""parameters"": {
+        ""customerId"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""The id of the customer object of your account""
+        },
+        ""productId"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""The id of the product this order is for""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""/customers/{customerId}/orders/{productId}/numbers/change"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}","<p>Allows you to order to modify the numbers listed, only numbers within the country given.</p><p>Use this to change one/more phone numbers of the specified product.</p><p>Make a new request if you wish to vary the elements of the order, and use the requestId field to correlate multiple orders together.</p>"
+as,"{
+    ""parameters"": {
+        ""customerId"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""The id of the customer object of your account""
+        },
+        ""productId"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""The id of the product this order is for""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""/customers/{customerId}/orders/{productId}/numbers/move"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}","<p>Allows you to order to move the numbers listed to a different location within the same country.</p><p>Use this to move one/more phone numbers of the specified product.</p><p>Make a new request if you wish to vary the elements of the order, and use the requestId field to correlate multiple orders together.</p>"
+as,"{
+    ""parameters"": {
+        ""productId"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""The id of the product this order is for""
+        },
+        ""customerId"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""The id of the customer object of your account""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""/customers/{customerId}/orders/{productId}/numbers/delete"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}","<p>Allows you to order toremove the numbers listed from the customer inventory, only numbers within the country given.</p><p>Make a new request if you wish to vary the elements of the order, and use the requestId field to correlate multiple orders together.</p>"
+as,"{
+    ""parameters"": {
+        ""customerId"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""The id of the customer object of your account""
+        },
+        ""productId"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""The id of the product this order is for""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""/customers/{customerId}/orders/{productId}/numbers/range"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}","<p>Allows you to order a quantity of phone numbers of the specified product and in a specified range.</p><p>Use this to order one/more phone numbers of the specified product, where the system will pick matching numbers from a numbers range you give.</p><p>Make a new request if you wish to vary the elements of the order, and use the requestId field to correlate multiple orders together.</p>"
+as,"{
+    ""parameters"": {
+        ""customerId"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""The id of the customer object of your account""
+        },
+        ""productId"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""The id of the product this order is for""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""/customers/{customerId}/orders/{productId}/numbers/any"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}","<p>Allows you to order a quantity of phone numbers of the specified product and let the system choose the numbers.</p><p>Use this to order one/more phone numbers of the specified product, where the system will pick the first available matches.</p><p>Make a new request if you wish to vary the elements of the order, and use the requestId field to correlate multiple orders together.</p>"
+as,"{
+    ""parameters"": {
+        ""customerId"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""The id of the customer object of your account""
+        },
+        ""productId"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""The id of the product this order is for""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""/customers/{customerId}/orders/{productId}/delete"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}","<p>Allows you to order to remove every number of this product customer inventory, only numbers within the country given.</p><p>Make a new request if you wish to vary the elements of the order, and use the requestId field to correlate multiple orders together.</p>"
+as,"{
+    ""parameters"": {
+        ""customerId"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""The id of the customer object of your account""
+        },
+        ""productId"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""The id of the product this order is for""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""/customers/{customerId}/orders/{productId}/numbers/reserve"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}","<p>Allows you to order a quantity of phone numbers of the specified product, numbers that you have already reserved with the system.</p><p>Use this to order numbers that you previously searched for in our inventory and successfully reserved.</p><p>Use the requestId field to correlate multiple orders together.</p>"
+asdfadsf,"{
+    ""parameters"": {
+        ""limit"": {
+            ""type"": ""number"",
+            ""required"": true,
+            ""description"": """"
+        },
+        ""skip"": {
+            ""type"": ""number"",
+            ""required"": true,
+            ""description"": """"
+        },
+        ""category"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": """"
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""Get Products in Category"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}", 
+asdfadsf,"{
+    ""parameters"": {
+        ""id"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": """"
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""Get Order"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}", 
+asdfadsf,"{
+    ""parameters"": {
+        ""skip"": {
+            ""type"": ""number"",
+            ""required"": true,
+            ""description"": """"
+        },
+        ""limit"": {
+            ""type"": ""number"",
+            ""required"": true,
+            ""description"": """"
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""Get Products"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}", 
+asdfadsf,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""Get Categories"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}", 
+asdfadsf,"{
+    ""parameters"": {
+        ""id"": {
+            ""type"": ""number"",
+            ""required"": true,
+            ""description"": """"
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""Get Product"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}", 
+asdfadsf,"{
+    ""parameters"": {
+        ""id"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": """"
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""Add to Order"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}", 
+asdfadsf,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""Create Product"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}", 
+asdfadsf,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""Create Order"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}", 
+Bing Keyword Planner,"{
+    ""parameters"": {
+        ""target_domain"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""The domain name of the target website."",
+            ""default"": ""chewy.com""
+        },
+        ""location_name"": {
+            ""type"": ""string"",
+            ""required"": false,
+            ""description"": ""Name of location.\n\nCan be a Country, Region or City. \n\nExamples: \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\""United States\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"", \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\""Germany\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"", \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\""London,England,United Kingdom\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"""",
+            ""default"": ""United States""
+        },
+        ""device"": {
+            ""type"": ""string"",
+            ""required"": false,
+            ""description"": ""Limits data for a particular device type.\n\nPossible values: *all*, *mobile*, *desktop*, *tablet*\nDefault value: *all*"",
+            ""default"": ""all""
+        },
+        ""language_name"": {
+            ""type"": ""string"",
+            ""required"": false,
+            ""description"": ""Name of language.\n\nExamples: \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\""English\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"", \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\""German\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"", \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\""Spanish\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"""",
+            ""default"": ""English""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""URL Seed"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}","Based on your provided keywords, this endpoint will return up to 3000 suitable keyword recommendations. Set up to 200 keywords and obtain the results that Bing Ads suggests for your query. Using this tool, you may obtain up to 3000 keyword ideas."
+Bing Keyword Planner,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""Search Volume"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",This endpoint will return search volume data for your input keywords. Set up to 200 keywords and get the results.
+Bing Keyword Planner,"{
+    ""parameters"": {
+        ""keywords"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""Comma-separated list of input keywords.\n\nMaximum number of input keywords: 200"",
+            ""default"": ""dog,puppy""
+        },
+        ""device"": {
+            ""type"": ""string"",
+            ""required"": false,
+            ""description"": ""Limits data for a particular device type.\n\nPossible values: *all*, *mobile*, *desktop*, *tablet*\nDefault value: *all*"",
+            ""default"": ""all""
+        },
+        ""location_name"": {
+            ""type"": ""string"",
+            ""required"": false,
+            ""description"": ""Name of location.\n\nCan be a Country, Region or City. \n\nExamples: \\\\\\\\\\\\\\\""United States\\\\\\\\\\\\\\\"", \\\\\\\\\\\\\\\""Germany\\\\\\\\\\\\\\\"", \\\\\\\\\\\\\\\""London,England,United Kingdom\\\\\\\\\\\\\\\"""",
+            ""default"": ""United States""
+        },
+        ""language_name"": {
+            ""type"": ""string"",
+            ""required"": false,
+            ""description"": ""Name of language.\n\nExamples: \\\\\\\\\\\\\\\""English\\\\\\\\\\\\\\\"", \\\\\\\\\\\\\\\""German\\\\\\\\\\\\\\\"", \\\\\\\\\\\\\\\""Spanish\\\\\\\\\\\\\\\"""",
+            ""default"": ""English""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""Keyword Ideas"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}","Based on your provided keywords, this endpoint will return up to 3000 suitable keyword recommendations. Set up to 200 keywords and obtain the results that Bing Ads suggests for your query. Using this tool, you may obtain up to 3000 keyword ideas."
+bobo,"{
+    ""parameters"": {
+        ""petId"": {
+            ""type"": ""number"",
+            ""required"": true,
+            ""description"": ""ID of pet that needs to be updated""
+        },
+        ""name"": {
+            ""type"": ""string"",
+            ""required"": false,
+            ""description"": ""Updated name of the pet""
+        },
+        ""status"": {
+            ""type"": ""string"",
+            ""required"": false,
+            ""description"": ""Updated status of the pet""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""updatePetWithForm"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",
+bobo,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""addPet"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",
+bobo,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""createUsersWithListInput"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",
+bobo,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""placeOrder"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",
+bobo,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""createUser"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",This can only be done by the logged in user.
+bobo,"{
+    ""parameters"": {
+        ""petId"": {
+            ""type"": ""number"",
+            ""required"": true,
+            ""description"": ""ID of pet to update""
+        },
+        ""additionalMetadata"": {
+            ""type"": ""string"",
+            ""required"": false,
+            ""description"": ""Additional data to pass to server""
+        },
+        ""file"": {
+            ""type"": ""binary"",
+            ""required"": false,
+            ""description"": ""file to upload""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""uploadFile"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",
+bobo,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""createUsersWithArrayInput"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",
+catfactprompts,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""uiConfiguration_2"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}", 
+catfactprompts,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""securityConfiguration_1"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}", 
+catfactprompts,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""swaggerResources_3"",
+        ""method"": ""PUT"",
+        ""category"": ""Advertising""
+    }
+}", 
+catfactprompts,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""uiConfiguration_3"",
+        ""method"": ""PUT"",
+        ""category"": ""Advertising""
+    }
+}", 
+catfactprompts,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""uiConfiguration_4"",
+        ""method"": ""DELETE"",
+        ""category"": ""Advertising""
+    }
+}", 
+catfactprompts,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""securityConfiguration_2"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}", 
+catfactprompts,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""uiConfiguration_5"",
+        ""method"": ""PATCH"",
+        ""category"": ""Advertising""
+    }
+}", 
+catfactprompts,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""swaggerResources_1"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}", 
+catfactprompts,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""securityConfiguration_5"",
+        ""method"": ""PATCH"",
+        ""category"": ""Advertising""
+    }
+}", 
+catfactprompts,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""uiConfiguration_1"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}", 
+catfactprompts,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""swaggerResources_2"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}", 
+catfactprompts,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""swaggerResources_5"",
+        ""method"": ""PATCH"",
+        ""category"": ""Advertising""
+    }
+}", 
+catfactprompts,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""swaggerResources_4"",
+        ""method"": ""DELETE"",
+        ""category"": ""Advertising""
+    }
+}", 
+catfactprompts,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""securityConfiguration_4"",
+        ""method"": ""DELETE"",
+        ""category"": ""Advertising""
+    }
+}", 
+catfactprompts,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""securityConfiguration_3"",
+        ""method"": ""PUT"",
+        ""category"": ""Advertising""
+    }
+}", 
+catfactprompts,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""getFacts"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}", 
+Chimp Rewriter,"{
+    ""parameters"": {
+        ""email"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""User\u2019s Chimp Rewriter account email. Note that the user requires a Chimp Rewriter Pro subscription.""
+        },
+        ""apikey"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""User\u2019s API key. Get one on the Chimp Rewriter User Management page.""
+        },
+        ""aid"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""Application ID. Set this to a string (100 charachers or less) to identify your application to the server. At this point, applications do not require registration.""
+        },
+        ""calcworddensity"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": """"
+        },
+        ""minlength"": {
+            ""type"": ""number"",
+            ""required"": false,
+            ""description"": ""The minimum character length for which to calculate word density. If you use 3, 2 letter words would not be included in the results."",
+            ""default"": ""3""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""CalcWordDensity"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",Calculates the word densities of words and phrases in the article.
+Chimp Rewriter,"{
+    ""parameters"": {
+        ""email"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""User\u2019s Chimp Rewriter account email. Note that the user requires a Chimp Rewriter Pro subscription.""
+        },
+        ""apikey"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""User\u2019s API key. Get one on the Chimp Rewriter User Management page.""
+        },
+        ""aid"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""Application ID. Set this to a string (100 charachers or less) to identify your application to the server. At this point, applications do not require registration.""
+        },
+        ""QueryStats"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": """"
+        },
+        ""simple"": {
+            ""type"": ""number"",
+            ""required"": false,
+            ""description"": ""Returns a raw number of how many queries can be made with the account instead of the detailed format described below."",
+            ""default"": ""1""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""QueryStats"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",Returns remaining query quota. Can also be used to test an account.
+Chimp Rewriter,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""TestConnection"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",Tests the connection to the API without user credentials.
+Chimp Rewriter,"{
+    ""parameters"": {
+        ""email"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""User\u2019s Chimp Rewriter account email. Note that the user requires a Chimp Rewriter Pro subscription.""
+        },
+        ""apikey"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""User\u2019s API key. Get one on the Chimp Rewriter User Management page.""
+        },
+        ""aid"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""Application ID. Set this to a string (100 charachers or less) to identify your application to the server. At this point, applications do not require registration.""
+        },
+        ""generatespin"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": """"
+        },
+        ""dontincludeoriginal"": {
+            ""type"": ""number"",
+            ""required"": false,
+            ""description"": ""If set to 1, the first first word in each set of spintax is not included in spun output. E.g. if this is found in the article: {word|syn1|syn2}, the result will only include either syn1 or syn2."",
+            ""default"": ""0""
+        },
+        ""reorderparagraphs"": {
+            ""type"": ""number"",
+            ""required"": false,
+            ""description"": ""If set to 1, paragraphs are randomly ordered in the result."",
+            ""default"": ""0""
+        },
+        ""N/A"": {
+            ""type"": ""string"",
+            ""required"": false,
+            ""description"": ""To protect any piece of text, simply wrap it with ###. For example, if you had a certain paragraph or code to protect, simply send \u201cAn intro sentence. ###My protected stuff### and the rest of the article\u201d. Anything inside the hashes will not be spun. Then just replace \u2018###\u2019 with an empty string.""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""GenerateSpin"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",Generates an unspun doc from one with spintax. Optionally reorders paragraphs and removes original word.
+Chimp Rewriter,"{
+    ""parameters"": {
+        ""email"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""User\u2019s Chimp Rewriter account email. Note that the user requires a Chimp Rewriter Pro subscription.""
+        },
+        ""apikey"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""User\u2019s API key. Get one on the Chimp Rewriter User Management page.""
+        },
+        ""aid"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""Application ID. Set this to a string (100 charachers or less) to identify your application to the server. At this point, applications do not require registration.""
+        },
+        ""globalspin"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": """"
+        },
+        ""quality"": {
+            ""type"": ""number"",
+            ""required"": false,
+            ""description"": ""Spin quality: 5 \u2013 Best, 4 \u2013 Better, 3 \u2013 Good, 2 \u2013 Average, 1 \u2013 All"",
+            ""default"": ""4""
+        },
+        ""posmatch"": {
+            ""type"": ""number"",
+            ""required"": false,
+            ""description"": ""Required Part of Speech (POS) match for a spin: 4 \u2013 FullSpin, 3 \u2013 Full, 2 \u2013 Loose, 1 \u2013 Extremely Loose, 0 \u2013 None. \u2018FullSpin\u2019 removes some common POS replacements that tend to reduce quality of spin."",
+            ""default"": ""3""
+        },
+        ""protectedterms"": {
+            ""type"": ""string"",
+            ""required"": false,
+            ""description"": ""Comma separated list of words or phrases to protect from spin i.e. \u2018my main keyword,my second keyword\u2019"",
+            ""default"": ""Empty""
+        },
+        ""rewrite"": {
+            ""type"": ""number"",
+            ""required"": false,
+            ""description"": ""If set to 1, results are returned as a rewritten article with no Spintax. Otherwise, an article with Spintax is returned. Note that with rewrite as 1, the original word will always be removed."",
+            ""default"": ""0""
+        },
+        ""phraseignorequality"": {
+            ""type"": ""number"",
+            ""required"": false,
+            ""description"": ""If set to 1, quality is ignored when finding phrase replacements for phrases. This results in a huge amount of spin, but quality can vary."",
+            ""default"": ""0""
+        },
+        ""spinwithinspin"": {
+            ""type"": ""number"",
+            ""required"": false,
+            ""description"": ""If set to 1, if there is existing spin syntax in the content you send up, the API will spin any relevant content inside this syntax. If 0, the API will skip over this content and only spin outside of existing syntax."",
+            ""default"": ""0""
+        },
+        ""spinwithinhtml"": {
+            ""type"": ""number"",
+            ""required"": false,
+            ""description"": ""Spin inside HTML tags. This includes <p> tags, for example if you send up \u201c<p>Here is a paragraph</p>\u201d, nothing would be spun unless spinwithinhtml is 1."",
+            ""default"": ""0""
+        },
+        ""applyinstantunique"": {
+            ""type"": ""number"",
+            ""required"": false,
+            ""description"": ""(Extra quota cost) Runs an instant unique pass over the article once spun. This replaces letters with characters that look like the original letter but have a different UTF8 value, passing copyscape 100% but garbling content to the search engines. It it recommended to protect keywords while using instant unique. Costs one extra query."",
+            ""default"": ""0""
+        },
+        ""fullcharset"": {
+            ""type"": ""number"",
+            ""required"": false,
+            ""description"": ""Only used if applyinstantunique = 1. This causes IU to use the full character set which has a broader range of replacements."",
+            ""default"": ""0""
+        },
+        ""spintidy"": {
+            ""type"": ""number"",
+            ""required"": false,
+            ""description"": ""(Extra quota cost) Runs a spin tidy pass over the result article. This fixes any common a/an type grammar mistakes and repeated words due to phrase spinning. Generally increases the quality of the article. Costs one extra query."",
+            ""default"": ""0""
+        },
+        ""tagprotect"": {
+            ""type"": ""string"",
+            ""required"": false,
+            ""description"": ""Protects anything between any syntax you define. Separate start and end syntax with a pipe \u2018|\u2019 and separate multiple tags with a comma \u2018,\u2019. For example, you could protect anything in square brackets by setting tagprotect=[|]. You could also protect anything between \u201cbegin\u201d and \u201cend\u201d by setting tagprotect=[|],begin|end"",
+            ""default"": ""Empty""
+        },
+        ""maxspindepth"": {
+            ""type"": ""number"",
+            ""required"": false,
+            ""description"": ""Define a maximum spin level depth in returned article. If set to 1, no nested spin will appear in the spun result. This paramater only matters if rewrite is false. Set to 0 or ignore for no limit on spin depth."",
+            ""default"": ""0""
+        },
+        ""N/A"": {
+            ""type"": ""string"",
+            ""required"": false,
+            ""description"": ""To protect any piece of text, simply wrap it with ###. For example, if you had a certain paragraph or code to protect, simply send \u201cAn intro sentence. ###My protected stuff### and the rest of the article\u201d. Anything inside the hashes will not be spun. Then just replace \u2018###\u2019 with an empty string.""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""GlobalSpin"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",Spins an article with various quality paramters and return it either with spintax or as a unique unspun document.
+Deep Social,"{
+    ""parameters"": {
+        ""api_token"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""To buy API Token register on http://deep.social/ and check our prices here http://deep.social/prices""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""Save users (only for Data Export plan)"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",Influencers that were previously saved can be excluded from search results using filter[known] filter. Can be used to export unique instagram accounts to boost your influencer base. Available only with Data Export plan.
+Deep Social,"{
+    ""parameters"": {
+        ""searchResultIds[0]"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": """"
+        },
+        ""api_token"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""To buy API Token register on http://deep.social/ and check our prices here http://deep.social/prices""
+        },
+        ""searchResultIds[1]"": {
+            ""type"": ""string"",
+            ""required"": false,
+            ""description"": """"
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""Show"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",
+Deep Social,"{
+    ""parameters"": {
+        ""api_token"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""To buy API Token register on http://deep.social/ and check our prices here http://deep.social/prices""
+        },
+        ""filter[audience_age][0][weight]"": {
+            ""type"": ""number"",
+            ""required"": false,
+            ""description"": ""Sets precision for the 'filter[audience_age][0][code]' filter, can be from 0 to 1, default value is 0.25. If you use multi-filter than be sure to match indexes of paired filters. For example 'filter[audience_age][0][weight]' have index 0, 'filter[audience_age][453][weight]' have index 453"",
+            ""default"": ""0.1""
+        },
+        ""filter[audience_gender][code]"": {
+            ""type"": ""string"",
+            ""required"": false,
+            ""description"": ""Filter influencers by audience gender (possible values MALE or FEMALE). Use with \""filter[audience_gender][weight]\"" - precision, can be from 0 to 1, default value is 0.5"",
+            ""default"": ""MALE""
+        },
+        ""filter[audience_gender][weight]"": {
+            ""type"": ""number"",
+            ""required"": false,
+            ""description"": ""Sets precision for the 'filter[audience_gender][code]' filter, can be from 0 to 1, default value is 0.5"",
+            ""default"": ""0.1""
+        },
+        ""filter[audience_geo][0][id]"": {
+            ""type"": ""number"",
+            ""required"": false,
+            ""description"": ""Multi-filter (OR) to filter influencers by audience GEO. To get GEO ID of specific region use 'GEO dictionary' endpoint. Use with \""filter[audience_geo][0][weight]\"" - precision, can be from 0 to 1, default value is 0.05. You can specify several GEO IDs to filter influencers. For example: -d 'filter[audience_geo][1][id]=102269' \\ -d 'filter[audience_geo][1][weight]=0.1' \\ -d 'filter[audience_geo][0][id]=65606' \\ -d 'filter[audience_geo][0][weight]=0.1' \\ - this query will return influencers that have audience in ANY of this regions"",
+            ""default"": ""148838""
+        },
+        ""filter[audience_geo][0][weight]"": {
+            ""type"": ""number"",
+            ""required"": false,
+            ""description"": ""Sets precision for the 'filter[audience_geo][0][id]' filter, can be from 0 to 1, default value is 0.05. If you use multi-filter than be sure to match indexes of paired filters. For example 'filter[audience_geo][0][weight]' have index 0, 'filter[audience_geo][453][weight]' have index 453"",
+            ""default"": ""0.1""
+        },
+        ""filter[audience_lang][code]"": {
+            ""type"": ""string"",
+            ""required"": false,
+            ""description"": ""Filter influencers by audeence language (to get language code use 'Languages dictionary' endpoint). Use with \""filter[audience_lang][weight]\"" - precision, can be from 0 to 1, default value is 0.2"",
+            ""default"": ""en""
+        },
+        ""filter[audience_lang][weight]"": {
+            ""type"": ""number"",
+            ""required"": false,
+            ""description"": ""Sets precision for the 'filter[audience_lang][code]' filter, can be from 0 to 1, default value is 0.2"",
+            ""default"": ""0.1""
+        },
+        ""filter[audience_race][code]"": {
+            ""type"": ""string"",
+            ""required"": false,
+            ""description"": ""Filter influencers by audience skin tone (possible values: Black, Asian or White). Use with \""filter[audience_race][weight]\"" - precision, can be from 0 to 1, default value is 0.3"",
+            ""default"": ""White""
+        },
+        ""filter[audience_race][weight]"": {
+            ""type"": ""number"",
+            ""required"": false,
+            ""description"": ""Sets precision for the 'filter[audience_race][code]' filter, can be from 0 to 1, default value is 0.3"",
+            ""default"": ""0.1""
+        },
+        ""filter[engagements][left_number]"": {
+            ""type"": ""number"",
+            ""required"": false,
+            ""description"": ""Filter influencers that have likes of comments greater than specified number"",
+            ""default"": ""100""
+        },
+        ""filter[engagements][right_number]"": {
+            ""type"": ""number"",
+            ""required"": false,
+            ""description"": ""Filter influencers that have likes of comments less than specified number"",
+            ""default"": ""100000""
+        },
+        ""filter[followers][left_number]"": {
+            ""type"": ""number"",
+            ""required"": false,
+            ""description"": ""Filter influencers that have followers greater than specified number"",
+            ""default"": ""5000""
+        },
+        ""filter[followers][right_number]"": {
+            ""type"": ""number"",
+            ""required"": false,
+            ""description"": ""Filter influencers that have followers less than specified number"",
+            ""default"": ""1000000""
+        },
+        ""sort[direction]"": {
+            ""type"": ""string"",
+            ""required"": false,
+            ""description"": ""Sets sorting, by default it is desc. You can specify custom sorting, possible values: 1, -1, asc, desc."",
+            ""default"": ""desc""
+        },
+        ""filter[race][code]"": {
+            ""type"": ""string"",
+            ""required"": false,
+            ""description"": ""Filter influencers by skin tone (possible values: Black, Asian or White)."",
+            ""default"": ""White""
+        },
+        ""filter[gender][code]"": {
+            ""type"": ""string"",
+            ""required"": false,
+            ""description"": ""Filter influencers by gender (possible values MALE or FEMALE)."",
+            ""default"": ""FEMALE""
+        },
+        ""filter[lang][code]"": {
+            ""type"": ""string"",
+            ""required"": false,
+            ""description"": ""Filter influencers by their language (to get language code use 'Languages dictionary' endpoint)."",
+            ""default"": ""en""
+        },
+        ""filter[audience_brand][0][id]"": {
+            ""type"": ""number"",
+            ""required"": false,
+            ""description"": ""Multi-filter (OR) to filter influencers by audience brands. To get Brand ID use 'Brands dictionary' endpoint. Use with \""filter[audience_brand][0][weight]\"" - precision, can be from 0 to 1, default value is 0.05 You can specify several Brand IDs to filter influencers. For example: -d 'filter[audience_brand][0][id]=65' \\ -d 'filter[audience_brand][0][id]=66' \\ - this query will return influencers that have ANY of this audience brands."",
+            ""default"": ""956""
+        },
+        ""filter[audience_brand][0][weight]"": {
+            ""type"": ""number"",
+            ""required"": false,
+            ""description"": ""Sets precision for the 'filter[audience_brand][0][id]' filter, can be from 0 to 1, default value is 0.05. If you use multi-filter than be sure to match indexes of paired filters. For example 'filter[audience_brand][0][weight]' have index 0, 'filter[audience_brand][453][weight]' have index 453."",
+            ""default"": ""0.01""
+        },
+        ""filter[brand_category][0]"": {
+            ""type"": ""number"",
+            ""required"": false,
+            ""description"": ""Multi-filter (AND) to filter influencers by interests. To get Interest ID use 'Interests dictionary' endpoint. You can specify several Interest IDs to filter influencers. For example: -d 'filter[brand_category][0]=2' \\ -d 'filter[brand_category][1]=20' \\ - this query will return influencers that have ALL of this interests."",
+            ""default"": ""74""
+        },
+        ""paging[skip]"": {
+            ""type"": ""number"",
+            ""required"": false,
+            ""description"": """",
+            ""default"": ""1""
+        },
+        ""paging[limit]"": {
+            ""type"": ""number"",
+            ""required"": false,
+            ""description"": """",
+            ""default"": ""1""
+        },
+        ""sort[field]"": {
+            ""type"": ""string"",
+            ""required"": false,
+            ""description"": ""Sort influencers by filter type. Possible values: \""followers\"", \""engagements\"", \""lang\"", \""gender\"", \""race\"", \""geo\"", \""audience_lang\"", \""audience_gender\"", \""audience_age\"", \""audience_race\"", \""audience_geo\"", \""audience_brand_category\"", \""audience_brand\"", \""audience_gender_per_age\"""",
+            ""default"": ""geo""
+        },
+        ""filter[audience_age][0][code]"": {
+            ""type"": ""string"",
+            ""required"": false,
+            ""description"": ""Multi-filter (OR) to filter influencers by audience age. Possible age ranges are: \""13-17\"", \""18-24\"", \""25-34\"", \""35-44\"", \""45-64\"", \""65-\"". Use with \""filter[audience_age][0][weight]\"" - precision, can be from 0 to 1, default value is 0.25. You can specify several age ranges to filter influencers. For example: -d 'filter[audience_age][0][code]=13-17' \\ -d 'filter[audience_age][1][code]=18-24' \\ - this query will return influencers that have ANY of this age ranges"",
+            ""default"": ""25-34""
+        },
+        ""filter[age][left_number]"": {
+            ""type"": ""number"",
+            ""required"": false,
+            ""description"": ""Filter influencers that older than specified number of years."",
+            ""default"": ""16""
+        },
+        ""filter[age][right_number]"": {
+            ""type"": ""number"",
+            ""required"": false,
+            ""description"": ""Filter influencers that younger than specified number of years."",
+            ""default"": ""80""
+        },
+        ""filter[audience_brand_category][0][id]"": {
+            ""type"": ""number"",
+            ""required"": false,
+            ""description"": ""Multi-filter (AND) to filter influencers by audience interests. To get Interest ID use 'Interests dictionary' endpoint. Use with \""filter[audience_brand_category][0][weight]\"" - precision, can be from 0 to 1, default value is 0.1 You can specify several Interest IDs to filter influencers. For example: -d 'filter[audience_brand_category][0][id]=2' \\ -d 'filter[audience_brand_category][1][id]=20' \\ - this query will return influencers that have ALL of this audience interests."",
+            ""default"": ""3""
+        },
+        ""filter[audience_brand_category][0][weight]"": {
+            ""type"": ""number"",
+            ""required"": false,
+            ""description"": ""Sets precision for the 'filter[audience_brand_category][0][id]' filter, can be from 0 to 1, default value is 0.1. If you use multi-filter than be sure to match indexes of paired filters. For example 'filter[audience_brand_category][0][weight]' have index 0, 'filter[audience_brand_category][453][weight]' have index 453."",
+            ""default"": ""0.01""
+        },
+        ""filter[brand][0]"": {
+            ""type"": ""number"",
+            ""required"": false,
+            ""description"": ""Multi-filter (OR) to filter influencers by brands. To get Brand ID use 'Brands dictionary' endpoint. You can specify several Brand IDs to filter influencers. For example: -d 'filter[brand][0]=65' \\ -d 'filter[brand][1]=66' \\ - this query will return influencers that have ANY of this Brands."",
+            ""default"": ""338""
+        },
+        ""filter[geo][0][id]"": {
+            ""type"": ""number"",
+            ""required"": false,
+            ""description"": ""Multi-filter (OR) to filter influencers in specific GEO region. To get GEO ID of specific region use 'GEO dictionary' endpoint. You can specify several GEO IDs to filter influencers. For example: -d 'filter[geo][1][id]=102269' \\ -d 'filter[geo][0][id]=65606' \\ - this query will return influencers that have ANY of this regions."",
+            ""default"": ""148838""
+        },
+        ""filter[known]"": {
+            ""type"": ""string"",
+            ""required"": false,
+            ""description"": ""Add this filter with value 'unknown' to hide saved users. To save users use 'save-known' endpoint. Available only with Data Export plan.""
+        },
+        ""filter[has_email]"": {
+            ""type"": ""string"",
+            ""required"": false,
+            ""description"": ""Add this filter with any value to hide users without contact info. To see contact info in response you need to have Data Export plan.""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""Search"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",Search influencers using filters. To request access contact sales info@deep.social
+Deep Social,"{
+    ""parameters"": {
+        ""url"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""Instagram user url or account name or social ID"",
+            ""default"": ""beyonce""
+        },
+        ""api_token"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""Prepaid token. Get 10 free tokens http://deep.social/register""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""Sampling"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",Get analytics using limited prepaid token. Get 10 free tokens http://deep.social/register
+👋 Demo Project,"{
+    ""parameters"": {
+        ""id"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": """"
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""Add to Order"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}", 
+👋 Demo Project,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""Create Order"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}", 
+👋 Demo Project,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""Create Product"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}", 
+👋 Demo Project,"{
+    ""parameters"": {
+        ""id"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": """"
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""Place Order"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}", 
+👋 Demo Project,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""Create User (Sign Up)"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}", 
+👋 Demo Project,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""Login"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}", 
+Dynamic  Designers QR Code,"{
+    ""parameters"": {
+        ""file"": {
+            ""type"": ""binary"",
+            ""required"": true,
+            ""description"": """"
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""Logo Upload"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}","Upload logo to be displayed on your QR Code. After uploading successfully, you will get file name in return. Send the file name in config object's logo  parameter. You can also upload your logo at following url:
+https://www.qrgraphix.com/upload-logo
+
+For upload file size limit is 500 KB"
+Dynamic  Designers QR Code,"{
+    ""parameters"": {
+        ""config"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""You can define Body Shape, eye shapes, eyeball shapes.\nYou can define Background Color, body color,  eyes color, eyeballs color.\nDefine logo to displayed on the QR Code.\nDefine output format "",
+            ""default"": ""{\""body\"":\""diamond\"",\""bgColor\"":\""#FFFFFF\"",\""bodyColor\"":\""#417505\"",\""eye\"":\""frame2\"",\""eyeball\"":\""ball2\"",\""logo\"":\""#facebook\"",\""file\"":\""PNG\""}""
+        },
+        ""data"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""Data to be encoded in the QR Code. You can encode text, url, EMAIL, PHONE, SMS, VCARD, LOCATION, FACEBOOK Profile page, TWITTER Page, YOUTUBE Page, WIFI Settings, EVENT Detail, BITCOIN Detail\nFor new line, send \\r\\n  in your text."",
+            ""default"": ""https://www.qrgraphix.com""
+        },
+        ""size"": {
+            ""type"": ""number"",
+            ""required"": false,
+            ""description"": ""Size from 50-2000 in pixels"",
+            ""default"": ""1000""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""Custom QR Codes"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}","You can customize your QR Code Body Shape, eye shape, eyeball shape, background color, body color, eye color, eye ball color, logo, size and output format."
+FreePlanwithHardLimit,"{
+    ""parameters"": {
+        ""petId"": {
+            ""type"": ""number"",
+            ""required"": true,
+            ""description"": ""ID of pet to return""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""getPetById"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",Returns a single pet
+FreePlanwithHardLimit,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""getInventory"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",Returns a map of status codes to quantities
+FreePlanwithHardLimit,"{
+    ""parameters"": {
+        ""orderId"": {
+            ""type"": ""number"",
+            ""required"": true,
+            ""description"": ""ID of pet that needs to be fetched""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""getOrderById"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",For valid response try integer IDs with value >= 1 and <= 10. Other values will generated exceptions
+FreePlanwithHardLimit,"{
+    ""parameters"": {
+        ""password"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""The password for login in clear text""
+        },
+        ""username"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""The user name for login""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""loginUser"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",
+FreePlanwithHardLimit,"{
+    ""parameters"": {
+        ""username"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""The name that needs to be fetched. Use user1 for testing. ""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""getUserByName"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",
+FreePlanwithHardLimit,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""logoutUser"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",
+FreePlanwithHardLimit,"{
+    ""parameters"": {
+        ""petId"": {
+            ""type"": ""number"",
+            ""required"": true,
+            ""description"": ""ID of pet that needs to be updated""
+        },
+        ""name"": {
+            ""type"": ""string"",
+            ""required"": false,
+            ""description"": ""Updated name of the pet""
+        },
+        ""status"": {
+            ""type"": ""string"",
+            ""required"": false,
+            ""description"": ""Updated status of the pet""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""updatePetWithForm"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",
+FreePlanwithHardLimit,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""createUsersWithListInput"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",
+FreePlanwithHardLimit,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""addPet"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",
+FreePlanwithHardLimit,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""placeOrder"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",
+FreePlanwithHardLimit,"{
+    ""parameters"": {
+        ""petId"": {
+            ""type"": ""number"",
+            ""required"": true,
+            ""description"": ""ID of pet to update""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""uploadFile"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",
+FreePlanwithHardLimit,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""createUsersWithArrayInput"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",
+FreePlanwithHardLimit,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""createUser"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",This can only be done by the logged in user.
+Glasshat,"{
+    ""parameters"": {
+        ""project_id"": {
+            ""type"": ""number"",
+            ""required"": true,
+            ""description"": ""ID of the project to retrieve details."",
+            ""default"": ""None""
+        },
+        ""apikey"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""Glasshat API licence key."",
+            ""default"": ""None""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""/project/{project_id}/update (Update project)"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",Modify a single project's settings.
+Glasshat,"{
+    ""parameters"": {
+        ""apikey"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""Glasshat API licence key."",
+            ""default"": ""None""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""/project/create (Create project)"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",Create project
+Glasshat,"{
+    ""parameters"": {
+        ""client_id"": {
+            ""type"": ""number"",
+            ""required"": true,
+            ""description"": ""ID of the client to retrieve details."",
+            ""default"": ""None""
+        },
+        ""apikey"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""Glasshat API licence key."",
+            ""default"": ""None""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""/client/{client_id}/delete (Delete client)"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",Remove a client.
+Glasshat,"{
+    ""parameters"": {
+        ""task_id"": {
+            ""type"": ""number"",
+            ""required"": true,
+            ""description"": ""ID of task action to retrieve details."",
+            ""default"": ""None""
+        },
+        ""apikey"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""Glasshat API licence key."",
+            ""default"": ""None""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""/task/{task_id}/update (Update action task)"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}","Change action task status. Mark an action as planned, finished, and/or declined."
+Glasshat,"{
+    ""parameters"": {
+        ""apikey"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""Glasshat API licence key."",
+            ""default"": ""None""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""/client/create (Create client)"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",Create a new client under the Glasshat account. Note an error will be returned if you've reached the maximum number of clients allowed for your Glasshat account.
+Glasshat,"{
+    ""parameters"": {
+        ""project_id"": {
+            ""type"": ""number"",
+            ""required"": true,
+            ""description"": ""ID of the project to retrieve details."",
+            ""default"": ""None""
+        },
+        ""apikey"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""Glasshat API licence key."",
+            ""default"": ""None""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""/project/{project_id}/delete (Delete project)"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",Remove a project.
+Glasshat,"{
+    ""parameters"": {
+        ""client_id"": {
+            ""type"": ""number"",
+            ""required"": true,
+            ""description"": ""ID of the client to retrieve details."",
+            ""default"": ""None""
+        },
+        ""apikey"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""Glasshat API licence key."",
+            ""default"": ""None""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""/client/{client_id}/update (Update client)"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",Modify the client.
+Keyword Suggestion API,"{
+    ""parameters"": {
+        ""keyword"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": """",
+            ""default"": ""API""
+        },
+        ""country_code"": {
+            ""type"": ""string"",
+            ""required"": false,
+            ""description"": """",
+            ""default"": ""us""
+        },
+        ""language_code"": {
+            ""type"": ""string"",
+            ""required"": false,
+            ""description"": """",
+            ""default"": ""en""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""All"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",This will give you all keywords releated to your queried keyword
+Keyword Suggestion API,"{
+    ""parameters"": {
+        ""keyword"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": """",
+            ""default"": ""API""
+        },
+        ""country_code"": {
+            ""type"": ""string"",
+            ""required"": false,
+            ""description"": """",
+            ""default"": ""us""
+        },
+        ""language_code"": {
+            ""type"": ""string"",
+            ""required"": false,
+            ""description"": """",
+            ""default"": ""en""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""Alphabetical"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",This will give you alphabetical releated to your queried keyword
+Keyword Suggestion API,"{
+    ""parameters"": {
+        ""keyword"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": """",
+            ""default"": ""api""
+        },
+        ""country_code"": {
+            ""type"": ""string"",
+            ""required"": false,
+            ""description"": """",
+            ""default"": ""us""
+        },
+        ""language_code"": {
+            ""type"": ""string"",
+            ""required"": false,
+            ""description"": """",
+            ""default"": ""en""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""Comparisons"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",This will give you comparisons releated to your queried keyword
+Keyword Suggestion API,"{
+    ""parameters"": {
+        ""keyword"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": """",
+            ""default"": ""API""
+        },
+        ""language_code"": {
+            ""type"": ""string"",
+            ""required"": false,
+            ""description"": """",
+            ""default"": ""en""
+        },
+        ""country_code"": {
+            ""type"": ""string"",
+            ""required"": false,
+            ""description"": """",
+            ""default"": ""us""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""Preposition"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",This will give you preposition releated to your queried keyword
+Keyword Suggestion API,"{
+    ""parameters"": {
+        ""keyword"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": """",
+            ""default"": ""API""
+        },
+        ""country_code"": {
+            ""type"": ""string"",
+            ""required"": false,
+            ""description"": """",
+            ""default"": ""us""
+        },
+        ""language_code"": {
+            ""type"": ""string"",
+            ""required"": false,
+            ""description"": """",
+            ""default"": ""en""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""Questions"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",This will give you questions releated to your queried keyword
+Keyword Suggestion API,"{
+    ""parameters"": {
+        ""keyword"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": """",
+            ""default"": ""api""
+        },
+        ""language_code"": {
+            ""type"": ""string"",
+            ""required"": false,
+            ""description"": """",
+            ""default"": ""en""
+        },
+        ""country_code"": {
+            ""type"": ""string"",
+            ""required"": false,
+            ""description"": """",
+            ""default"": ""us""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""Releated"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",This will give you releated keywords for your queried keyword
+Lab 1,"{
+    ""parameters"": {
+        ""id"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": """"
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""Place Order"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}", 
+Lab 1,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""Create Product"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}", 
+Lab 1,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""Create Order"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}", 
+Lab 1,"{
+    ""parameters"": {
+        ""id"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": """"
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""Add to Order"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}", 
+Lab 1,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""Create User (Sign Up)"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}", 
+Lab 1,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""Login"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}", 
+MultipleTeamsCallingTest,"{
+    ""parameters"": {
+        ""password"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""The password for login in clear text"",
+            ""default"": ""string""
+        },
+        ""username"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""The user name for login"",
+            ""default"": ""string""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""loginUser"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",Logs user into the system
+MultipleTeamsCallingTest,"{
+    ""parameters"": {
+        ""orderId"": {
+            ""type"": ""number"",
+            ""required"": true,
+            ""description"": ""ID of pet that needs to be fetched"",
+            ""default"": 0
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""getOrderById"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",For valid response try integer IDs with value >= 1 and <= 10. Other values will generated exceptions
+MultipleTeamsCallingTest,"{
+    ""parameters"": {
+        ""petId"": {
+            ""type"": ""number"",
+            ""required"": true,
+            ""description"": ""ID of pet to return"",
+            ""default"": 0
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""getPetById"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",Returns a single pet
+MultipleTeamsCallingTest,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""getInventory"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",Returns a map of status codes to quantities
+MultipleTeamsCallingTest,"{
+    ""parameters"": {
+        ""username"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""The name that needs to be fetched. Use user1 for testing. "",
+            ""default"": ""string""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""getUserByName"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",Get user by user name
+MultipleTeamsCallingTest,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""logoutUser"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",Logs out current logged in user session
+MultipleTeamsCallingTest,"{
+    ""parameters"": {
+        ""petId"": {
+            ""type"": ""number"",
+            ""required"": true,
+            ""description"": ""ID of pet to update"",
+            ""default"": 0
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""uploadFile"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",uploads an image
+MultipleTeamsCallingTest,"{
+    ""parameters"": {
+        ""petId"": {
+            ""type"": ""number"",
+            ""required"": true,
+            ""description"": ""ID of pet that needs to be updated"",
+            ""default"": 0
+        },
+        ""name"": {
+            ""type"": ""string"",
+            ""required"": false,
+            ""description"": ""Updated name of the pet"",
+            ""default"": ""string""
+        },
+        ""status"": {
+            ""type"": ""string"",
+            ""required"": false,
+            ""description"": ""Updated status of the pet"",
+            ""default"": ""string""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""updatePetWithForm"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",Updates a pet in the store with form data
+MultipleTeamsCallingTest,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""createUsersWithListInput"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",Creates list of users with given input array
+MultipleTeamsCallingTest,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""placeOrder"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",Place an order for a pet
+MultipleTeamsCallingTest,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""createUsersWithArrayInput"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",Creates list of users with given input array
+MultipleTeamsCallingTest,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""createUser"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",This can only be done by the logged in user.
+MultipleTeamsCallingTest,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""addPet"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",Add a new pet to the store
+👋 Onboarding Project,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""Create Product"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}", 
+👋 Onboarding Project,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""Create User (Sign Up)"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}", 
+👋 Onboarding Project,"{
+    ""parameters"": {
+        ""id"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": """"
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""Place Order"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}", 
+👋 Onboarding Project,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""Create Order"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}", 
+👋 Onboarding Project,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""Login"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}", 
+👋 Onboarding Project,"{
+    ""parameters"": {
+        ""id"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": """"
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""Add to Order"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}", 
+pe-demo,"{
+    ""parameters"": {
+        ""code"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""HTTP status code.""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""View status code and message"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",View status code and message for the specified value.
+pe-demo,"{
+    ""parameters"": {
+        ""user"": {
+            ""type"": ""string"",
+            ""required"": false,
+            ""description"": ""Your user name.""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""View a personalized greeting"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",View a personalized greeting for the specified or guest user.
+pe-demo,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""View API affirmation"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",View API affirmation in HTML format.
+pe-demo,"{
+    ""parameters"": {
+        ""user"": {
+            ""type"": ""string"",
+            ""required"": false,
+            ""description"": ""Your user name.""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""View personalized greeting"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",View a personalized greeting for the specified or guest user.
+pe-demo,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""View request headers and body"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",View the request headers and body in JSON format.
+pe-demo,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""Validate access using basic authentication"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",Validate access using basic authentication.
+pe-demo,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""View JSON response"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",View a sample response in JSON format.
+pe-demo,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""View XML response"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",View a sample response in XML format.
+pe-demo,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""View IP address"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",View the IP address of the client in JSON format.
+pe-demo,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""Get help"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",View help information about available resources in HTML format.
+pe-demo,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""Send request and view request headers and body"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}","Send a request and view the resulting request headers and body in JSON format.<p>The request payload can be specified using one of the following formats: application/json, application/x-www-form-urlencoded, or application/xml."
+petstore blitz,"{
+    ""parameters"": {
+        ""petId"": {
+            ""type"": ""number"",
+            ""required"": true,
+            ""description"": ""ID of pet to return""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""getPetById"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",Returns a single pet
+petstore blitz,"{
+    ""parameters"": {
+        ""orderId"": {
+            ""type"": ""number"",
+            ""required"": true,
+            ""description"": ""ID of pet that needs to be fetched""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""getOrderById"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",For valid response try integer IDs with value >= 1 and <= 10.  Other values will generated exceptions
+petstore blitz,"{
+    ""parameters"": {
+        ""username"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""The name that needs to be fetched. Use user1 for testing.""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""getUserByName"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}", 
+petstore blitz,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""logoutUser"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}", 
+petstore blitz,"{
+    ""parameters"": {
+        ""username"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""The user name for login""
+        },
+        ""password"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""The password for login in clear text""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""loginUser"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}", 
+petstore blitz,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""getInventory"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",Returns a map of status codes to quantities
+petstore blitz,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""createUser"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",This can only be done by the logged in user.
+petstore blitz,"{
+    ""parameters"": {
+        ""petId"": {
+            ""type"": ""number"",
+            ""required"": true,
+            ""description"": ""ID of pet to update""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""uploadFile"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}", 
+petstore blitz,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""createUsersWithArrayInput"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}", 
+petstore blitz,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""createUsersWithListInput"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}", 
+petstore blitz,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""addPet"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}", 
+petstore blitz,"{
+    ""parameters"": {
+        ""petId"": {
+            ""type"": ""number"",
+            ""required"": true,
+            ""description"": ""ID of pet that needs to be updated""
+        },
+        ""name"": {
+            ""type"": ""string"",
+            ""required"": false,
+            ""description"": ""Updated name of the pet""
+        },
+        ""status"": {
+            ""type"": ""string"",
+            ""required"": false,
+            ""description"": ""Updated status of the pet""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""updatePetWithForm"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}", 
+petstore blitz,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""placeOrder"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}", 
+PetstoreRateLimit,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""logoutUser"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",
+PetstoreRateLimit,"{
+    ""parameters"": {
+        ""username"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""The user name for login""
+        },
+        ""password"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""The password for login in clear text""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""loginUser"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",
+PetstoreRateLimit,"{
+    ""parameters"": {
+        ""username"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""The name that needs to be fetched. Use user1 for testing. ""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""getUserByName"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",
+PetstoreRateLimit,"{
+    ""parameters"": {
+        ""petId"": {
+            ""type"": ""number"",
+            ""required"": true,
+            ""description"": ""ID of pet to return""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""getPetById"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",Returns a single pet
+PetstoreRateLimit,"{
+    ""parameters"": {
+        ""orderId"": {
+            ""type"": ""number"",
+            ""required"": true,
+            ""description"": ""ID of pet that needs to be fetched""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""getOrderById"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",For valid response try integer IDs with value >= 1 and <= 10. Other values will generated exceptions
+PetstoreRateLimit,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""getInventory"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",Returns a map of status codes to quantities
+PetstoreRateLimit,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""createUsersWithArrayInput"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",
+PetstoreRateLimit,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""createUser"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",This can only be done by the logged in user.
+PetstoreRateLimit,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""createUsersWithListInput"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",
+PetstoreRateLimit,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""addPet"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",
+PetstoreRateLimit,"{
+    ""parameters"": {
+        ""petId"": {
+            ""type"": ""number"",
+            ""required"": true,
+            ""description"": ""ID of pet that needs to be updated""
+        },
+        ""name"": {
+            ""type"": ""string"",
+            ""required"": false,
+            ""description"": ""Updated name of the pet""
+        },
+        ""status"": {
+            ""type"": ""string"",
+            ""required"": false,
+            ""description"": ""Updated status of the pet""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""updatePetWithForm"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",
+PetstoreRateLimit,"{
+    ""parameters"": {
+        ""petId"": {
+            ""type"": ""number"",
+            ""required"": true,
+            ""description"": ""ID of pet to update""
+        },
+        ""file"": {
+            ""type"": ""binary"",
+            ""required"": false,
+            ""description"": ""file to upload""
+        },
+        ""additionalMetadata"": {
+            ""type"": ""string"",
+            ""required"": false,
+            ""description"": ""Additional data to pass to server""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""uploadFile"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",
+PetstoreRateLimit,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""placeOrder"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",
+Poplar Mail,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""Mailing"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",This endpoint allows you to trigger a mailing for a given campaign. Mailings can only be triggered for active campaigns. The API will return an error if the campaign is not yet ready.
+Poplar Mail,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""Orders"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",Orders endpoints may be used to report customer transactions as they happen. These are used within Poplar for attribution reporting and to enable existing customers to be easily suppressed within your campaigns.
+Poplar Mail,"{
+    ""parameters"": {
+        ""id"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": """"
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""Audience"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",This endpoint can be used to programmatically add users to an audience.
+Poplar Mail,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""Do Not Mail"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}","Managing your do not mail list is just as important for direct mail as it is for email. We offer two ways to suppress mailings, either via an API or manually via a .csv list upload. The API is the easiest way to integrate an opt out form with our triggered mail service."
+PrivatePublicAPI,"{
+    ""parameters"": {
+        ""petId"": {
+            ""type"": ""number"",
+            ""required"": true,
+            ""description"": ""ID of pet to return"",
+            ""default"": 0
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""getPetById"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",Returns a single pet
+PrivatePublicAPI,"{
+    ""parameters"": {
+        ""username"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""The name that needs to be fetched. Use user1 for testing. "",
+            ""default"": ""string""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""getUserByName"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",Get user by user name
+PrivatePublicAPI,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""logoutUser"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",Logs out current logged in user session
+PrivatePublicAPI,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""getInventory"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",Returns a map of status codes to quantities
+PrivatePublicAPI,"{
+    ""parameters"": {
+        ""password"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""The password for login in clear text"",
+            ""default"": ""string""
+        },
+        ""username"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""The user name for login"",
+            ""default"": ""string""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""loginUser"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",Logs user into the system
+PrivatePublicAPI,"{
+    ""parameters"": {
+        ""orderId"": {
+            ""type"": ""number"",
+            ""required"": true,
+            ""description"": ""ID of pet that needs to be fetched"",
+            ""default"": 0
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""getOrderById"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",For valid response try integer IDs with value >= 1 and <= 10. Other values will generated exceptions
+PrivatePublicAPI,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""addPet"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",Add a new pet to the store
+PrivatePublicAPI,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""createUsersWithListInput"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",Creates list of users with given input array
+PrivatePublicAPI,"{
+    ""parameters"": {
+        ""petId"": {
+            ""type"": ""number"",
+            ""required"": true,
+            ""description"": ""ID of pet to update"",
+            ""default"": 0
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""uploadFile"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",uploads an image
+PrivatePublicAPI,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""createUsersWithArrayInput"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",Creates list of users with given input array
+PrivatePublicAPI,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""createUser"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",This can only be done by the logged in user.
+PrivatePublicAPI,"{
+    ""parameters"": {
+        ""petId"": {
+            ""type"": ""number"",
+            ""required"": true,
+            ""description"": ""ID of pet that needs to be updated"",
+            ""default"": 0
+        },
+        ""status"": {
+            ""type"": ""string"",
+            ""required"": false,
+            ""description"": ""Updated status of the pet"",
+            ""default"": ""string""
+        },
+        ""name"": {
+            ""type"": ""string"",
+            ""required"": false,
+            ""description"": ""Updated name of the pet"",
+            ""default"": ""string""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""updatePetWithForm"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",Updates a pet in the store with form data
+PrivatePublicAPI,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""placeOrder"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",Place an order for a pet
+PublicAPITestingInbox,"{
+    ""parameters"": {
+        ""petId"": {
+            ""type"": ""number"",
+            ""required"": true,
+            ""description"": ""ID of pet to return""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""getPetById"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",Returns a single pet
+PublicAPITestingInbox,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""getInventory"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",Returns a map of status codes to quantities
+PublicAPITestingInbox,"{
+    ""parameters"": {
+        ""orderId"": {
+            ""type"": ""number"",
+            ""required"": true,
+            ""description"": ""ID of pet that needs to be fetched""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""getOrderById"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",For valid response try integer IDs with value >= 1 and <= 10. Other values will generated exceptions
+PublicAPITestingInbox,"{
+    ""parameters"": {
+        ""username"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""The user name for login""
+        },
+        ""password"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""The password for login in clear text""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""loginUser"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",
+PublicAPITestingInbox,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""logoutUser"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",
+PublicAPITestingInbox,"{
+    ""parameters"": {
+        ""username"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""The name that needs to be fetched. Use user1 for testing. ""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""getUserByName"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",
+PublicAPITestingInbox,"{
+    ""parameters"": {
+        ""petId"": {
+            ""type"": ""number"",
+            ""required"": true,
+            ""description"": ""ID of pet to update""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""uploadFile"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",
+PublicAPITestingInbox,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""createUsersWithArrayInput"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",
+PublicAPITestingInbox,"{
+    ""parameters"": {
+        ""petId"": {
+            ""type"": ""number"",
+            ""required"": true,
+            ""description"": ""ID of pet that needs to be updated""
+        },
+        ""status"": {
+            ""type"": ""string"",
+            ""required"": false,
+            ""description"": ""Updated status of the pet""
+        },
+        ""name"": {
+            ""type"": ""string"",
+            ""required"": false,
+            ""description"": ""Updated name of the pet""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""updatePetWithForm"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",
+PublicAPITestingInbox,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""addPet"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",
+PublicAPITestingInbox,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""placeOrder"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",
+PublicAPITestingInbox,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""createUsersWithListInput"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",
+PublicAPITestingInbox,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""createUser"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",This can only be done by the logged in user.
+Putreq,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""Endpoint A"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",end
+Putreq,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""Endpint B"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",efsdfs
+Putreq,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""putReq"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",put req
+quota-test-1,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""endpoint_2"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",/users/1
+quota-test-1,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""endpoint_3"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",/users/3
+quota-test-1,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""endpoint_1"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",/users/1
+Test sawgger 2.0,"{
+    ""parameters"": {
+        ""uuid"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": """"
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""/account_activation/{uuid}"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}", 
+Test sawgger 2.0,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""createAccount"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}","**POST data example**: { username: 'test', password: 'yourpassword', email: 'foo@tbar.com', language: 'en' } \
+**Response example**: { status: 'success', code: 1, message: ""Account registration successful. A message with an activation link to your account was sent to the e-mail address you entered. "" }
+
+  ### Possible response:
+  code        status      message \
+      1           success   Account registration successful. A message with an activation link to your account was sent to the e-mail address you entered. \
+      2           success   Account registration successful. \
+      -1          failed    The account with this name already exist - propose a different name. \
+      -2          failed    There is already an account associated with the specified e-mail address. \
+      -3          failed    Sorry, something went wrong. Try again. \
+      -4          failed    Error in validation email
+"
+Test sawgger 2.0,"{
+    ""parameters"": {
+        ""menu_type"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": """",
+            ""default"": ""MU""
+        },
+        ""module_udid"": {
+            ""type"": ""number"",
+            ""required"": true,
+            ""description"": """"
+        },
+        ""user_id"": {
+            ""type"": ""number"",
+            ""required"": true,
+            ""description"": """"
+        },
+        ""ido"": {
+            ""type"": ""number"",
+            ""required"": true,
+            ""description"": """"
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""updateMenuParams"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}","```
+  Parameter Type Required Description
+  menu_type String yes Options: 'MU', 'MI', 'MS', 'MP'
+  ido Number yes Parameter ido
+
+  type 1 - Valid values
+
+  POST data example:
+  {
+      ""value"": 25
+  }
+  ""value"": current value
+
+  Response data example:
+  {
+      ""status"": ""success"",
+      ""data"": ""1""
+  }
+
+  error example:
+  { error: 'Value out of range' }
+
+  type 2 - Valid values
+
+  POST data example:
+  {
+      ""value"": 100
+  }
+  ""value"": value 1/10
+
+  Response data example:
+  {
+      ""status"": ""success"",
+      ""data"": ""1""
+  }
+
+  error example:
+  {
+      error: 'Value out of range'
+  }
+
+  type 3 - Valid values
+
+  POST data example:
+  {
+      ""value"": 30
+  }
+  ""value"": value min: sec
+
+  Response data example:
+  {
+      ""status"": ""success"",
+      ""data"": ""1""
+  }
+
+  error example:
+  {
+      error: 'Value out of range'
+  }
+  type 4 - Valid values
+
+  POST data example:
+  {
+      ""value"": 60
+  }
+  ""value"": value hour: min
+
+  Response data example:
+  {
+      ""status"": ""success"",
+      ""data"": ""1""
+  }
+
+  error example:
+  {
+      error: 'Value out of range'
+  }
+
+  type 5 - Valid values
+
+  POST data example:
+  {
+      ""value"": 15
+  }
+  ""value"": value h: min during the day
+
+  Response data example:
+  {
+      ""status"": ""success"",
+      ""data"": ""1""
+  }
+
+  error example:
+  {
+      error: 'Value out of range'
+  }
+
+  type 6 -  Entering code (input)
+
+  POST data example:
+  {
+      ""code"": 1234
+  }
+  ""code"":access code
+
+  Response data example:
+  {
+      ""status"": ""success"",
+      ""data"": ""1""
+  }
+
+  error example:
+  {
+      error: 'the code is not a number'
+  }
+
+  type 7 - Time mode (temperature + time)
+
+  POST data example:
+  {
+      ""temp"":50,
+      ""time"":100
+  }
+  ""temp"": temperature transfer value
+  ""time"": time transfer value
+
+  Response data example:
+  {
+      ""status"": ""success"",
+      ""data"": ""1""
+  }
+
+  error example:
+  {
+      error: 'Value out of range'
+  }
+
+  type 10 - ON / OFF
+
+  POST data example:
+  {
+      ""value"": 1
+  }
+  ""value"": enable(1) or disable(0) the value
+
+  Response data example:
+  {
+      ""status"": ""success"",
+      ""data"": ""1""
+  }
+
+  error example:
+  {
+      error: 'Invalid value for turn on-off'
+  }
+
+  type 11 - Choice 1 out of many
+
+  POST data example:
+  {
+      ""value"": 1
+  }
+  ""value"": Choice 1 of many
+
+  Response data example:
+  {
+      ""status"": ""success"",
+      ""data"": ""1""
+  }
+
+  error example:
+  {
+      error: 'Value out of range'
+  }
+
+  type 111 -  Selection of strip mode (or other zone controller)
+
+  POST data example:
+  {
+      ""value"": 1
+  }
+  ""value"":Choice 1 of many
+
+  Response data example:
+  {
+      ""status"": ""success"",
+      ""data"": ""1""
+  }
+
+  error example:
+  {
+      error: 'wrong number of parameters'
+  }
+
+  type 112 - Selection 1 of many + wiki, message
+
+  POST data example:
+  {
+      ""value"": 1
+  }
+  ""value"":Choice 1 of many
+
+  Response data example:
+  {
+      ""status"": ""success"",
+      ""data"": ""1""
+  }
+
+  error example:
+  {
+      error: 'Value out of range'
+  }
+
+  type 12 - Weekly + -
+
+  POST data example:
+  {
+      ""weekly_plus_minus"":{
+      ""values"":[0,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,0,15,15,15,15,15,15]
+  }
+  }
+  ""values"": [new adjustment values...]
+
+  Response data example:
+  {
+      ""status"": ""success"",
+      ""data"": ""1""
+  }
+
+  error example:
+  {
+      error: 'wrong number of hours'
+  }
+
+  type 13 - Weekly on / off
+
+  POST data example:
+  {
+      ""weekly_on_off"":{
+          ""values"":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+      }
+  }
+  ""values"": [values on off...]
+  1 - on
+  0 - off
+
+  Response data example:
+  {
+      ""status"": ""success"",
+      ""data"": ""1""
+  }
+
+  error example:
+  {
+      error: 'wrong number of parameters'
+  }
+
+  type 15 - Many-of-many selection (ON / OFF set of lamps)
+  POST data example:
+  {
+      ""many_of_many"":[
+      {
+          ""id"":0,
+          ""value"":1
+      },
+      {
+          ""id"":1,
+          ""value"":1
+      }
+      ]
+  }
+  ""id"" - item id
+  ""value"" - selected value
+  1 - checked
+  0 - unchecked
+
+  Response data example:
+  {
+      ""status"": ""success"",
+      ""data"": ""1""
+  }
+
+  error example:
+  {
+      error: 'too many elements'
+  }
+
+  type 29 - Heating curve offset / slope - Viessmann
+
+  POST data example:
+  {
+      ""slope"":4,
+      ""shift"":4
+  }
+  ""slope"": value slope
+  ""shift"": value shift
+
+  Response data example:
+  {
+      ""status"": ""success"",
+      ""data"": ""1""
+  }
+
+  error example:
+  {
+      error: 'Value out of range'
+  }
+
+  type 30 - Heat curve
+
+  POST data example:
+  {
+      ""heating_curve"":[
+      {
+          ""id"":0,
+          ""value"":33
+      },
+      {
+          ""id"":1,
+          ""value"":33
+      },{
+          ""id"":2,
+          ""value"":33
+      },
+      {
+          ""id"":3,
+          ""value"":33
+      }
+      ]
+  }
+  ""id"":element id
+  ""value"":values after editing
+
+  Response data example:
+  {
+      ""status"": ""success"",
+      ""data"": ""1""
+  }
+
+  error example:
+  { error: 'number of items out of range' }
+  { error: 'Value out of range' }
+
+  type 31 - Heating curve slope / offset
+
+  POST data example:
+  {
+      ""slope"":4,
+      ""shift"":4
+  }
+  ""slope"": value slope
+  ""shift"": value shift
+
+  error example:
+  {
+      error: 'Value out of range'
+  }
+
+  type 100 - Universal schedule
+
+  POST data example:
+  {
+      ""universal_schedule"":[
+      {
+          ""start"":0,
+          ""end"":15,
+          ""interval"":1,
+          ""temp"": 20
+      },
+      {
+          ""start"":15,
+          ""end"":30,
+          ""interval"":1,
+          ""temp"": 20
+      },
+      {
+          ""start"":30,
+          ""end"":45,
+          ""interval"":1,
+          ""temp"": 20
+      },
+      {
+          ""start"":45,
+          ""end"":60,
+          ""interval"":1,
+          ""temp"": 20
+      },
+      {
+          ""start"":60,
+          ""end"":1439,
+          ""interval"":1,
+          ""temp"": 20
+      }
+      ]
+  }
+  ""start"":start time expressed in seconds ,
+  ""end"":end time in seconds
+  ""interval"":fan power,
+  ""temp"": set temperature
+
+  Response data example:
+  {
+      ""status"": ""success"",
+      ""data"": ""1""
+  }
+
+  error example:
+  { error: 'the time of the first object is not equal to 0' }
+  { error: 'the time of the last object is not equal to 1439' }
+  { error: 'the times are intertwined' }
+  { error: 'time is not quarterly' }
+  { error: 'the number of items is incorrect' }
+
+  type 106 - Universal value editing
+
+  POST data example:
+  {""value"": 10}
+  ""value"": current value
+
+  Response data example:
+  {
+      ""status"": ""success"",
+      ""data"": ""1""
+  }
+
+  error example:
+  {
+       error: 'Value out of range'
+  }
+
+  type 107 - Date edit
+
+  POST data example:
+  {
+      ""year"":2020,
+      ""month"":3,
+      ""day"": 21
+  }
+  ""year"":year,
+  ""month"":month,
+  ""day"": day
+
+  Response data example:
+  {
+      ""status"": ""success"",
+      ""data"": ""1""
+  }
+
+  error example:
+  { error: 'wrong day data' }
+  { error: 'wrong month data' }
+
+  type 108 - Edition of the range (date from - date to)
+
+  POST data example:
+  {
+      ""date_start"":{
+          ""year"":2019,
+          ""month"":12,
+          ""day"":1
+      },
+      ""date_end"":{
+      ""year"":2019,
+      ""month"":12,
+      ""day"":2
+      }
+  }
+  ""year"":year,
+  ""month"":month,
+  ""day"": day
+
+  Response data example:
+  {
+      ""status"": ""success"",
+      ""data"": ""1""
+  }
+
+  error example:
+  { error: 'the dates overlap' }
+  { error: 'wrong day data' }
+  { error: 'wrong month data' }
+
+  type 109 - Date (various formats and edits supported)
+
+  POST data example:
+  {
+      ""years"":2000,
+      ""month"":4,
+      ""day"":3
+  }
+  ""year"":year,
+  ""month"":month,
+  ""day"": day
+
+  Response data example:
+  {
+      ""status"": ""success"",
+      ""data"": ""1""
+  }
+
+  error example:
+  { error: 'month is out of range' }
+  { error: 'too many elements' }
+
+  type 120 - Viessmann schedule
+
+  POST data example:
+  {
+      ""schedule"":[
+      {
+      ""day"": 0,
+      ""time"":[{""start"":300,""end"":400},{""start"":400,""end"":500},{""start"":600,""end"":700}]
+      },
+      {
+      ""day"": 1,
+      ""time"":[{""start"":300,""end"":400},{""start"":400,""end"":500},{""start"":600,""end"":700}]
+      }
+      ]
+  }
+  day: days of the week
+  0 - Monday
+  1 - Tuesday
+  2 - Wednesday
+  3 - Thursday
+  4 - Friday
+  5 - Saturday
+  6 - Sunday
+  time: schedule work time
+  ""start"":the stated start time
+  ""end"": end time
+
+  Response data example:
+  {
+      ""status"": ""success"",
+      ""data"": ""1""
+  }
+
+  error example:
+  { error: 'wrong number of time' }
+  { error: 'the times are coming' }
+  { error: 'wrong number of days' }
+"
+Test sawgger 2.0,"{
+    ""parameters"": {
+        ""user_id"": {
+            ""type"": ""number"",
+            ""required"": true,
+            ""description"": """"
+        },
+        ""module_udid"": {
+            ""type"": ""number"",
+            ""required"": true,
+            ""description"": """"
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""Force Data Synchronization"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}", 
+Test sawgger 2.0,"{
+    ""parameters"": {
+        ""user_id"": {
+            ""type"": ""number"",
+            ""required"": true,
+            ""description"": """"
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""registerModule"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}","``` 
+Field                       Type        require
+ module_name                 String      true
+ registration_code           Integer     true
+ notification_email          String      false
+ additional_information      String      false
+ accept_post_policy          Bool        false       ""I agree to the processing of additional data (country, postcode)""
+ country                     String      false
+ zip_code                    String      false
+
+ POST data example:
+ {
+     ""module_name"": ""test"",
+     ""registration_code"": 52312,
+     ""notification_email"": ""foo@bar.com"",
+     ""additional_information"": ""Fitter name / Fitter phone etc."",
+     ""accept_post_policy"": true,
+     ""country"": ""England"",
+     ""zip_code"": ""LE14""
+ }
+
+ Response example:
+ { code: 1, status: 'success',  message: ""registration successful"" }
+
+ Possible responses:
+ code        status      message
+ 1           'success'   'registration successful'
+ -1          'fail'      'invalid register code'
+ -2          'fail'      'register code error'``
+"
+Test sawgger 2.0,"{
+    ""parameters"": {
+        ""user_id"": {
+            ""type"": ""number"",
+            ""required"": true,
+            ""description"": """"
+        },
+        ""module_udid"": {
+            ""type"": ""number"",
+            ""required"": true,
+            ""description"": """"
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""zoneChange"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}","Change zone parameters (L-7, L-8, WiFi 8S, ST-8S WiFi) \n
+Set constant temperature:
+
+1. **Set constant temperature**:  \
+POST data example:
+   {
+    ""mode"": {
+        ""id"": 210,
+        ""parentId"": 101,
+        ""mode"": ""constantTemp"",
+        ""constTempTime"": 0,
+        ""setTemperature"": 220,
+        ""scheduleIndex"": 0
+    }
+}
+
+2. **Set constant temperature with time limitation**: \
+POST data example:{
+    ""mode"": {
+        ""id"": 210,
+        ""parentId"": 101,
+        ""mode"": ""timeLimit"",
+        ""constTempTime"": 60,
+        ""setTemperature"": 220,
+        ""scheduleIndex"": 0
+    }
+}
+3. **Turn on zone**: \
+POST data example:
+{
+    ""zone"": {
+        ""id"": 101,
+        ""zoneState"": ""zoneOn""
+    }
+}
+4. **Turn off zone**: \
+POST data example:
+{
+    ""zone"": {
+        ""id"": 101,
+        ""zoneState"": ""zoneOff""
+    }
+}
+"
+Test sawgger 2.0,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""/authentication"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}","### Response data example: 
+ ``{authenticated: true, user_id: 240471648, token: .eyJ1c2VybmFtZSI6InRlc3QiLCJ1c2VyX2lkIjoyNDA0NzE2NDgsImlhdCI6MTUyNjk5ODQxOX0.opQW1yTczP7vuiIkI1Skuy8yJ8eGhYrlYUKmll9P88M}
+ ``
+"
+Test sawgger 2.0,"{
+    ""parameters"": {
+        ""user_id"": {
+            ""type"": ""number"",
+            ""required"": true,
+            ""description"": """"
+        },
+        ""module_udid"": {
+            ""type"": ""number"",
+            ""required"": true,
+            ""description"": """"
+        },
+        ""zone_id"": {
+            ""type"": ""number"",
+            ""required"": true,
+            ""description"": """"
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""zoneSchedulesChange"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}","### POST data example: 
+```
+{ 
+  modeId = 100 
+  schedule = { 
+          id: 150, 
+          index: -1, 
+          p0Days: [""1"", ""1"", ""1"", ""1"", ""1"", ""0"", ""0""], 
+          p0Intervals: [{start:0, stop: 480, temp: 180}, {start: 480, stop: 960, temp: 240}],
+          p0SetbackTemp: 200,
+          p1Days: [""0"", ""0"", ""0"", ""0"", ""0"", ""1"", ""1""],
+          p1Intervals: ddd,
+          p1SetbackTemp: 210
+      }
+ }
+
+modeId(integer):                                   id of the mode object (nakładka)  connected to the zone 
+schedule(object)    id(integer):                   id of the global schedule connected to specified module 
+                    index(integer):                index of the global schedule (0 to 4)
+                    p0Days(array of strings):      array of days turned on/off for program 1(1 - on, 0 - off). Values must be opposites of p1Days.
+                    p0Intervals(array of objects): group of intervals for program 1. Maximum 3 intervals (can be empty)
+                                                    - each interval requires 3 properties: start, stop and temp
+                                                    - start/stop define the starting/stopping times for the interval
+                                                    - start/stop represent time in minutes. Min 0, Max 1440
+                                                    - temp defines the temperature for the interval (x10). Min 50 max 350.
+                                                    eg. {start: 480, stop: 960, temp 200} from 8:00 - 16:00 temperature will be 20 degrees celsius
+                    p0SetbackTemp(integer):         temperature for anytime not covered by p0Intervals. Min 50 max 350.
+                    p1Days(array of strings):       array of days turned on/off for program 2(1 - on, 0 - off). Values must be opposites of p0Days.
+                    p1Intervals(array of objects):  group of intervals for program 2. Maximum 3 intervals (can be empty)
+                                                    - each interval requires 3 properties: start, stop and temp
+                                                    - start/stop define the starting/stopping times for the interval
+                                                    - start/stop represent time in minutes. Min 0, Max 1440
+                                                    - temp defines the temperature for the interval (x10). Min 50 max 350.
+                                                    eg. {start: 480, stop: 960, temp 200} from 8:00 - 16:00 temperature will be 20 degrees celsius
+                    p1SetbackTemp(integer):         temperature for any time not covered by p1Intervals. Min 50 max 350.
+Error response
+
+Each error response returns data in the following format:
+{""error"": ""code_for_received_error"", ""error_description"": ""Some text describing the error""}
+
+
+     invalid_json
+          General error regarding incorrectly sent data.
+Schedule property errors:
+
+      missing_schedule_property
+          The request is missing the required 'schedule' property.
+
+      invalid_schedule_property
+          The request is missing required properties on the schedule property. 'schedule' must have the following
+          properties: id, index, p0Days, p0Intervals, p0SetbackTemp, p1Days, p1Intervals, p1SetbackTemp.
+
+      Interval errors:
+
+          invalid_number_of_interval_elements
+              Invalid amount of elements in 'p0Intervals' or 'p1Intervals'. The maximum allowed amount is 3.
+
+          missing_interval_property
+              Element(s) of 'p0Intervals' or 'p1Intervals' are missing interval properties. Each interval must have the
+              following properties: start, stop, temp.
+
+          invalid_interval_start_out_of_range
+          invalid_interval_stop_out_of_range
+              Element(s) of 'p0Intervals' or 'p1Intervals' have an invalid 'start' or 'stop' property. 'start' and 'stop'
+              must be between 0 and 1440.
+
+          invalid_interval_start_time_not_increment_of_15
+          invalid_interval_stop_time_not_increment_of_15
+              Element(s) of 'p0Intervals' or 'p1Intervals' have an invalid 'start' or 'stop' property. 'start' and 'stop'
+              must be an increment of 15.
+
+      invalid_interval_stop_greater_than_or_equal_to_start
+          Element(s) of 'p0Intervals' or 'p1Intervals' start property must be less than (and not equal) to the stop
+          property.
+
+      invalid_interval_temp
+          Element(s) of 'p0Intervals' or 'p1Intervals' have and invalid temp property. Temp must be between 50
+          and 350 inclusive.
+
+      invalid_interval_overlap
+          Element(s) of 'p0Intervals' or 'p1Intervals' start/stop times overlap each other. An element's 'start' must be
+          greater than or equal to the previous element's 'stop'.
+
+
+  Day errors 
+        invalid_p0days_length
+        invalid_p1days_length
+            The request has an invalid 'p0Days' or 'p1Days' property. Its length must always be 7 (the amount of days
+            in a week).
+
+        invalid_p0day_element
+        invalid_p1day_element
+            The request has an invalid 'p0Days' or 'p1Days' property. Each element must be either ""0"" or ""1"".
+
+        invalid_pday_equal
+            An element at 'n' in 'p0Days' has the same value as 'p1Days' at index 'n'. Elements at the same index must
+            not have the same value.
+
+    invalid_p0setback_temp
+    invalid_p1setback_temp
+            The request has an invalid 'p0SetbackTemp' or 'p1SetbackTemp' property. It's value must be between 50
+            and 350 inclusive.
+
+    invalid_local_schedule_index
+        Invalid 'index' property on 'schedule' property. The index must be between -40 and -1 inclusive.
+
+    invalid_local_schedule_property
+        The request is missing the required 'modeId' property.
+
+    invalid_local_schedule_zone_not_in_module
+        The 'zoneId' parameter has an id that does not belong to the specified module.
+
+    invalid_local_schedule_doesnt_belong_to_zone
+        The request's schedule has an id that does not belong to the zone.
+
+    invalid_local_schedule_index_mismatch
+        The request's schedule has an index which doesn't match it's id.
+
+    invalid_local_schedule_mode_not_in_zone
+        The request's modeId does not belong to it's zone.          
+
+   Type errors
+
+           invalid_schedule_type
+                Wrong type for schedule property. Schedule must be an object.
+
+            invalid_pinterval_type
+                Wrong type for p0Interval or p1Interval property. p0Interval and p1Interval must be arrays of objects.
+
+            invalid_interval_type
+                Wrong type for interval property. Interval must be a object.
+
+            invalid_interval_start_type
+                Wrong type for interval start property. Start must be an integer.
+
+            invalid_interval_stop_type
+                Wrong type for interval stop property. Stop must be an integer.
+
+            invalid_interval_temp_type
+                Wrong type for interval temp property. Temp must be an integer.
+
+            invalid_p0days_type
+                Wrong type for p0Days. p0Days must be an array of strings.
+
+            invalid_p1days_type
+                Wrong type for p1Days. p1Days must be an array of strings.
+
+            invalid_p0day_element_type
+                Wrong type for p0Day element. p0Day elements must be strings.
+
+            invalid_p1day_element_type
+                Wrong type for p1Day element. p1Day elements must be strings.
+
+            invalid_p0setback_temp_type
+                Wrong type for p0SetbackType. p0SetbackType must be an integer.
+
+            invalid_p1setback_temp_type
+                Wrong type for p1SetbackType. p1SetbackType must be an integer.
+
+            invalid_local_schedule_index_type
+                Wrong type for index. Index must be an integer.
+
+            invalid_local_schedule_mode_id_type
+                Wrong type for modeId. modeId must be an integer.
+"
+Test sawgger 2.0,"{
+    ""parameters"": {
+        ""user_id"": {
+            ""type"": ""number"",
+            ""required"": true,
+            ""description"": """"
+        },
+        ""module_udid"": {
+            ""type"": ""number"",
+            ""required"": true,
+            ""description"": """"
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""zoneGlobalSchedulesChange"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}","**setInZones(array of objects)**:                      array of zoneIds to be set with their corresponding modeIds. This cannot be empty. Zone(s)
+                                           must belong to the module specified by {module_udid} \
+**scheduleName(string)**:                              new name for the global schedule. Only required if changing the name. Max length 40. 
+### schedule(object) ###   
+    id(integer):                   id of the global schedule connected to specified module 
+    index(integer):                index of the global schedule (0 to 4) \
+    p0Days(array of strings):      array of days turned on/off for program 1(1 - on, 0 - off). Values must be opposites of p1Days. ervals(array of objects): group of intervals for program 1. Maximum 3 intervals (can be empty) 
+                                    - each interval requires 3 properties: start, stop and temp 
+                                    - start/stop define the starting/stopping times for the interval 
+                                    - start/stop represent time in minutes. Min 0, Max 1440 
+                                    - temp defines the temperature for the interval (x10). Min 50 max 350. 
+                                    eg. {start: 480, stop: 960, temp 200} from 8:00 - 16:00 temperature will be 20 degrees celsius \
+    p0SetbackTemp(integer):         temperature for anytime not covered by p0Intervals. Min 50 max 350.
+    p1Days(array of strings):       array of days turned on/off for program 2(1 - on, 0 - off). Values must be opposites of p0Days.
+    p1Intervals(array of objects):  group of intervals for program 2. Maximum 3 intervals (can be empty)
+                                    - each interval requires 3 properties: start, stop and temp
+                                    - start/stop define the starting/stopping times for the interval
+                                    - start/stop represent time in minutes. Min 0, Max 1440
+                                    - temp defines the temperature for the interval (x10). Min 50 max 350.
+                                    eg. {start: 480, stop: 960, temp 200} from 8:00 - 16:00 temperature will be 20 degrees celsius
+    p1SetbackTemp(integer):         temperature for any time not covered by p1Intervals. Min 50 max 350.
+
+## Error response ##
+Each error response returns data in the following format: \
+{""error"": ""code_for_received_error"", ""error_description"": ""Some text describing the error""}
+
+**Schedule property errors**:
+
+    missing_schedule_property
+        The request is missing the required 'schedule' property.
+
+    invalid_schedule_property
+        The request is missing required properties on the schedule property. 'schedule' must have the following
+        properties: id, index, p0Days, p0Intervals, p0SetbackTemp, p1Days, p1Intervals, p1SetbackTemp.
+
+**Interval errors**:
+
+    invalid_number_of_interval_elements
+        Invalid amount of elements in 'p0Intervals' or 'p1Intervals'. The maximum allowed amount is 4.
+
+    missing_interval_property
+        Element(s) of 'p0Intervals' or 'p1Intervals' are missing interval properties. Each interval must have the
+        following properties: start, stop, temp.
+
+    invalid_interval_start_out_of_range
+    invalid_interval_stop_out_of_range
+        Element(s) of 'p0Intervals' or 'p1Intervals' have an invalid 'start' or 'stop' property. 'start' and 'stop'
+        must be between 0 and 1440.
+
+    invalid_interval_start_time_not_increment_of_15
+    invalid_interval_stop_time_not_increment_of_15
+        Element(s) of 'p0Intervals' or 'p1Intervals' have an invalid 'start' or 'stop' property. 'start' and 'stop'
+        must be an increment of 15.
+
+    invalid_interval_stop_greater_than_or_equal_to_start
+        Element(s) of 'p0Intervals' or 'p1Intervals' start property must be less than (and not equal) to the stop
+        property.
+
+    invalid_interval_temp
+        Element(s) of 'p0Intervals' or 'p1Intervals' have and invalid temp property. Temp must be between 50
+        and 350 inclusive.
+
+    invalid_interval_overlap
+        Element(s) of 'p0Intervals' or 'p1Intervals' start/stop times overlap each other. An element's 'start' must be
+        greater than or equal to the previous element's 'stop'.
+
+**Day errors**:
+
+    invalid_p0days_length
+    invalid_p1days_length
+        The request has an invalid 'p0Days' or 'p1Days' property. Its length must always be 7 (the amount of days
+        in a week).
+
+    invalid_p0day_element
+    invalid_p1day_element
+        The request has an invalid 'p0Days' or 'p1Days' property. Each element must be either ""0"" or ""1"".
+
+    invalid_pday_equal
+        An element at 'n' in 'p0Days' has the same value as 'p1Days' at index 'n'. Elements at the same index must
+        not have the same value.
+
+    invalid_p0setback_temp
+    invalid_p1setback_temp
+            The request has an invalid 'p0SetbackTemp' or 'p1SetbackTemp' property. It's value must be between 50
+            and 350 inclusive.        
+
+    invalid_global_schedule_index
+          Invalid 'index' property on 'schedule' property. The index must be between 0 and 4 inclusive.
+
+     invalid_global_schedule_property
+          The request is missing required properties. In addition to 'schedule', it must have 'setInZones' and
+          'scheduleName' properties.
+
+    invalid_global_schedule_not_in_module
+        The 'schedule' property has an id that does not belong to the specified module.
+
+    invalid_global_schedule_invalid_set_in_zones_length
+        The request's 'setInZones' property has an invalid length. 'setInZones' must not be empty.
+
+    invalid_global_schedule_invalid_set_in_zones_properties
+        The request's 'setInZones' property has invalid element(s). Each element must have the required properties
+        'zoneId' and 'modeId'.
+
+    invalid_global_schedule_invalid_set_in_zones_not_in_module
+        The request's 'setInZones' property has invalid element(s). One or more of the elements have a zoneId that does
+        not belong to the specified module.
+
+    invalid_global_schedule_index_mismatch
+        The request's schedule has an index which doesn't match it's id.
+
+    invalid_global_schedule_invalid_schedule_name_length
+        The request's scheduleName has an invalid length. It's length must not be more than 40.
+
+    invalid_global_schedule_invalid_set_in_zones_mode_not_in_zone
+        The request's 'setInZones' property has a modeId which doesn't belong to the zone.
+
+### Type errors:
+    invalid_schedule_type
+        Wrong type for schedule property. Schedule must be an object.
+
+    invalid_pinterval_type
+        Wrong type for p0Interval or p1Interval property. p0Interval and p1Interval must be arrays of objects.
+
+    invalid_interval_type
+        Wrong type for interval property. Interval must be a object.
+
+    invalid_interval_start_type
+        Wrong type for interval start property. Start must be an integer.
+
+    invalid_interval_stop_type
+        Wrong type for interval stop property. Stop must be an integer.
+
+    invalid_interval_temp_type
+        Wrong type for interval temp property. Temp must be an integer.
+
+    invalid_p0days_type
+        Wrong type for p0Days. p0Days must be an array of strings.
+
+    invalid_p1days_type
+        Wrong type for p1Days. p1Days must be an array of strings.
+
+    invalid_p0day_element_type
+        Wrong type for p0Day element. p0Day elements must be strings.
+
+    invalid_p1day_element_type
+        Wrong type for p1Day element. p1Day elements must be strings.
+
+    invalid_p0setback_temp_type
+        Wrong type for p0SetbackType. p0SetbackType must be an integer.
+
+    invalid_p1setback_temp_type
+        Wrong type for p1SetbackType. p1SetbackType must be an integer.
+
+    invalid_global_schedule_index_type
+        Wrong type for index. Index must be an integer.
+
+    invalid_global_schedule_invalid_schedule_name_type
+        Wrong type for scheduleName. scheduleName must be a string.
+
+    invalid_global_schedule_invalid_set_in_zones_type
+        Wrong type for setInZones. setInZones must be an array of objects.
+
+    invalid_global_schedule_invalid_set_in_zones_element_type
+        Wrong type for setInZones element. setInZones elements must be objects.
+
+    invalid_global_schedule_invalid_set_in_zones_zone_type
+        Wrong type for setInZones element zoneId. setInZones elements zoneIds must be integers.
+
+    invalid_global_schedule_invalid_set_in_zones_mode_type
+        Wrong type for setInZones element modeId. setInZones elements modeIds must be integers.
+"
+Test_v2,"{
+    ""parameters"": {
+        ""secret"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""Your API Secret that you get from your account on our website""
+        },
+        ""match_id"": {
+            ""type"": ""number"",
+            ""required"": true,
+            ""description"": ""Match ID""
+        },
+        ""key"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""Your API Key that you get from your account on our website API key""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""some-operation-od"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",Getting match statistics
+test,"{
+    ""parameters"": {
+        ""url"": {
+            ""type"": ""string"",
+            ""required"": false,
+            ""description"": """",
+            ""default"": ""http://www.africau.edu/images/default/sample.pdf""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""testtesttest"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",nsadas
+test,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""test with tokenk"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",token
+test,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""test"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",test
+TestingAPIwithinOrg,"{
+    ""parameters"": {
+        ""venueId"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": """",
+            ""default"": ""string""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""Createaccount"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}","Create a new account in the specified venue. Account initializations may or may not be immediately performed (e.g. funding an account's reserve on Ripple or Stellar).
+
+## Response
+
+Field | Type | Description
+--- | --- | ---
+result | Account | The newly created account."
+TestingAPIwithinOrg,"{
+    ""parameters"": {
+        ""accountId"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": """",
+            ""default"": ""string""
+        },
+        ""venueId"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": """",
+            ""default"": ""string""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""Deleteallaccountorders"",
+        ""method"": ""DELETE"",
+        ""category"": ""Advertising""
+    }
+}",Delete all orders for the account.
+TestingAPIwithinOrg,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""Gettime"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",Retrieve the server time. This endpoint is also useful as a method for a client to 'ping' the Stronghold Platform and measure latency.
+TestingAPIwithinOrg,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""Createcredential"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}","Create a new credential that is validated with the specified passphrase.
+
+If you are using the Stronghold Identity APIs, you can also pass the access token as a field in the request to automatically link the 3rd party to the new credential.
+
+## Request
+
+Field | Type | Description
+--- | --- | ---
+passphrase | string | The passphrase the requestor will use with the new credential.
+
+## Response
+
+Field | Type | Description
+--- | --- | ---
+result | Credential | The newly created credential."
+TestingAPIwithinOrg,"{
+    ""parameters"": {
+        ""venueId"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": """",
+            ""default"": ""string""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""Listmarkets"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",Retrieve a list of the well known markets on the venue.
+TestingAPIwithinOrg,"{
+    ""parameters"": {
+        ""Content-Type"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": """",
+            ""default"": ""application/json""
+        },
+        ""venueID"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": """",
+            ""default"": ""string""
+        },
+        ""accountId"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": """",
+            ""default"": ""string""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""Placeorder"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}","Place a new order on the specific market.
+
+## Request
+
+Field | Type | Description
+--- | --- | ---
+marketID | string | The well-known market symbol, identifying the market to place the order on.
+type | string | The type of order to place.
+side | string | Either `buy` or `sell`.
+size | string | The size of the order, as measured in the base currency.
+price | string | The price to offer or ask for each unit of the base currency, as measured in the counter currency.
+customerReference | string | (Optional) a customer-provided reference to identify the order.
+
+## Response
+
+Field | Type | Description
+--- | --- | ---
+
+`404` is returned when the market symbol was not valid.
+`501` is returned when the order type is not supported."
+TestingAPIwithinOrg,"{
+    ""parameters"": {
+        ""venueId"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": """",
+            ""default"": ""string""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""Getassets"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}","Retrieve a list of known assets for the current venue.
+
+## Response
+
+Field | Type | Description
+--- | --- | ---
+Result | Asset[] | List of known assets for the current venue."
+TestingAPIwithinOrg,"{
+    ""parameters"": {
+        ""venueId"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": """",
+            ""default"": ""string""
+        },
+        ""accountId"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": """",
+            ""default"": ""string""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""Listaccounttrades"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",Retrieve a list of the account's most recently executed trades.
+TestingAPIwithinOrg,"{
+    ""parameters"": {
+        ""accountId"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": """",
+            ""default"": ""string""
+        },
+        ""venueId"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": """",
+            ""default"": ""string""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""Prepareoperation"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",Prepare operation
+TestingAPIwithinOrg,"{
+    ""parameters"": {
+        ""venueId"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": """",
+            ""default"": ""string""
+        },
+        ""accountId"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": """",
+            ""default"": ""string""
+        },
+        ""operationId"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": """",
+            ""default"": ""string""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""Signoperation"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",Sign operation
+TestingAPIwithinOrg,"{
+    ""parameters"": {
+        ""venueId"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": """",
+            ""default"": ""string""
+        },
+        ""marketId"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": """",
+            ""default"": ""string""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""Getmarketorderbook"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}","Retrieve the orderbook for a given market.
+
+## Response
+
+Field | Type | Description
+--- | --- | ---
+result | Orderbook | The market orderbook.
+result.bids | string[][] | The bid orders.
+result.asks | string[][] | The ask orders.
+
+Each item in the bids or asks arrays is an array describing a particular price with a size: [""(price)"", ""(size)""]."
+TestingAPIwithinOrg,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""GenerateaUUID"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",Generate an RFC 4122 v4 UUID.
+TestingAPIwithinOrg,"{
+    ""parameters"": {
+        ""credentialID"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": """",
+            ""default"": ""string""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""Grantcredentialpermissions"",
+        ""method"": ""PUT"",
+        ""category"": ""Advertising""
+    }
+}","Grants the specified credential permissions. If the credential is not already associated with an identity it receives the identity of the credential that is used to make the call.
+
+## Request
+
+Field | Type | Description
+--- | --- | ---
+secret | string | The secret of the credential that the permissions are being set for.
+passphrase | string | The passphrase of the credential that the permissions are being set for.
+permissions | string | The policy describing the permissions the credential will have."
+TestingAPIwithinOrg,"{
+    ""parameters"": {
+        ""venueId"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": """",
+            ""default"": ""string""
+        },
+        ""marketId"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": """",
+            ""default"": ""string""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""Listmarkettrades"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}","Retrieve a list of historic trades for a given market. The last 200 trades are provided by default. If your use case requires more history, please contact developers@stronghold.co
+
+## Response
+
+Field | Type | Description
+--- | --- | ---
+result | Object | The latest historic trades.
+result.marketId | string | The market's identifier.
+result.trades | string[][] | The trades.
+
+Each item in the trades array is an array describing a particular trade: [""(price)"", ""(size)"", ""(time)""]."
+TestingAPIwithinOrg,"{
+    ""parameters"": {
+        ""accountId"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": """",
+            ""default"": ""string""
+        },
+        ""venueId"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": """",
+            ""default"": ""string""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""Getaccount"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}","Retrieve account information, including balances.
+
+The result will contain the following information:
+- **ID**: the account's identifier. Stronghold associates a protocol-agnostic identifier that is used in preference to the 'native' ID, such as a 'public address'.
+- **Balances**: the account's balances. Asset information will be provided where possible."
+TestingAPIwithinOrg,"{
+    ""parameters"": {
+        ""venueId"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": """",
+            ""default"": ""string""
+        },
+        ""accountId"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": """",
+            ""default"": ""string""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""Requestdeposit"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}","# Deposits and Withdrawals
+Transactions are requested with `paymentMethodDetails` (details of the transaction, passed to Stronghold) and responses contain `paymentMethodInstructions` (instructions for the user, given by Stronghold) as follows:
+
+## PaymentMethodDetails on Requests
+
+Key | Description | Used In
+--- | --- | ---
+amount | The amount of the transaction as a string with a maximum of 7 decimal places | Withdrawals for all
+withdrawal_address | The venue-specific address for the asset to be withdrawn to | Withdrawals for `bitcoin`, `litecoin`, `ethereum`, `stellar`, and `ripple`
+reference | The venue-specific reference to be attached to the withdrawal | Withdrawals for `stellar` and `ripple`
+bank_name | The name of the bank, e.g. 'JPMorgan Chase Bank N.A.' | Deposits for `us-ach` and withdrawals for `us-ach` and `us-wire`
+bank_routing_number | The routing number of the bank account | Deposits for `us-ach` and withdrawals for `us-ach` and `us-wire`
+bank_account_number | The account number of the bank account | Deposits for `us-ach` and withdrawals for `us-ach` and `us-wire`
+bank_account_type | The type of bank account, either 'checking' or 'savings' | Deposits and withdrawals for `us-ach`
+
+## PaymentMethodInstructions on Responses
+
+Key | Description | Used In
+--- | --- | ---
+deposit_address | The venue-specific address that the asset should to be deposited into | Deposits for `bitcoin`, `litecoin`, `ethereum`, `stellar`, and `ripple`
+reference | The venue-specific reference that must be attached to the deposit | Deposits for `stellar`, `ripple`, and `us-wire`
+interledger_payment_pointer | The Interledger SPSP Payment Pointer used to receive streaming payments in a certain asset | Deposits for `ilp-spsp`
+amount | The amount that must be sent for the deposit to succeed | Deposits for `us-wire`
+recipient_name | The name of the recipient that the funds should be sent to | Deposits for `us-wire`
+recipient_address | The address of the recipient that the funds should be sent to | Deposits for `us-wire`
+bank_name | The name of the bank, e.g. 'JPMorgan Chase Bank N.A.' | Deposits for `us-wire`
+bank_routing_number | The routing number of the bank account | Deposits for `us-wire`
+bank_account_number | The account number of the bank account | Deposits for `us-wire`
+bank_swift_code | The SWIFT code to use where the wire is being sent internationally | Deposits for `us-wire`
+
+## Notes
+
+- For `us-ach` and `us-wire`, the name on the bank account must match the name on the entity's Stronghold account.
+- `us-ach` deposits take a variable amount of time to be credited to a Stronghold account. Please contact us for more information on the timings for your particular use case.
+- The entity must have completed the account verification to use all payment methods with the exception of `ilp-spsp`.
+
+## Request
+
+Field | Type | Description
+--- | --- | ---
+assetId | string | The identifier of the asset to deposit.
+paymentMethod | string | The payment method for the deposit.
+paymentMethodDetails | key-value string pairs | (Optional) If required for the deposit method, the details of the deposit.
+
+## Response
+
+Field | Type | Description
+--- | --- | ---
+result | AccountTransaction | The account transaction. A transaction may not necessarily been created (as seen by the absence of an identifier) but the payment method instructions can be followed to initiate the deposit."
+TestingAPIwithinOrg,"{
+    ""parameters"": {
+        ""venueId"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": """",
+            ""default"": ""string""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""Fundaccount"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",Fund account
+TestingAPIwithinOrg,"{
+    ""parameters"": {
+        ""venueId"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": """",
+            ""default"": ""string""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""Directwithdrawal"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}","Withdrawal allows customers to directly withdraw anchored funds from a non-Stronghold account.
+
+The payment method details must describe a payout made to an account owned by the customer. Using withdrawal to send funds to other beneficiaries will result in failure."
+TestingAPIwithinOrg,"{
+    ""parameters"": {
+        ""credentialID"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""The identifier of the credential to revoke."",
+            ""default"": ""string""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""Revokecredential"",
+        ""method"": ""DELETE"",
+        ""category"": ""Advertising""
+    }
+}","Revoke a credential, rendering it useless for API access purposes. The request can be signed with any authorized credential, including the credential that is being revoked (i.e. a credential can sign the request to revoke itself)."
+TestingAPIwithinOrg,"{
+    ""parameters"": {
+        ""accountId"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": """",
+            ""default"": ""string""
+        },
+        ""venueId"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": """",
+            ""default"": ""string""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""Getaccountorders"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",Retrieve the open orders for an account.
+TestingAPIwithinOrg,"{
+    ""parameters"": {
+        ""accountId"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": """",
+            ""default"": ""string""
+        },
+        ""orderId"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": """",
+            ""default"": ""string""
+        },
+        ""venueId"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": """",
+            ""default"": ""string""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""Deleteaccountorder"",
+        ""method"": ""DELETE"",
+        ""category"": ""Advertising""
+    }
+}",Delete an order for an account.
+TestingAPIwithinOrg,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""Getavailablevenues"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}","Retrieve the venues the credential has access to.
+
+Each venue describes its:
+- **capabilities**: as each venue differs in protocol and context, not all Platform APIs are supported on all venues. The capabilities object describes which operations can be performed.
+- **attributes**: protocol/context-specific key-value pairs."
+TestingAPIwithinOrg,"{
+    ""parameters"": {
+        ""accountId"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": """",
+            ""default"": ""string""
+        },
+        ""venueId"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": """",
+            ""default"": ""string""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""Getaccounttransactions"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}","## Response
+
+Field | Type | Description
+--- | --- | ---
+result | AccountTransaction[] | The account's transactions."
+TestingAPIwithinOrg,"{
+    ""parameters"": {
+        ""venueID"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": """",
+            ""default"": ""string""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""Createcustody-enabledaccount"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}","Create a new account in the specified venue that is available for use with the custody APIs. Account initializations may or may not be immeadiately performed (e.g. funding an account's reserve on Ripple or Stellar).
+
+## Response
+
+Field | Type | Description
+--- | --- | ---
+result | Custody Account | The newly created account."
+TestingAPIwithinOrg,"{
+    ""parameters"": {
+        ""venueId"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": """",
+            ""default"": ""string""
+        },
+        ""accountId"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": """",
+            ""default"": ""string""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""Requestwithdrawal"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}","## Request
+
+Field | Type | Description
+--- | --- | ---
+assetId | string | The identifier of the asset to withdraw.
+paymentMethod | string | The payment method requested for the withdrawal.
+paymentMethodDetails | key-value string pairs | (Optional) If required for the withdrawal method, the details of the withdrawal.
+
+## Response
+
+Field | Type | Description
+--- | --- | ---
+result | AccountTransaction | The account transaction for the withdrawal."
+ThisisaPublicAPI_v2,"{
+    ""parameters"": {
+        ""petId"": {
+            ""type"": ""number"",
+            ""required"": true,
+            ""description"": ""ID of pet to return""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""getPetById"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",Returns a single pet
+ThisisaPublicAPI_v2,"{
+    ""parameters"": {
+        ""orderId"": {
+            ""type"": ""number"",
+            ""required"": true,
+            ""description"": ""ID of pet that needs to be fetched""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""getOrderById"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",For valid response try integer IDs with value >= 1 and <= 10. Other values will generated exceptions
+ThisisaPublicAPI_v2,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""getInventory"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",Returns a map of status codes to quantities
+ThisisaPublicAPI_v2,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""logoutUser"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",
+ThisisaPublicAPI_v2,"{
+    ""parameters"": {
+        ""username"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""The user name for login""
+        },
+        ""password"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""The password for login in clear text""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""loginUser"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",
+ThisisaPublicAPI_v2,"{
+    ""parameters"": {
+        ""username"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""The name that needs to be fetched. Use user1 for testing. ""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""getUserByName"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",
+ThisisaPublicAPI,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""addPet"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",Add a new pet to the store
+ThisisaPublicAPI,"{
+    ""parameters"": {
+        ""petId"": {
+            ""type"": ""number"",
+            ""required"": true,
+            ""description"": ""ID of pet to update"",
+            ""default"": 0
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""uploadFile"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",uploads an image
+ThisisaPublicAPI,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""createUsersWithListInput"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",Creates list of users with given input array
+ThisisaPublicAPI,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""createUser"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",This can only be done by the logged in user.
+ThisisaPublicAPI,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""placeOrder"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",Place an order for a pet
+ThisisaPublicAPI,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""createUsersWithArrayInput"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",Creates list of users with given input array
+ThisisaPublicAPI,"{
+    ""parameters"": {
+        ""petId"": {
+            ""type"": ""number"",
+            ""required"": true,
+            ""description"": ""ID of pet that needs to be updated"",
+            ""default"": 0
+        },
+        ""status"": {
+            ""type"": ""string"",
+            ""required"": false,
+            ""description"": ""Updated status of the pet"",
+            ""default"": ""string""
+        },
+        ""name"": {
+            ""type"": ""string"",
+            ""required"": false,
+            ""description"": ""Updated name of the pet"",
+            ""default"": ""string""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""updatePetWithForm"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",Updates a pet in the store with form data
+ThisshouldbeFREE,"{
+    ""parameters"": {
+        ""petId"": {
+            ""type"": ""number"",
+            ""required"": true,
+            ""description"": ""ID of pet to return""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""getPetById"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",Returns a single pet
+ThisshouldbeFREE,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""logoutUser"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",
+ThisshouldbeFREE,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""getInventory"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",Returns a map of status codes to quantities
+ThisshouldbeFREE,"{
+    ""parameters"": {
+        ""password"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""The password for login in clear text""
+        },
+        ""username"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""The user name for login""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""loginUser"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",
+ThisshouldbeFREE,"{
+    ""parameters"": {
+        ""username"": {
+            ""type"": ""string"",
+            ""required"": true,
+            ""description"": ""The name that needs to be fetched. Use user1 for testing. ""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""getUserByName"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",
+ThisshouldbeFREE,"{
+    ""parameters"": {
+        ""orderId"": {
+            ""type"": ""number"",
+            ""required"": true,
+            ""description"": ""ID of pet that needs to be fetched""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""getOrderById"",
+        ""method"": ""GET"",
+        ""category"": ""Advertising""
+    }
+}",For valid response try integer IDs with value >= 1 and <= 10. Other values will generated exceptions
+ThisshouldbeFREE,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""addPet"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",
+ThisshouldbeFREE,"{
+    ""parameters"": {
+        ""petId"": {
+            ""type"": ""number"",
+            ""required"": true,
+            ""description"": ""ID of pet to update""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""uploadFile"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",
+ThisshouldbeFREE,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""placeOrder"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",
+ThisshouldbeFREE,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""createUsersWithArrayInput"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",
+ThisshouldbeFREE,"{
+    ""parameters"": {
+        ""petId"": {
+            ""type"": ""number"",
+            ""required"": true,
+            ""description"": ""ID of pet that needs to be updated""
+        },
+        ""name"": {
+            ""type"": ""string"",
+            ""required"": false,
+            ""description"": ""Updated name of the pet""
+        },
+        ""status"": {
+            ""type"": ""string"",
+            ""required"": false,
+            ""description"": ""Updated status of the pet""
+        }
+    },
+    ""metadata"": {
+        ""endpoint"": ""updatePetWithForm"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",
+ThisshouldbeFREE,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""createUsersWithListInput"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",
+ThisshouldbeFREE,"{
+    ""parameters"": {},
+    ""metadata"": {
+        ""endpoint"": ""createUser"",
+        ""method"": ""POST"",
+        ""category"": ""Advertising""
+    }
+}",This can only be done by the logged in user.

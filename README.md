@@ -39,26 +39,26 @@ Inference runs a language model over a prompt dataset and logs model responses. 
 
 **Example Usage**
 ```bash
+cd src/agent_tool_optimizer
+
 # Hugging Face engine with gated model and access token
-python src/agent_tool_optimizer/inference_main.py \
+python inference_main.py \
   --model_name "intuit/agent-tool-optimizer" \ 
   --input_data_path data/inference/tool_descs.example.csv \ 
   --hf_access_token <your_token_here> \ 
   --inference_engine "hf"
 
 # vLLM (default) with a local model and a CSV data file
-python src/agent_tool_optimizer/inference_main.py \
+python inference_main.py \
   --model_name /opt/ml/model \ 
   --input_data_path data/inference/tool_descs.example.csv
 
 # Hugging Face engine with a Hub model
-python src/agent_tool_optimizer/inference_main.py \
+python inference_main.py \
   --model_name Qwen/Qwen3-8B \
   --input_data_path data/inference/tool_descs.example.csv \
   --inference_engine "hf"
 ```
-
-Set `PYTHONPATH` to include `src` (e.g. `export PYTHONPATH=/path/to/project/src`).
 
 ### Docker Usage
 
@@ -91,11 +91,31 @@ The image uses the Dockerfile’s conda env, installs PyTorch (CUDA 12.6) and th
 
 ## Training
 
+### Environment setup
+
+```bash
+# Install dependencies
+uv sync --active --no-install-project
+uv pip install -e . --no-deps
+
+# Start virtual environment
+source .venv/bin/activate
+
+# TODO: provide more detailed instructions on this
+# Configure environment variables (first time only)
+# cp .env.example .env
+# Edit .env — key fields:
+#   TOOLBENCH_KEY=<your_toolbench_key>
+```
+
 ### Training Data (Option 1) - Download existing example training data
 
 Sample training data is available for this library through [intuit/tool-optimizer-dataset](https://huggingface.co/datasets/intuit/tool-optimizer-dataset) stored in HuggingFace. 
-To retrieve that data, execute `python src/utils/pull_hf_data.py` using the following arguments:
 
+**Entry point**
+> `src/utils/pull_hf_data.py`
+
+**Arguments**
 | Argument | Required | Default | Description |
 |----------|----------|---------|-------------|
 | `--hf_access_token` | No | `None` | Hugging Face access token for authentication. Pass as arg or set as env variable (HF_TOKEN) |
@@ -103,6 +123,19 @@ To retrieve that data, execute `python src/utils/pull_hf_data.py` using the foll
 | `--data_files` | No | `None` | Optional. Pulls only specific files from HF repo |
 | `--data_dir` | No | `None` | Optional. Pulls only specific directory from HF repo |
 | `--output_path` | No | `"../../data"` | Local path where to store files pulled from HF repo |
+
+**Example Usage**
+```bash
+cd src/utils
+
+export HF_TOKEN=<enter_hf_token>
+
+python pull_hf_data.py \
+  --repo_id "intuit/tool-optimizer-dataset" \
+  --data_dir "StableToolBench/tool_usage" \
+  --output_path ../../data/
+```
+
 
 ### Training Data (Option 2) - Generate training data using pipeline
 
@@ -117,26 +150,6 @@ Across these stages, there are six main steps:
 4. **Step 4 — Execution Traces**: Run synthesized queries against tools (using D1 descriptions) to produce success/failure execution traces.
 5. **Step 5 — D1 to D2 (Trace-Aware Refinement)**: Refine D1 descriptions into rule-enriched, robust D2 descriptions using the execution traces.
 6. **Step 6 — SFT (Supervised Fine-Tuning)**: Train a model to generate D2-quality descriptions from D0 input.
-
-#### Environment setup
-
-```bash
-# Go into root directory
-cd tool-optimizer
-
-# Install dependencies
-uv sync --active --no-install-project
-uv pip install -e . --no-deps
-
-# Start virtual environment
-source .venv/bin/activate
-
-# TODO: provide more detailed instructions on this
-# Configure environment variables (first time only)
-cp .env.example .env
-# Edit .env — key fields:
-#   TOOLBENCH_KEY=<your_toolbench_key>
-```
 
 #### Step 1. Annotate tool usage and health signals
 
