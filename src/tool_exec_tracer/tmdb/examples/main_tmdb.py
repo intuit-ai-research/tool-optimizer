@@ -20,11 +20,13 @@ load_dotenv()
 _PACKAGE_ROOT = str(Path(__file__).resolve().parents[2])  # tool_exec_tracer/
 ROOT_DIR = os.path.expanduser(os.environ.get("ROOT_DIR", _PACKAGE_ROOT))
 
-# Add StableToolBench to sys.path so its internal 'toolbench.*' imports resolve
-sys.path.insert(0, os.path.join(_PACKAGE_ROOT, "StableToolBench"))
+# StableToolBench lives at <repo>/src/submodules/StableToolBench (a git submodule, not a subpackage of
+# tool_exec_tracer). Add it to sys.path so its internal `toolbench.*` imports resolve.
+_STB_DIR = str(Path(__file__).resolve().parents[3] / "submodules" / "StableToolBench")
+sys.path.insert(0, _STB_DIR)
 
-from tool_exec_tracer.StableToolBench.toolbench.inference.Downstream_tasks.rapidapi_multithread import rapidapi_wrapper, pipeline_runner
-from tool_exec_tracer.StableToolBench.toolbench.utils import standardize, change_name
+from toolbench.inference.Downstream_tasks.rapidapi_multithread import rapidapi_wrapper, pipeline_runner
+from toolbench.utils import standardize, change_name
 from tool_exec_tracer.utils.exp_meta import build_reproducibility_log
 import logging
 import json

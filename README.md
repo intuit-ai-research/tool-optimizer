@@ -9,14 +9,13 @@ Python package to enhance software tool descriptions in an effort to improve age
 Inference runs a language model over a prompt dataset and logs model responses. Two backends are supported: **vLLM** (default, recommended for throughput) and **Hugging Face** (Transformers pipeline).
 
 ### Requirements
-
 - Python ≥ 3.12
-- CUDA for GPU inference
+- CUDA for GPU inference (optional)
 
 ### Environment setup
 - Install dependencies with `uv`:
-  - If using **vLLM** for inference: `uv sync --active --no-install-project --extra vllm`, or use the Docker image 
   - If using **Hugging Face** for inference: `uv sync --active --no-install-project`
+  - If using **vLLM** for inference: `uv sync --active --no-install-project --extra vllm`, or use the Docker image 
 - Start virtual environment: `source .venv/bin/activate` 
 
 ### CLI Usage
@@ -39,26 +38,32 @@ Inference runs a language model over a prompt dataset and logs model responses. 
 
 **Example Usage**
 ```bash
-cd src/agent_tool_optimizer
+# Set `PYTHONPATH` to include `src` 
+export PYTHONPATH=$(pwd)/src
 
-# Hugging Face engine with gated model and access token
-python inference_main.py \
-  --model_name "intuit/agent-tool-optimizer" \ 
-  --input_data_path data/inference/tool_descs.example.csv \ 
-  --hf_access_token <your_token_here> \ 
+# OPTIONAL
+export HF_TOKEN=<your_token_here> # Enter as env variable or as CLI arg below
+
+# OPTION 1 - Hugging Face engine with gated model and access token
+python src/agent_tool_optimizer/inference_main.py \
+  --model_name "intuit/agent-tool-optimizer" \
+  --input_data_path data/inference/tool_descs.example.csv \
+  --hf_access_token <your_token_here> \
   --inference_engine "hf"
 
-# vLLM (default) with a local model and a CSV data file
-python inference_main.py \
-  --model_name /opt/ml/model \ 
+# OPTION 2 - vLLM (default) with a local model and a CSV data file
+python src/agent_tool_optimizer/inference_main.py \
+  --model_name /opt/ml/model \
   --input_data_path data/inference/tool_descs.example.csv
+  --inference_engine "vllm"
 
-# Hugging Face engine with a Hub model
-python inference_main.py \
+# OPTION 3 - Hugging Face engine with a Hub model
+python src/agent_tool_optimizer/inference_main.py \
   --model_name Qwen/Qwen3-8B \
   --input_data_path data/inference/tool_descs.example.csv \
   --inference_engine "hf"
 ```
+
 
 ### Docker Usage
 
@@ -94,6 +99,9 @@ The image uses the Dockerfile’s conda env, installs PyTorch (CUDA 12.6) and th
 ### Environment setup
 
 ```bash
+# Deactivate previous virtual environment if one was previously activated
+deactivate
+
 # Install dependencies
 uv sync --active --no-install-project
 uv pip install -e . --no-deps
@@ -128,12 +136,15 @@ Sample training data is available for this library through [intuit/tool-optimize
 ```bash
 cd src/utils
 
-export HF_TOKEN=<enter_hf_token>
+# OPTIONAL
+export HF_TOKEN=<your_token_here> # Enter as env variable or as CLI arg below
 
 python pull_hf_data.py \
   --repo_id "intuit/tool-optimizer-dataset" \
-  --data_dir "StableToolBench/tool_usage" \
+  --data_dir "StableToolBench" \
   --output_path ../../data/
+
+cd ../..
 ```
 
 
@@ -182,6 +193,9 @@ Across these stages, there are six main steps:
 ```bash
 cd src/tool_annotator
 
+# OPTIONAL
+export OPENAI_API_KEY=<your_key_here> # Enter as env variable or as CLI arg below
+
 python main_select.py \
   --tool_usage_path data/StableToolBench/tools_usage/ \
   --mcp_yaml_path data/StableToolBench/tools_mcp_yaml_raw/ \
@@ -222,6 +236,9 @@ cd ../..
 **Example Usage**
 ```bash
 cd src/tool_desc_improve_tracefree
+
+# OPTIONAL
+export OPENAI_API_KEY=<your_key_here> # Enter as env variable or as CLI arg below
 
 python main_StableToolBench.py \
   --mcp_yaml_path ../../data/StableToolBench/tools_mcp_yaml_raw \
@@ -325,6 +342,9 @@ export TOKENIZERS_PARALLELISM=false
 ```bash
 cd datagen
 
+# OPTIONAL
+export OPENAI_API_KEY=<your_key_here> # Enter as env variable or as CLI arg below
+
 ./run_pipeline.sh \
   --input_dir ../../tool-optimizer/data/StableToolBench/tools_mcp_yaml_desc_improve_tracefree \
   --samples_per_server 6 \
@@ -376,6 +396,9 @@ For manual step-by-step execution (including optional quality checks in Steps 2-
 ```bash
 cd src/submodules/StableToolBench/server
 
+# OPTIONAL
+export OPENAI_API_KEY=<your_key_here> # Enter as env variable or as CLI arg below
+
 # Start the StableToolBench server (and leave it running)
 python main.py --openai_api_key "<key>" \
   --model_name "gpt-4.1-2025-04-14"
@@ -392,6 +415,9 @@ python main.py --openai_api_key "<key>" \
 *In a separate terminal window*
 ```bash
 cd src/tool_exec_tracer
+
+# OPTIONAL
+export OPENAI_API_KEY=<your_key_here> # Enter as env variable or as CLI arg below
 
 python eval/tmdb/examples/main_tmdb.py \
   --config eval/tmdb/configs/tmdb_base.yaml \

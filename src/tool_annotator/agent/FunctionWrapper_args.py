@@ -1,16 +1,16 @@
 import os
 import yaml
 
-# Resolve FunctionWrapper as a sibling repo relative to the tool-optimizer repo root
-_REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "..", ".."))
-_DEFAULT_FW_DIR = os.path.join(_REPO_ROOT, "..", "FunctionWrapper")
-FunctionWrapper_DIR = os.environ.get("FunctionWrapper_DIR", os.path.abspath(_DEFAULT_FW_DIR))
-TOOLEVAL_DIR = os.environ.get("TOOLEVAL_DIR", f"{FunctionWrapper_DIR}/StableToolBench/toolbench/tooleval")
+# Resolve StableToolBench's tooleval directory relative to this file so cwd doesn't matter.
+# Layout: <repo>/src/tool_annotator/agent/FunctionWrapper_args.py → <repo>/src/submodules/StableToolBench/toolbench/tooleval
+_AGENT_DIR = os.path.dirname(os.path.abspath(__file__))
+_SRC_DIR = os.path.abspath(os.path.join(_AGENT_DIR, "..", ".."))
+TOOLEVAL_DIR = os.path.join(_SRC_DIR, "submodules", "StableToolBench", "toolbench", "tooleval")
 
 def add_FunctionWrapper_args(parser):
     # First, parse just the config file argument
     parser.add_argument("--config", type=str, 
-                        default=f"{FunctionWrapper_DIR}/eval/tmdb/configs/tmdb_base.yaml",
+                        default=f"../../tool_exec_tracer/tmdb/configs/tmdb_base.yaml",
                        help="Config file path")
     parser.add_argument("--debug", action="store_true", default=False,
                        help="Run in debug mode (limited queries for quick testing)")
@@ -18,7 +18,7 @@ def add_FunctionWrapper_args(parser):
                        help="Run full evaluation (overrides debug)")
     parser.add_argument("--dataset", type=str, default=None,
                        help="Dataset to evaluate (overrides config)")
-    parser.add_argument("--tool_root_dir", type=str, default=f"{FunctionWrapper_DIR}/StableToolBench/data/toolenv/tools/",
+    parser.add_argument("--tool_root_dir", type=str, default=False,
                        help="Tool root directory for StableToolBench. Will use it to call APIs.")
 
     parser.add_argument("--mcp_yaml_path", type=str, nargs="+", default=None,
@@ -77,9 +77,9 @@ def impute_functionwrapper_args(args):
         args.dataset = "tmdb"  # fallback default
     
     # MCP paths - use config's mcp_yaml_path if CLI not provided
-    if args.mcp_yaml_path is None:
-        args.mcp_yaml_path = config_data.get('agent', {}).get('params', {}).get('mcp_yaml_path', 
-                                f"{FunctionWrapper_DIR}/eval/tmdb/desc_mcp_yaml/tmdb_d0_mcp.yaml")
+    # if args.mcp_yaml_path is None:
+    #     args.mcp_yaml_path = config_data.get('agent', {}).get('params', {}).get('mcp_yaml_path', 
+    #                             f"{FunctionWrapper_DIR}/eval/tmdb/desc_mcp_yaml/tmdb_d0_mcp.yaml")
     
     if args.decompo_mcp_yaml_path is None:
         # Use same as mcp_yaml_path if not specified
@@ -166,17 +166,17 @@ def impute_functionwrapper_args(args):
 
     # load tmdb or spotify queries
     if args.dataset == "tmdb":
-        queries_path = f"{FunctionWrapper_DIR}/DRAFT/tmdb.json"
+        queries_path = f"../../tool_exec_tracer/tmdb/data/tmdb.json"
     elif args.dataset == "tmdb_0802_syn":
-        queries_path = f"{FunctionWrapper_DIR}/DRAFT/tmdb_0802_syn.json"
+        queries_path = f"../../tool_exec_tracer/tmdb/data/tmdb_0802_syn.json"
     elif args.dataset == "tmdb_0709_syn":
-        queries_path = f"{FunctionWrapper_DIR}/DRAFT/tmdb_0709_syn.json"
+        queries_path = f"../../tool_exec_tracer/tmdb/data/tmdb_0709_syn.json"
     elif args.dataset == "spotify":
-        queries_path = f"{FunctionWrapper_DIR}/DRAFT/spotify.json"
+        queries_path = f"../../tool_exec_tracer/tmdb/data/spotify.json"
     elif args.dataset == "spotify_1007_syn":
-        queries_path = f"{FunctionWrapper_DIR}/DRAFT/spotify_1007_syn.json"
+        queries_path = f"../../tool_exec_tracer/tmdb/data/spotify_1007_syn.json"
     elif args.dataset == "spotify_1021_syn":
-        queries_path = f"{FunctionWrapper_DIR}/DRAFT/spotify_1021_syn.json"
+        queries_path = f"../../tool_exec_tracer/tmdb/data/spotify_1021_syn.json"
     else:
         queries_path = None
 

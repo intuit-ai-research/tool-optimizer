@@ -37,12 +37,11 @@ from phoenix.otel import register
 from openinference.instrumentation import capture_span_context
 from openinference.instrumentation.smolagents import SmolagentsInstrumentor
 
-from tool_annotator.agent.FunctionWrapper_args import FunctionWrapper_DIR, TOOLEVAL_DIR, add_FunctionWrapper_args, impute_functionwrapper_args
-sys.path.append(FunctionWrapper_DIR)
+from tool_annotator.agent.FunctionWrapper_args import TOOLEVAL_DIR, add_FunctionWrapper_args, impute_functionwrapper_args
 sys.path.append(TOOLEVAL_DIR)
 from tool_annotator.agent.api_tool import build_tools_from_yaml_tools
-from utils.exp_meta import build_reproducibility_log
-from eval.tmdb.examples.main_tmdb import prepare_data_from_StableToolBench, load_queries, load_tools, ToolManager, create_output_directory, standardize
+from tool_exec_tracer.utils.exp_meta import build_reproducibility_log
+from tool_exec_tracer.tmdb.examples.main_tmdb import prepare_data_from_StableToolBench, load_queries, load_tools, ToolManager, create_output_directory, standardize
 from evaluators import load_registered_automatic_evaluator
 
 def load_json_paths(json_root_dir):
@@ -116,8 +115,6 @@ def load_mcp_logs_under_one_folder(tool_usage_path: str, all_json_paths: Dict[Tu
         run_parameters = json.load(f)
     # use the dataset to find the corresponding query file
     queries_path = Path(run_parameters["dataset"])
-    if not queries_path.exists():
-        queries_path = FunctionWrapper_DIR/queries_path
     # read the query file
     with open(queries_path, "r") as f:
         queries = json.load(f)

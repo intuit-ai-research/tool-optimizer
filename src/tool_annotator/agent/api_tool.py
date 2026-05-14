@@ -7,8 +7,7 @@ import json
 from smolagents import Tool
 from smolagents.models import get_tool_json_schema
 
-# FunctionWrapper is added to sys.path in tool_annotator/main.py before imports
-from eval.tmdb.utils.api_caller import call_api_mcp  # type: ignore
+from tool_exec_tracer.tmdb.utils.api_caller import call_api_mcp  # type: ignore
 
 # """
 # Shortest, no-file-edit workaround: monkey‑patch the imported symbol that tools.py uses.
