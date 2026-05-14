@@ -91,8 +91,11 @@ class APISpecTool(Tool):
         self.description = tool["description"]
         self.inputs = inputs_from_tool(tool)
         self.output_type = "object"
-        
+
         self.tool = tool
+        # tool_provider is stamped onto each API in prepare_data_from_StableToolBench (main_tmdb.py).
+        # It's required as the prefix for env.rapidapi_wrapper_name_mapping lookups in call_api_mcp.
+        self.tool_provider = tool.get("tool_provider", "")
         self.env = env
         self.is_initialized = True
         self.tool_call_by_prompt = tool_call_by_prompt
@@ -123,6 +126,7 @@ class APISpecTool(Tool):
             metadata=self.tool["_metadata"],
             platform=self.tool["_metadata"]["platform"],
             rapidapi_wrapper=self.env,
+            tool_provider=self.tool_provider,
         )
     
 
