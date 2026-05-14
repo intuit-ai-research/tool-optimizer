@@ -264,7 +264,7 @@ def main():
             BM25_threshold=args.BM25_threshold,
             retrieval_sample_size=args.retrieval_sample_size,
         )
-        def load_mcp_yaml_func(mcp_yaml_path):
+        def load_mcp_yaml_func(mcp_yaml_path, old_version=False):
             with open(mcp_yaml_path, "r") as f:
                 yaml_data = yaml.safe_load(f)
                 tool_name = list(yaml_data["mcp_servers"].keys())[0]
