@@ -5,7 +5,8 @@ import yaml
 # Layout: <repo>/src/tool_annotator/agent/FunctionWrapper_args.py → <repo>/src/submodules/StableToolBench/toolbench/tooleval
 _AGENT_DIR = os.path.dirname(os.path.abspath(__file__))
 _SRC_DIR = os.path.abspath(os.path.join(_AGENT_DIR, "..", ".."))
-TOOLEVAL_DIR = os.path.join(_SRC_DIR, "submodules", "StableToolBench", "toolbench", "tooleval")
+SUBMODULES_DIR = os.path.join(_SRC_DIR, "submodules")
+TOOLEVAL_DIR = os.path.join(SUBMODULES_DIR, "StableToolBench", "toolbench", "tooleval")
 
 def add_FunctionWrapper_args(parser):
     # First, parse just the config file argument

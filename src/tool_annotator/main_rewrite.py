@@ -37,7 +37,7 @@ from phoenix.otel import register
 from openinference.instrumentation import capture_span_context
 from openinference.instrumentation.smolagents import SmolagentsInstrumentor
 
-from tool_annotator.agent.FunctionWrapper_args import TOOLEVAL_DIR, add_FunctionWrapper_args, impute_functionwrapper_args
+from tool_annotator.agent.FunctionWrapper_args import TOOLEVAL_DIR, SUBMODULES_DIR, add_FunctionWrapper_args, impute_functionwrapper_args
 sys.path.append(TOOLEVAL_DIR)
 from tool_annotator.agent.api_tool import build_tools_from_yaml_tools
 from tool_exec_tracer.utils.exp_meta import build_reproducibility_log
@@ -115,6 +115,11 @@ def load_mcp_logs_under_one_folder(tool_usage_path: str, all_json_paths: Dict[Tu
         run_parameters = json.load(f)
     # use the dataset to find the corresponding query file
     queries_path = Path(run_parameters["dataset"])
+    if not queries_path.is_absolute() and not queries_path.exists():
+        # Legacy run_parameters.json files store `dataset` as a path relative to the old
+        # FunctionWrapper checkout root (e.g. "StableToolBench/solvable_queries/...").
+        # After the repo merge, StableToolBench lives under <repo>/src/submodules/.
+        queries_path = Path(SUBMODULES_DIR) / queries_path
     # read the query file
     with open(queries_path, "r") as f:
         queries = json.load(f)
