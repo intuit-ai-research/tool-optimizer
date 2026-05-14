@@ -9,8 +9,8 @@ TOOLEVAL_DIR = os.path.join(_SRC_DIR, "submodules", "StableToolBench", "toolbenc
 
 def add_FunctionWrapper_args(parser):
     # First, parse just the config file argument
-    parser.add_argument("--config", type=str, 
-                        default=f"../../tool_exec_tracer/tmdb/configs/tmdb_base.yaml",
+    parser.add_argument("--config", type=str,
+                        default=os.path.join(_SRC_DIR, "tool_exec_tracer", "tmdb", "configs", "tmdb_base.yaml"),
                        help="Config file path")
     parser.add_argument("--debug", action="store_true", default=False,
                        help="Run in debug mode (limited queries for quick testing)")
@@ -165,18 +165,19 @@ def impute_functionwrapper_args(args):
     # print(f"   📋 Prompt Collection: ENABLED (saving queries, contexts, and selected APIs to prompt.json)")
 
     # load tmdb or spotify queries
+    _DATA_DIR = os.path.join(_SRC_DIR, "tool_exec_tracer", "tmdb", "data")
     if args.dataset == "tmdb":
-        queries_path = f"../../tool_exec_tracer/tmdb/data/tmdb.json"
+        queries_path = os.path.join(_DATA_DIR, "tmdb.json")
     elif args.dataset == "tmdb_0802_syn":
-        queries_path = f"../../tool_exec_tracer/tmdb/data/tmdb_0802_syn.json"
+        queries_path = os.path.join(_DATA_DIR, "tmdb_0802_syn.json")
     elif args.dataset == "tmdb_0709_syn":
-        queries_path = f"../../tool_exec_tracer/tmdb/data/tmdb_0709_syn.json"
+        queries_path = os.path.join(_DATA_DIR, "tmdb_0709_syn.json")
     elif args.dataset == "spotify":
-        queries_path = f"../../tool_exec_tracer/tmdb/data/spotify.json"
+        queries_path = os.path.join(_DATA_DIR, "spotify.json")
     elif args.dataset == "spotify_1007_syn":
-        queries_path = f"../../tool_exec_tracer/tmdb/data/spotify_1007_syn.json"
+        queries_path = os.path.join(_DATA_DIR, "spotify_1007_syn.json")
     elif args.dataset == "spotify_1021_syn":
-        queries_path = f"../../tool_exec_tracer/tmdb/data/spotify_1021_syn.json"
+        queries_path = os.path.join(_DATA_DIR, "spotify_1021_syn.json")
     else:
         queries_path = None
 
