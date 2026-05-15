@@ -253,7 +253,7 @@ def main():
             input_query_file=queries_path,
             output_answer_file=create_output_directory(args, queries_path, output_suffix),
             backbone_model="",
-            toolbench_key="lIoNrcOLqpVjwugdHm8B1XR9fnZtzaySbMi0Qk2TUPYCGKeD4E",
+            toolbench_key=os.environ["TOOLBENCH_KEY"],
             rapidapi_key="",
             use_rapidapi_key=False,
             api_customization="",

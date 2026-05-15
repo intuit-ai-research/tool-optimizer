@@ -583,7 +583,7 @@ def main():
             input_query_file=queries_path,
             output_answer_file=output_dir,
             backbone_model="",
-            toolbench_key="lIoNrcOLqpVjwugdHm8B1XR9fnZtzaySbMi0Qk2TUPYCGKeD4E",
+            toolbench_key=os.environ["TOOLBENCH_KEY"],
             rapidapi_key="",
             use_rapidapi_key=False,
             api_customization="",

@@ -102,6 +102,9 @@ The image uses the Dockerfile’s conda env, installs PyTorch (CUDA 12.6) and th
 # Deactivate previous virtual environment if one was previously activated
 deactivate
 
+# This repo requires submodules, so if you did not recursively pull them, do so now:
+git submodule update --init --recursive
+
 # Install dependencies
 uv sync --active --no-install-project
 uv pip install -e . --no-deps
@@ -200,11 +203,19 @@ python main_select.py \
   --tool_usage_path data/StableToolBench/tools_usage/ \
   --mcp_yaml_path data/StableToolBench/tools_mcp_yaml_raw/ \
   --tool_root_dir data/StableToolBench/tools_api/ \
-  --model_name  "gpt-4.1-2025-04-14" \
+  --model_name  "openai:gpt-4.1-2025-04-14" \
   --output_path ../../data/tools_mcp_yaml_annotated
 
 cd ../..
 ```
+
+python main_select.py \
+  --tool_usage_path /Users/csoares1/dev/git-repos/tool-optimizer/data/StableToolBench/tools_usage/ \
+  --mcp_yaml_path /Users/csoares1/dev/git-repos/tool-optimizer/data/StableToolBench/tools_mcp_yaml_raw/ \
+  --tool_root_dir /Users/csoares1/dev/git-repos/tool-optimizer/data/StableToolBench/tools_api/ \
+  --model_name  "openai:gpt-4.1-2025-04-14" \
+  --output_path ../../data/tools_mcp_yaml_annotated
+
 
 **Output**: Annotated YAML files in `<path_to_output_dir>/<Category>/`, one per tool. These contain the original tool descriptions plus `_metadata` annotations for health status and example calls.
 
@@ -400,9 +411,10 @@ cd src/submodules/StableToolBench/server
 export OPENAI_API_KEY=<your_key_here> # Enter as env variable or as CLI arg below
 
 # Start the StableToolBench server (and leave it running)
-python main.py --openai_api_key "<key>" \
-  --model_name "gpt-4.1-2025-04-14"
-  --tool_root_dir ../../../../data/StableToolBench/tools_api 
+python main.py \
+  --openai_api_key "<key>" \
+  --model_name "gpt-4.1-2025-04-14" \
+  --tool_root_dir ../../../../data/StableToolBench/tools_api
 ```
 
 ##### Step 4.2. Start StableToolBench server
