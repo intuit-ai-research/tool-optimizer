@@ -177,7 +177,34 @@ Across these stages, there are six main steps:
 > **Skip this step?** Pre-computed annotations are available using `src/utils/pull_hf_data.py` (pulled as part of `tools_mcp_yaml_annotated/`). You can proceed directly to Step 3 using these, or use the raw D0 YAMLs from (pulled as part of `tools_mcp_yaml_raw/`). See [Training Data](#training-data-option-1---download-existing-example-training-data) for more info.
 
 
-##### Step 1.1. Execute script to generate output data
+##### Step 1.1. Start StableToolBench server
+**Entry point**
+> `src/submodules/StableToolBench/server/main.py`
+
+**Arguments**
+| Argument | Required | Default | Description |
+|----------|----------|---------|-------------|
+| `--tool_root_dir` | Yes | `None` | Directory path to tools API definitions |
+| `--openai_api_key` | No | `None` | API key for LLM calls using OpenAI models. Must either be provided as CLI arg or already exist as OPENAI_API_KEY env variable |
+| `--model_name` | No | `gpt-4.1-2025-04-14` | OpenAI model name to be used for LLM calls |
+
+**Example Usage**
+```bash
+cd src/submodules/StableToolBench/server
+
+# OPTIONAL
+export OPENAI_API_KEY=<your_key_here> # Enter as env variable or as CLI arg below
+
+# Start the StableToolBench server (and leave it running)
+python main.py \
+  --model_name "gpt-4.1-2025-04-14" \
+  --tool_root_dir ../../../../data/StableToolBench/tools_api
+
+cd ../../../..
+```
+
+
+##### Step 1.2. Execute script to generate output data
 
 **Entry point**
 > `src/tool_annotator/main_select.py`
@@ -193,6 +220,8 @@ Across these stages, there are six main steps:
 | `--output_path` | No | `"../../data/tools_mcp_yaml_annotated_<timestamp>"` | Local path where to store output of annotated tools mcp yamls |
 
 **Example Usage**
+
+*In a separate terminal window*
 ```bash
 cd src/tool_annotator
 
@@ -209,12 +238,7 @@ python main_select.py \
 cd ../..
 ```
 
-python main_select.py \
-  --tool_usage_path /Users/csoares1/dev/git-repos/tool-optimizer/data/StableToolBench/tools_usage/ \
-  --mcp_yaml_path /Users/csoares1/dev/git-repos/tool-optimizer/data/StableToolBench/tools_mcp_yaml_raw/ \
-  --tool_root_dir /Users/csoares1/dev/git-repos/tool-optimizer/data/StableToolBench/tools_api/ \
-  --model_name  "openai:gpt-4.1-2025-04-14" \
-  --output_path ../../data/tools_mcp_yaml_annotated
+
 
 
 **Output**: Annotated YAML files in `<path_to_output_dir>/<Category>/`, one per tool. These contain the original tool descriptions plus `_metadata` annotations for health status and example calls.
@@ -393,31 +417,10 @@ For manual step-by-step execution (including optional quality checks in Steps 2-
 **Purpose**: Execute the synthesized queries against the actual tools to produce success/failure execution traces. These traces are used in Step 5 to refine descriptions.
 
 ##### Step 4.1. Start StableToolBench server
-**Entry point**
-> `src/submodules/StableToolBench/server/main.py`
 
-**Arguments**
-| Argument | Required | Default | Description |
-|----------|----------|---------|-------------|
-| `--tool_root_dir` | Yes | `None` | Directory path to tools API definitions |
-| `--openai_api_key` | No | `None` | API key for LLM calls using OpenAI models. Must either be provided as CLI arg or already exist as OPENAI_API_KEY env variable |
-| `--model_name` | No | `gpt-4.1-2025-04-14` | OpenAI model name to be used for LLM calls |
+Make sure the StableToolBench server is running. If not, refer to Training Step 1.1 to start the server.
 
-**Example Usage**
-```bash
-cd src/submodules/StableToolBench/server
-
-# OPTIONAL
-export OPENAI_API_KEY=<your_key_here> # Enter as env variable or as CLI arg below
-
-# Start the StableToolBench server (and leave it running)
-python main.py \
-  --openai_api_key "<key>" \
-  --model_name "gpt-4.1-2025-04-14" \
-  --tool_root_dir ../../../../data/StableToolBench/tools_api
-```
-
-##### Step 4.2. Start StableToolBench server
+##### Step 4.2. Run evaluation to capture traces
 
 **Entry point**
 > `src/tool_exec_tracer/tmdb/examples/main_tmdb.py`
@@ -431,7 +434,7 @@ cd src/tool_exec_tracer
 # OPTIONAL
 export OPENAI_API_KEY=<your_key_here> # Enter as env variable or as CLI arg below
 
-python eval/tmdb/examples/main_tmdb.py \
+python tmdb/examples/main_tmdb.py \
   --config eval/tmdb/configs/tmdb_base.yaml \
   --dataset ../../data/StableToolBench/tools_synthetic_queries/ToolUse_smithery_198_3tool_1775806399/combined_queries.json \
   --mcp_yaml_path ../../data/StableToolBench/tools_mcp_yaml_desc_improve_tracefree \

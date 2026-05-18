@@ -214,3 +214,6 @@ __marimo__/
 
 # Claude Code
 CLAUDE.md
+
+# Tool annotator logs
+src/tool_annotator/log/
