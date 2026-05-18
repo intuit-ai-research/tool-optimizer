@@ -147,6 +147,7 @@ python pull_hf_data.py \
   --data_dir "StableToolBench" \
   --output_path ../../data/
 
+# Return to repo root
 cd ../..
 ```
 
@@ -200,11 +201,13 @@ python main.py \
   --model_name "gpt-4.1-2025-04-14" \
   --tool_root_dir ../../../../data/StableToolBench/tools_api
 
+# Return to repo root
 cd ../../../..
 ```
 
-
 ##### Step 1.2. Execute script to generate output data
+
+<mark>NOTE: This step can take in the order of DAYS to complete, so plan accordingly</mark>
 
 **Entry point**
 > `src/tool_annotator/main_select.py`
@@ -233,13 +236,11 @@ python main_select.py \
   --mcp_yaml_path data/StableToolBench/tools_mcp_yaml_raw/ \
   --tool_root_dir data/StableToolBench/tools_api/ \
   --model_name  "openai:gpt-4.1-2025-04-14" \
-  --output_path ../../data/tools_mcp_yaml_annotated
+  --output_path ../../data/StableToolBench/tools_mcp_yaml_annotated
 
+# Return to repo root
 cd ../..
 ```
-
-
-
 
 **Output**: Annotated YAML files in `<path_to_output_dir>/<Category>/`, one per tool. These contain the original tool descriptions plus `_metadata` annotations for health status and example calls.
 
@@ -248,9 +249,9 @@ cd ../..
 #### Step 2. Data-Independent Description Improvement
 
 > **Diagram mapping (First half of Stage 3: Two-Stage Description Improvement)**
-> - **Input**: `Initial Description (D0)` (Sparse, Vague) → `eval/StableToolBench/`
+> - **Input**: `Initial Description (D0)` (Sparse, Vague)
 > - **Process**: `Data-Independent Improvement`
-> - **Output**: `Improved Description (D1)` (Structured, Clear) → `description_improvement/results/StableToolBench_D1/`
+> - **Output**: `Improved Description (D1)` (Structured, Clear)
 
 **Purpose**: Transform sparse, vague D0 descriptions into structured, clear D1 descriptions using LLM-based guidelines. No execution data is needed — this is purely prompt-driven improvement.
 
@@ -278,9 +279,10 @@ export OPENAI_API_KEY=<your_key_here> # Enter as env variable or as CLI arg belo
 python main_StableToolBench.py \
   --mcp_yaml_path ../../data/StableToolBench/tools_mcp_yaml_raw \
   --model_name "gpt-4.1-2025-04-14" \
-  --output_path ../../data/StableToolBench/tools_mcp_yaml_desc_improve_tracefree
+  --output_path ../../data/StableToolBench/tools_mcp_yaml_desc_improve_tracefree \
   --config config/StableToolBench.yaml
 
+# Return to repo root
 cd ../..
 ```
 
@@ -289,7 +291,6 @@ cd ../..
 This automatically loops through all YAML files under `<path_to_tools_mcp_yaml_raws>/<Category>/`. It skips files that already exist in the output folder, so re-running is safe.
 
 **Output**: YAML files with improved descriptions stored in `<path_to_output_dir>/<Category>/<tool>.yaml`.
-
 
 **Config details** (`StableToolBench.yaml`):
 - Strategy: `generic_llm_guidelines` (data-independent)
@@ -381,15 +382,15 @@ cd datagen
 export OPENAI_API_KEY=<your_key_here> # Enter as env variable or as CLI arg below
 
 ./run_pipeline.sh \
-  --input_dir ../../tool-optimizer/data/StableToolBench/tools_mcp_yaml_desc_improve_tracefree \
+  --input_dir ../../../..//data/StableToolBench/tools_mcp_yaml_desc_improve_tracefree \
   --samples_per_server 6 \
-  --num_tools 3
+  --num_tools 3 \
   --model_name "gpt-4.1-2025-04-14" \
-  --tools_root_dir ../../tool-optimizer/data/StableToolBench/tools_api/ \
-  --output_folder ../../tool-optimizer/data/StableToolBench/tools_synthetic_queries
-# Output: ../../tool-optimizer/data/StableToolBench/tools_synthetic_queries/ToolUse_smithery_2508_3tool_1766028185
+  --tools_root_dir ../../../..//data/StableToolBench/tools_api/ \
+  --output_folder ../../../..//data/StableToolBench/tools_synthetic_queries
+# Output: ../../../..//data/StableToolBench/tools_synthetic_queries/ToolUse_smithery_2508_3tool_1766028185
 
-# Return to root
+# Return to repo root
 cd ../../../..
 ```
 
@@ -403,7 +404,7 @@ cd ../../../..
 
 For manual step-by-step execution (including optional quality checks in Steps 2-4), see `TOUCAN/datagen/README.MD`.
 
-**Output**: `<output_folder>/ToolUse_<name>_<timestamp>/combined_queries.json`
+**Output**: Synthetically generated user queries using variety of tools and stored in `<output_folder>/ToolUse_<name>_<timestamp>/combined_queries.json`.
 
 ---
 
@@ -412,7 +413,7 @@ For manual step-by-step execution (including optional quality checks in Steps 2-
 > **Diagram mapping (Stage 3: Two-Stage Description Improvement — trace generation)**
 > - **Input**: `Tool Call Queries` (from Step 3) + `Improved Description (D1)` (from Step 2)
 > - **Process**: Execute queries against actual tool APIs
-> - **Output**: `(Success & Failure) Execution Traces` → `experiments/<timestamp>/`
+> - **Output**: `(Success & Failure) Execution Traces`
 
 **Purpose**: Execute the synthesized queries against the actual tools to produce success/failure execution traces. These traces are used in Step 5 to refine descriptions.
 
@@ -425,6 +426,24 @@ Make sure the StableToolBench server is running. If not, refer to Training Step 
 **Entry point**
 > `src/tool_exec_tracer/tmdb/examples/main_tmdb.py`
 
+**Arguments**
+| Argument | Required | Default | Description |
+|----------|----------|---------|-------------|
+| `--input_dir` | Yes | -- | Input directory for YAML tool specs. Can use annotated files from --output_path of Step 1 or filtered files from --output_path of Step 2 |
+| `--tools_root_dir` | Yes | -- | Directory path to tools API definitions |
+| `--mcp_servers_dir` | No | `../mcp_servers` | Output directory for generated MCP server JSONs (Stage 0) |                                                        
+| `--cache_dir` | No | `./tool_response_cache` | Cache directory for `convert_yaml_to_mcp_json.py` (Stage 0) |                                                     
+| `--num_tools` | No | 2 | Controls complexity of generated questions by how many tools are included in each generated prompt/question |
+| `--sampling_strategy` | No | `uniform` | How MCP servers are selected when generating question prompts. Options: `random`, `uniform`, `power_law`, or `featured` |
+| `--samples_per_server` | No | 10 | How many questions are generated per MCP server |
+| `--mode` | No | `single_server` | Question generation mode: `single_server` or `multi_server` |
+| `--output_folder` | No | `../data` | Output root directory for Stage 1-1 |
+| `--timestamp` | No | Current epoch time | Timestamp/seed used in output file naming for Stage 1-1 |
+| `--model_name` | No | `gpt-4.1-2025-04-14` | OpenAI model name to be used for LLM calls |
+| `--openai_api_key` | No | `None` | API key for LLM calls using OpenAI models. Must either be provided as CLI arg or already exist as OPENAI_API_KEY env variable |
+| `--engine` | No | `openai` | Inference backend: `vllm_api`, `vllm`, `hf`, `together_api`, `openai`, or `openrouter_api` |
+| `--start_vllm_service` | No | `false` | Whether to auto-start a vLLM server (`true` or `false`) |
+
 **Example Usage**
 
 *In a separate terminal window*
@@ -435,7 +454,7 @@ cd src/tool_exec_tracer
 export OPENAI_API_KEY=<your_key_here> # Enter as env variable or as CLI arg below
 
 python tmdb/examples/main_tmdb.py \
-  --config eval/tmdb/configs/tmdb_base.yaml \
+  --config tmdb/configs/tmdb_base.yaml \
   --dataset ../../data/StableToolBench/tools_synthetic_queries/ToolUse_smithery_198_3tool_1775806399/combined_queries.json \
   --mcp_yaml_path ../../data/StableToolBench/tools_mcp_yaml_desc_improve_tracefree \
   --tool_root_dir ../../data/StableToolBench/tools_api \
@@ -443,7 +462,7 @@ python tmdb/examples/main_tmdb.py \
   --openai_api_key <key> \
   --model_name "gpt-4.1-2025-04-14"
 
-# Return to root directory
+# Return to repo root
 cd ../..
 ```
 
@@ -465,7 +484,7 @@ cd ../..
 > **Diagram mapping (Stage 3: Two-Stage Description Improvement — second half)**
 > - **Input**: `Improved Description (D1)` + `(Success & Failure) Execution Traces` (from Step 4) + `Analyze Tool Dependencies`
 > - **Process**: `Trace-Aware Refinement`
-> - **Output**: `Final Description (D2)` (Rule-Enriched, Robust) → `description_improvement/results/StableToolBench_D2/`
+> - **Output**: `Final Description (D2)` (Rule-Enriched, Robust)
 > - **Also produces**: `SFT Training Data`
 
 **Purpose**: Analyze execution traces (successes and failures) to generate rule-enriched D2 descriptions. Uses Explanation-Based Learning (EBL) to extract rules from traces and incorporate them into tool descriptions.
@@ -483,7 +502,7 @@ python main.py \
   --eval_results_dir ../../data/StableToolBench/tools_exec_traces/20260415_111700 \
   --output_dir ../../data/StableToolBench/tool_mcp_yaml_desc_atomic
 
-# Return to root directory
+# Return to repo root
 cd ../..
 ```
 
@@ -530,10 +549,6 @@ python -m pip uninstall -y flash-attn flash_attn
 python -m pip install --no-cache-dir --no-build-isolation "flash-attn==2.7.4.post1"
 ```
 
-The SFT step also uses a local fork of VERL (included as a submodule):
-```
-https://github.com/intuit-ai-research/verl
-```
 
 ### 6.2 Data Preprocessing
 
