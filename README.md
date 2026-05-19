@@ -320,12 +320,14 @@ cd src/submodules/TOUCAN
 
 **OPTION 1: USING UV**
 ```bash
-uv venv --python 3.12 .venv
-source .venv/bin/activate
-uv pip install torch
+deactivate
+uv venv --python 3.12 .venv2
+source .venv2/bin/activate
 uv pip install -r requirements.txt
 cd Qwen-Agent && pip install -e . && cd ..
 ```
+
+> On macOS, the GPU-only dependencies (`flash-attn`, `vllm`, `cupy-cuda12x`, `xformers`) are skipped automatically via PEP 508 markers in `pyproject.toml`. No separate steps are needed.
 
 **OPTION 2: USING CONDA**
 ```bash
@@ -333,7 +335,6 @@ cd Qwen-Agent && pip install -e . && cd ..
 conda create -n toucan python=3.12 -y
 conda activate toucan
 # Install Required Packages
-pip install torch
 pip install -r requirements.txt
 # Install Qwen Agent from Source
 cd Qwen-Agent && pip install -e . && cd ..
@@ -382,12 +383,12 @@ cd datagen
 export OPENAI_API_KEY=<your_key_here> # Enter as env variable or as CLI arg below
 
 ./run_pipeline.sh \
-  --input_dir ../../../..//data/StableToolBench/tools_mcp_yaml_desc_improve_tracefree \
+  --input_dir ../../../../data/StableToolBench/tools_mcp_yaml_desc_improve_tracefree \
   --samples_per_server 6 \
   --num_tools 3 \
   --model_name "gpt-4.1-2025-04-14" \
-  --tools_root_dir ../../../..//data/StableToolBench/tools_api/ \
-  --output_folder ../../../..//data/StableToolBench/tools_synthetic_queries
+  --tools_root_dir ../../../../data/StableToolBench/tools_api/ \
+  --output_folder ../../../../data/StableToolBench/tools_synthetic_queries
 # Output: ../../../..//data/StableToolBench/tools_synthetic_queries/ToolUse_smithery_2508_3tool_1766028185
 
 # Return to repo root
