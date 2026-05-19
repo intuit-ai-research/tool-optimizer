@@ -11,7 +11,7 @@ def pull_hf_data(
     hf_access_token: str | None = None,
     repo_id: str = "intuit/tool-optimizer-dataset",
     data_files: list[str] | None = None,
-    data_dir: str | None = None,
+    data_dir: list[str] | None = None,
     output_path: str = "../../data",
 ) -> None:
     """Pull data files from a HuggingFace dataset repo."""
@@ -39,11 +39,11 @@ def pull_hf_data(
                 )
 
         if data_dir:
-            log.info(f"Downloading directory '{data_dir}' from '{repo_id}'...")
+            log.info(f"Downloading directories {data_dir} from '{repo_id}'...")
             snapshot_download(
                 repo_id=repo_id,
                 repo_type="dataset",
-                allow_patterns=f"{data_dir}/*",
+                allow_patterns=[f"{d}/*" for d in data_dir],
                 local_dir=output_path,
                 token=token,
             )
@@ -68,7 +68,7 @@ def main() -> None:
     parser.add_argument("--hf_access_token", type=str, default=None, help="HuggingFace access token (defaults to HF_TOKEN env var)")
     parser.add_argument("--repo_id", type=str, default="intuit/tool-optimizer-dataset", help="HuggingFace dataset repo ID")
     parser.add_argument("--data_files", type=str, nargs="*", default=None, help="Specific files to pull (pulls entire repo if omitted)")
-    parser.add_argument("--data_dir", type=str, default=None, help="Specific directory to pull from the repo")
+    parser.add_argument("--data_dir", type=str, nargs="*", default=None, help="One or more directories to pull from the repo (space-separated)")
     parser.add_argument("--output_path", type=str, default="../../data", help="Local directory to save files to")
 
     args = parser.parse_args()

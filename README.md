@@ -142,10 +142,17 @@ cd src/utils
 # OPTIONAL
 export HF_TOKEN=<your_token_here> # Enter as env variable or as CLI arg below
 
+# OPTION 1.1 - PULL ALL THE AVAILABLE DATA
 python pull_hf_data.py \
   --repo_id "intuit/tool-optimizer-dataset" \
   --data_dir "StableToolBench" \
   --output_path ../../data/
+
+# OPTION 1.2 - PULL SUBSET OF DIRECTORIES
+python pull_hf_data.py \
+  --repo_id "intuit/tool-optimizer-dataset" \
+  --data_dir "StableToolBench/tools_api" "StableToolBench/tools_usage" "StableToolBench/tools_mcp_yaml_raw" \
+  --output_path ../../data2/
 
 # Return to repo root
 cd ../..
@@ -403,7 +410,7 @@ cd ../../../..
 5. **Convert**: Convert to query format (`convert_preview_to_g1.py`)
 6. **Combine**: Merge all queries into `combined_queries.json`
 
-For manual step-by-step execution (including optional quality checks in Steps 2-4), see `TOUCAN/datagen/README.MD`.
+It is not necessary for this project, but if desired, manual step-by-step execution (including optional quality checks in Steps 2-4) can be found at `TOUCAN/datagen/README.MD`.
 
 **Output**: Synthetically generated user queries using variety of tools and stored in `<output_folder>/ToolUse_<name>_<timestamp>/combined_queries.json`.
 
@@ -459,8 +466,7 @@ python tmdb/examples/main_tmdb.py \
   --dataset ../../data/StableToolBench/tools_synthetic_queries/ToolUse_smithery_198_3tool_1775806399/combined_queries.json \
   --mcp_yaml_path ../../data/StableToolBench/tools_mcp_yaml_desc_improve_tracefree \
   --tool_root_dir ../../data/StableToolBench/tools_api \
-  --output_dir ../../data/StableToolBench/tools_exec_traces/20260415_111700 \
-  --openai_api_key <key> \
+  --output_dir ../../data/StableToolBench/tools_exec_traces \
   --model_name "gpt-4.1-2025-04-14"
 
 # Return to repo root
