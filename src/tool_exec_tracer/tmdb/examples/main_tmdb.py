@@ -705,11 +705,20 @@ def main():
     # Note: We save run_parameters.json instead of copying config.yaml because
     # run_parameters.json contains the ACTUAL parameters used (including CLI overrides),
     # while config.yaml would only show the base config without overrides.
+    # Paths are stored as absolute so downstream stages (e.g. tool_desc_atomic/main.py)
+    # can read run_parameters.json from any cwd without breaking.
+    def _abs(p):
+        if p is None:
+            return None
+        if isinstance(p, (list, tuple)):
+            return [os.path.abspath(x) if x is not None else None for x in p]
+        return os.path.abspath(p)
+
     run_params = {
-        "config": args.config,
-        "dataset": args.dataset,
-        "mcp_yaml_path": args.mcp_yaml_path,
-        "decompo_mcp_yaml_path": args.decompo_mcp_yaml_path,
+        "config": _abs(args.config),
+        "dataset": _abs(args.dataset),
+        "mcp_yaml_path": _abs(args.mcp_yaml_path),
+        "decompo_mcp_yaml_path": _abs(args.decompo_mcp_yaml_path),
         "seed": args.seed,
         "temperature": args.temperature,
         "top_p": args.top_p,
@@ -720,7 +729,7 @@ def main():
         "workers": args.workers,
         "desc_in_task_decomp": args.desc_in_task_decomp,
         "debug_mode": debug,
-        "queries_path": queries_path,
+        "queries_path": _abs(queries_path),
         "prompts": {
             "task_decomposition": args.task_decomp_prompt_version,
             "parameter_generation": args.param_gen_prompt_version,

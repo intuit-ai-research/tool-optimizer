@@ -152,7 +152,7 @@ python pull_hf_data.py \
 python pull_hf_data.py \
   --repo_id "intuit/tool-optimizer-dataset" \
   --data_dir "StableToolBench/tools_api" "StableToolBench/tools_usage" "StableToolBench/tools_mcp_yaml_raw" \
-  --output_path ../../data2/
+  --output_path ../../data/
 
 # Return to repo root
 cd ../..
@@ -214,7 +214,7 @@ cd ../../../..
 
 ##### Step 1.2. Execute script to generate output data
 
-<mark>NOTE: This step can take in the order of DAYS to complete, so plan accordingly</mark>
+<mark>NOTE: This step can take in the order of DAYS to complete, so plan accordingly.</mark>
 
 **Entry point**
 > `src/tool_annotator/main_select.py`
@@ -263,6 +263,8 @@ cd ../..
 **Purpose**: Transform sparse, vague D0 descriptions into structured, clear D1 descriptions using LLM-based guidelines. No execution data is needed — this is purely prompt-driven improvement.
 
 > **Skip this step?** Pre-computed trace-free and data independent descriptions are available using `src/utils/pull_hf_data.py` (pulled as part of `tools_mcp_yaml_tracefree_desc_improve/`). See [Training Data](#training-data-option-1---download-existing-example-training-data) for more info.
+
+<mark>NOTE: This step can take in the order of HOURS to complete, so plan accordingly.</mark>
 
 **Entry point**
 > `src/tool_desc_improve_tracefree/main_StableToolBench.py`
@@ -391,8 +393,8 @@ export OPENAI_API_KEY=<your_key_here> # Enter as env variable or as CLI arg belo
 
 ./run_pipeline.sh \
   --input_dir ../../../../data/StableToolBench/tools_mcp_yaml_desc_improve_tracefree \
-  --samples_per_server 6 \
-  --num_tools 3 \
+  --samples_per_server 2 \
+  --num_tools 4 \
   --model_name "gpt-4.1-2025-04-14" \
   --tools_root_dir ../../../../data/StableToolBench/tools_api/ \
   --output_folder ../../../../data/StableToolBench/tools_synthetic_queries
@@ -456,6 +458,8 @@ Make sure the StableToolBench server is running. If not, refer to Training Step 
 
 *In a separate terminal window*
 ```bash
+deactivate
+source .venv/bin/activate
 cd src/tool_exec_tracer
 
 # OPTIONAL

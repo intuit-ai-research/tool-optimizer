@@ -1,10 +1,32 @@
 import argparse
 import logging
 import os
+import time
 
 from huggingface_hub import hf_hub_download, snapshot_download
+from huggingface_hub.utils import HfHubHTTPError
 
 log = logging.getLogger(__name__)
+
+# HF Hub free tier: 5000 resolver requests per 5 minutes.
+# Re-downloads of cached files don't count, so retries become cheap on subsequent attempts.
+RATE_LIMIT_MAX_RETRIES = 6
+RATE_LIMIT_BACKOFF_SECONDS = 60
+DOWNLOAD_WORKERS = 2
+
+
+def _snapshot_with_retry(**kwargs) -> None:
+    for attempt in range(RATE_LIMIT_MAX_RETRIES):
+        try:
+            snapshot_download(**kwargs)
+            return
+        except HfHubHTTPError as e:
+            status = getattr(e.response, "status_code", None)
+            if status != 429 or attempt == RATE_LIMIT_MAX_RETRIES - 1:
+                raise
+            wait = RATE_LIMIT_BACKOFF_SECONDS * (2**attempt)
+            log.warning(f"Hit HF Hub rate limit (429). Sleeping {wait}s before retry {attempt + 2}/{RATE_LIMIT_MAX_RETRIES}. Already-cached files will not be re-resolved.")
+            time.sleep(wait)
 
 
 def pull_hf_data(
@@ -40,21 +62,23 @@ def pull_hf_data(
 
         if data_dir:
             log.info(f"Downloading directories {data_dir} from '{repo_id}'...")
-            snapshot_download(
+            _snapshot_with_retry(
                 repo_id=repo_id,
                 repo_type="dataset",
                 allow_patterns=[f"{d}/*" for d in data_dir],
                 local_dir=output_path,
                 token=token,
+                max_workers=DOWNLOAD_WORKERS,
             )
 
         if not data_files and not data_dir:
             log.info(f"Downloading entire dataset from '{repo_id}'...")
-            snapshot_download(
+            _snapshot_with_retry(
                 repo_id=repo_id,
                 repo_type="dataset",
                 local_dir=output_path,
                 token=token,
+                max_workers=DOWNLOAD_WORKERS,
             )
 
         log.info(f"Download complete. Files saved to '{output_path}'.")
